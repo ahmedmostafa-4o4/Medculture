@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 let array = [];
 let newArray = [];
 let key;
