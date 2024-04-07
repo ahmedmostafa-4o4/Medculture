@@ -148,6 +148,6 @@ let signInBtn = document.getElementById("btn");
 
 if (localStorage.getItem("State") === "signed") {
   localStorage.setItem("State", "not Signed");
-  location.assign("/Pages/Index.html");
+  location.assign("../Pages/Index.html");
 }
 //End State Handling
