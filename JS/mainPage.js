@@ -1,5 +1,3 @@
-import { SpeedInsights } from "@vercel/speed-insights/next";
-
 const scrollBtn = document.querySelector(".arrow-up");
 
 window.onscroll = function () {

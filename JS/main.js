@@ -1,4 +1,3 @@
-import { SpeedInsights } from "@vercel/speed-insights/next";
 // Start Slider Handling
 
 let slider = document.querySelector(".landing");

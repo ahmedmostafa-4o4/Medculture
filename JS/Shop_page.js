@@ -1,5 +1,3 @@
-import { SpeedInsights } from "@vercel/speed-insights/next";
-
 const sideBarOpenBtn = document.getElementById("side-bar-open-btn");
 const sideBarCloseBtn = document.getElementById("side-bar-close-btn");
 
