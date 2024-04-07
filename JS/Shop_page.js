@@ -98,3 +98,15 @@ productWindowbg.addEventListener("click", function () {
   productWindowbg.classList.remove("show");
   productWindowDetials.classList.remove("clicked-product-box-animation");
 });
+
+const scrollBarLeftArrow = document.querySelector(".left-arrow");
+const scrollBarRightArrow = document.querySelector(".right-arrow");
+const scrollBar = document.querySelector(".departs");
+
+scrollBarLeftArrow.addEventListener("click", function () {
+  scrollBar.scrollLeft -= 70;
+});
+
+scrollBarRightArrow.addEventListener("click", function () {
+  scrollBar.scrollLeft += 70;
+});
