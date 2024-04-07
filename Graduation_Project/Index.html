@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Main Style -->
+    <link rel="stylesheet" href="CSS/style.css" />
+    <!-- Normalize File -->
+    <link rel="stylesheet" href="CSS/normalize.css" />
+    <!-- Font Awesome File -->
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="bg"></div>
+    <div class="parent">
+      <form action="" class="sign-in">
+        <h1>Sign in</h1>
+        <label for="user-name-field">Email</label>
+        <i class="fa-regular fa-user username-icon"></i>
+        <input
+          type="email"
+          placeholder="Type your email"
+          id="user-name-field"
+        />
+        <span id="emailSignIn-span">This Email Doesn't Exist!</span>
+        <label for="password-field">Password</label>
+        <i class="fa-solid fa-lock password-icon"></i>
+        <input
+          type="password"
+          placeholder="Type your password"
+          id="password-field"
+        />
+        <i class="fa-regular fa-eye pass-eye-in"></i>
+        <span id="passwordSignIn-span">Wrong Password, Try again</span>
+        <button id="btn">Login</button>
+      </form>
+      <div class="landing">
+        <div class="links">
+          <a href="#" class="facebook"
+            ><i class="fa-brands fa-square-facebook"></i
+          ></a>
+          <a href="#" class="instgram"
+            ><i class="fa-brands fa-square-instagram"></i
+          ></a>
+          <a href="#" class="twitter"
+            ><i class="fa-brands fa-square-x-twitter"></i
+          ></a>
+          <a href="#" class="github"
+            ><i class="fa-brands fa-square-github"></i
+          ></a>
+        </div>
+        <button class="slider-btn" id="slider-btn">Sign up</button>
+      </div>
+      <form action="" class="sign-up">
+        <h1>Sign up</h1>
+        <div class="input-holder">
+          <input
+            class="nameInput"
+            type="text"
+            placeholder="First Name"
+            required
+          />
+          <input
+            class="nameInput"
+            type="text"
+            placeholder="Last Name"
+            required
+          />
+        </div>
+        <input type="email" placeholder="Enter your email" id="sign-up-email" />
+        <span id="emailSignUp-span">This email already exist!</span>
+        <input
+          type="password"
+          placeholder="Enter your password"
+          id="sign-up-password"
+        />
+        <span id="passwordSignUp-span"
+          >Minimum 8 characters, both lower and upper case Must include symbols
+          Must include numbers.
+        </span>
+        <i class="fa-regular fa-eye pass-eye"></i>
+        <input
+          type="password"
+          placeholder="Confirm password"
+          id="confirm-password"
+        />
+        <span id="confirm-span">Type your password correctly!</span>
+        <button>Sign up</button>
+      </form>
+    </div>
+    <script src="JS/PageJS.js" type="module"></script>
+    <script src="JS/main.js"></script>
+  </body>
+</html>

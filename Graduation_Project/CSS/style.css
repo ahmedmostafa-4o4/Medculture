@@ -1,0 +1,281 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('/Images/Main\ Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+}
+
+.bg::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    right: 200px;
+    width: 200px;
+    height: 100px;
+
+}
+
+.parent {
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.parent form {
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+
+}
+
+.parent .sign-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent .sign-in label {
+    align-self: flex-start;
+    margin-left: 81px;
+    font-size: 13px;
+    color: rgb(139 139 188);
+}
+
+.parent .sign-in .pass-eye-in {
+    position: absolute;
+    top: 60%;
+    right: 12%;
+    cursor: pointer;
+    color: rgb(139 139 188);
+    z-index: 1;
+}
+
+.parent .sign-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.username-icon {
+    position: absolute;
+    top: 39.8%;
+    font-size: 13px;
+    left: 61.5%;
+    color: rgb(139 139 188);
+}
+
+.password-icon {
+    position: absolute;
+    top: 60%;
+    font-size: 13px;
+    left: 61.5%;
+    color: rgb(139 139 188);
+}
+
+.parent .sign-up .nameInput {
+    width: 77.5px;
+    text-align: start;
+}
+
+.parent .sign-up input {
+    margin-bottom: 15px;
+}
+
+.parent .sign-up .pass-eye {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    cursor: pointer;
+    color: rgb(139 139 188);
+    z-index: 1;
+}
+
+.parent form input {
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent transparent rgb(139 139 188) transparent;
+    background-color: transparent;
+    padding: 10px;
+    padding-left: 15px;
+    font-size: 12px;
+    width: 50%;
+    color: rgb(139 139 188);
+}
+
+.parent .sign-in input {
+    margin-bottom: 30px;
+}
+
+
+
+.parent form button {
+    padding: 10px;
+    width: 50%;
+    color: white;
+    background-color: #2196f3;
+    border: none;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    font-size: 10px;
+    cursor: pointer;
+    box-shadow: 0px 9px 20px 0px #00000057;
+    margin-top: 30px;
+    user-select: none;
+}
+
+
+.parent form input:focus {
+    outline: none;
+}
+
+.parent form h1 {
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #2196f3;
+}
+
+.parent .discription {
+    width: 50%;
+
+}
+
+.parent .landing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0%);
+    width: 50%;
+    height: 100%;
+    background-color: #2196f3;
+    -webkit-transform: translate(0%);
+    -moz-transform: translate(0%);
+    -ms-transform: translate(0%);
+    -o-transform: translate(0%);
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    color: #ccc;
+    z-index: 1000;
+}
+
+.parent .landing button {
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(to right, #00BCD4, #3996e2);
+    border: none;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 9px 20px 0px #00000027;
+    user-select: none;
+}
+
+.parent .landing button:hover {
+    background-color: #ccc;
+}
+
+
+.landing .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: 0.5s;
+    align-self: flex-start;
+    font-size: 30px;
+    margin-left: 40px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.landing .links a {
+    color: #00e1ff;
+    text-decoration: none;
+    margin-bottom: 20px;
+    background-clip: text;
+    transition: 0.6s;
+    -webkit-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -ms-transition: 0.6s;
+    -o-transition: 0.6s;
+}
+
+.landing .links .github {
+    margin-bottom: 0;
+}
+
+
+
+.landing .links .facebook:hover {
+    color: #4267B2;
+}
+
+.landing .links .instgram:hover {
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.landing .links .github:hover,
+.landing .links .twitter:hover {
+    color: black;
+}
+
+span {
+    font-size: 10px;
+    color: red;
+    width: 200px;
+    margin-top: 4px;
+    display: none;
+}
