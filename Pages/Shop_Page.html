@@ -21,16 +21,6 @@
   <body>
     <div class="main">
       <div class="side-bar">
-        <div class="account-details">
-          <img src="../Images/image-daniel.jpg" alt="" />
-          <p class="acc-name">Ahmed Mostafa</p>
-        </div>
-        <div class="wishlist">
-          <div class="wishlist-icon">
-            <i class="fa-regular fa-heart"></i>
-          </div>
-          <p>wishlist</p>
-        </div>
         <p class="text-white self-start">Social Links</p>
         <div class="social-links">
           <a href="#" class="facebook"
@@ -73,6 +63,43 @@
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </form>
+
+          <div class="user-btn">
+            <span>A</span>
+            <div class="user-info">
+              <div class="user-img">
+                <span>A</span>
+              </div>
+              <p class="user-name">Ahmed Mostafa</p>
+              <div
+                class="user-account-info"
+                data-set="account"
+                onclick="openAccountPage()"
+              >
+                <i class="fa-solid fa-user"></i>
+                <p>Account info</p>
+              </div>
+              <div class="user-wishlist" data-set="wishlist">
+                <i class="fa-solid fa-star"></i>
+                <p>Wishlist</p>
+              </div>
+              <div class="user-notification" data-set="notification">
+                <i class="fa-regular fa-bell"></i>
+                <p>Notifications</p>
+              </div>
+              <div class="user-alarm" data-set="alarm">
+                <i class="fa-solid fa-stopwatch"></i>
+                <p>Set Alarm</p>
+              </div>
+              <div class="user-settings" data-set="settings">
+                <i class="fa-solid fa-gear"></i>
+                <p>Settings</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="notification"><i class="fa-regular fa-bell"></i></div>
+          <div class="wishlist-btn"><i class="fa-solid fa-star"></i></div>
         </div>
         <div class="scroll-bar">
           <div class="left-arrow"><span></span></div>
@@ -88,13 +115,27 @@
             <div class="one">test</div>
             <div class="one">test</div>
             <div class="one">test</div>
+            <div class="one">test</div>
+            <div class="one">test</div>
+            <div class="one">test</div>
+            <div class="one">test</div>
+            <div class="one">test</div>
+            <div class="one">test</div>
+            <div class="one">test</div>
+            <div class="one">test</div>
+            <div class="one">test</div>
+            <div class="one">test</div>
+            <div class="one">test</div>
+            <div class="one">test</div>
+            <div class="one">test</div>
+            <div class="one">test</div>
           </div>
           <div class="right-arrow"><span></span></div>
         </div>
         <div class="products-box">
           <div data-set="1">
             <div class="product-img">
-              <img src="../Images/XV014-edit_grande.webp" alt="" />
+              <img src="" alt="" />
             </div>
             <div class="product-details">
               <p class="product-name">Morfen</p>
@@ -137,7 +178,7 @@
           </div>
           <div data-set="1">
             <div class="product-img">
-              <img src="../Images/XV014-edit_grande.webp" alt="" />
+              <img src="../Images/1.png" alt="" />
             </div>
             <div class="product-details">
               <p class="product-name">Morfen</p>
@@ -459,6 +500,163 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="account-page">
+      <div class="account-side-bar">
+        <div class="back" onclick="back()">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <div class="side-bar-account-info active" data-set="account">
+          <i class="fa-solid fa-user"></i>
+          <p>Account information</p>
+        </div>
+        <div class="side-bar-wishlist" data-set="wishlist">
+          <i class="fa-solid fa-star"></i>
+          <p>Wishlist</p>
+        </div>
+        <div class="side-bar-notification" data-set="notification">
+          <i class="fa-regular fa-bell"></i>
+          <p>Notification</p>
+        </div>
+        <div class="side-bar-alarm" data-set="alarm">
+          <i class="fa-solid fa-stopwatch"></i>
+          <p>Alarms</p>
+        </div>
+        <div class="side-bar-settings" data-set="settings">
+          <i class="fa-solid fa-gear"></i>
+          <p>Settings</p>
+        </div>
+      </div>
+      <div class="right-page">
+        <div class="user-info-page page-hidden" data-set="account">
+          <div class="user-img">
+            <img src="" alt="" />
+          </div>
+          <form action="" class="user-info-fields">
+            <div>
+              <label for="user-first-name">First Name</label>
+
+              <input type="text" id="user-first-name" value="Ahmed" disabled />
+              <p id="change-first-name">Change</p>
+            </div>
+            <div>
+              <label for="user-last-name">last Name</label>
+              <input type="text" id="user-last-name" value="Mostafa" disabled />
+              <p id="change-last-name">Change</p>
+            </div>
+            <div>
+              <label for="user-email">Your Email</label>
+              <input
+                type="text"
+                id="user-email"
+                value="ahmedmostafa00@gmail.com"
+                disabled
+              />
+              <p id="change-email">Change</p>
+            </div>
+            <div>
+              <label for="user-birthdate">Birthdate</label>
+              <input
+                type="text"
+                id="user-birthdate"
+                value="31/3/2003"
+                disabled
+              />
+              <p id="change-birthdate">Change</p>
+            </div>
+            <div>
+              <label for="user-address">Your Address</label>
+              <input
+                type="text"
+                id="user-address"
+                value="New Fayoum"
+                disabled
+              />
+              <p id="change-address">Change</p>
+            </div>
+            <button
+              class="save-info-btn-false save-info-btn"
+              id="save-info-btn"
+              disabled
+            >
+              Save
+            </button>
+          </form>
+        </div>
+        <div class="wish-list-page page-hidden" data-set="wishlist">
+          <div class="saved-product">
+            <div class="saved-product-img">
+              <img src="../Images/XV014-edit_grande.webp" alt="" />
+            </div>
+            <div class="saved-product-info">
+              <h1 id="product-name" class="product-name">Morfen</h1>
+              <p class="product-description" id="product-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                dolores eos ad laudantium quisquam provident rerum, pariatur in
+                magni ratione? Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. At repudiandae eum veniam beatae odio, ipsa
+                explicabo dolore laboriosam? Ad velit ratione asperiores?
+                Doloremque perferendis omnis unde non dolorem, recusandae eum.
+              </p>
+              <span class="product-price" id="product-price"
+                >30.99 <span>EGP</span></span
+              >
+              <button class="rm-btn">Remove</button>
+            </div>
+          </div>
+          <div class="saved-product">
+            <div class="saved-product-img">
+              <img src="../Images/image-daniel.jpg" alt="" />
+            </div>
+            <div class="saved-product-info">
+              <h1 id="product-name" class="product-name">Morfen</h1>
+              <p class="product-description" id="product-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                dolores eos ad laudantium quisquam provident rerum, pariatur in
+                magni ratione? Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. At repudiandae eum veniam beatae odio, ipsa
+                explicabo dolore laboriosam? Ad velit ratione asperiores?
+                Doloremque perferendis omnis unde non dolorem, recusandae eum.
+              </p>
+              <span class="product-price" id="product-price"
+                >30.99 <span>EGP</span></span
+              >
+              <button class="rm-btn">Remove</button>
+            </div>
+          </div>
+          <div class="saved-product">
+            <div class="saved-product-img">
+              <img src="../Images/image-daniel.jpg" alt="" />
+            </div>
+            <div class="saved-product-info">
+              <h1 id="product-name" class="product-name">Morfen</h1>
+              <p class="product-description" id="product-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                dolores eos ad laudantium quisquam provident rerum, pariatur in
+                magni ratione? Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. At repudiandae eum veniam beatae odio, ipsa
+                explicabo dolore laboriosam? Ad velit ratione asperiores?
+                Doloremque perferendis omnis unde non dolorem, recusandae eum.
+              </p>
+              <span class="product-price" id="product-price"
+                >30.99 <span>EGP</span></span
+              >
+              <button class="rm-btn">Remove</button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="notification-page page-hidden"
+          data-set="notification"
+        ></div>
+        <div class="alarms-page page-hidden" data-set="alarm">
+          <button class="set-alarm">
+            <i class="fa-solid fa-plus"></i>New Alarm
+          </button>
+        </div>
+        <div class="settings-page page-hidden" data-set="settings"></div>
       </div>
     </div>
 
