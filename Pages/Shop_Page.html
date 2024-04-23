@@ -655,6 +655,58 @@
           <button class="set-alarm">
             <i class="fa-solid fa-plus"></i>New Alarm
           </button>
+          <div class="alarm-box-bg">
+            <form action="" class="new-alarm-box" method="get">
+              <label for="alarm-name">Alarm name</label>
+              <input
+                type="text"
+                maxlength="10"
+                placeholder="Alarm"
+                id="alarm-name"
+              />
+              <label for="set-time">Set time</label>
+              <input type="time" name="set-time" id="set-time" />
+              <label for="">Repeat</label>
+              <div class="check-day">
+                <div>
+                  <input type="checkbox" id="Saturday" />
+                  <label for="Saturday">Saturday</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="Sunday" />
+                  <label for="Sunday">Sunday</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="Monday" />
+                  <label for="Monday">Monday</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="Tuesday" />
+                  <label for="Tuesday">Tuesday</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="Wednesday" />
+                  <label for="Wednesday">Wednesday</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="Thursday" />
+                  <label for="Thursday">Thursday</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="Friday" />
+                  <label for="Friday">Friday</label>
+                </div>
+              </div>
+              <div class="btns">
+                <button class="save-alarm-btn" onclick="preventDefault()">
+                  Save
+                </button>
+                <button class="cancel-alarm-btn">Cancel</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="alarms"></div>
         </div>
         <div class="settings-page page-hidden" data-set="settings"></div>
       </div>

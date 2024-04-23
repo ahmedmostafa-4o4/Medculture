@@ -222,7 +222,7 @@ sideBarbtns.forEach(function (e) {
 
 dropDownMenuBtns.forEach(function (e) {
   e.addEventListener("click", function (e) {
-    sideBarbtns.forEach(function (ele) {
+    sideBarbtns.forEach(function () {
       sideBarSet = e.currentTarget.getAttribute("data-set");
     });
     rightPages.forEach(function (e) {
@@ -236,3 +236,100 @@ dropDownMenuBtns.forEach(function (e) {
     });
   });
 });
+
+//Alarm Page
+
+//Set New Alarm
+
+const setAlarmBtn = document.querySelector(".set-alarm");
+const alarmBox = document.querySelector(".alarm-box-bg");
+const saveAlarmBtn = document.querySelector(".save-alarm-btn");
+const cancelAlarmBtn = document.querySelector(".cancel-alarm-btn");
+const alarms = document.querySelector(".alarms");
+setAlarmBtn.addEventListener("click", () => {
+  alarmBox.style.display = "block";
+});
+
+cancelAlarmBtn.addEventListener("click", () => {
+  alarmBox.style.display = "none";
+});
+
+let onOffBtn = document.querySelectorAll(".on-off");
+
+saveAlarmBtn.addEventListener("click", () => {
+  onOffBtns(onOffBtn);
+
+  const alarmHolder = document.createElement("div");
+  alarmHolder.classList.add("alarm-holder");
+  const alarmNameP = document.createElement("p");
+  alarmNameP.classList.add("alarm-name");
+  const alarmName = document.createTextNode("Alarm Name");
+  alarmNameP.append(alarmName);
+  alarmHolder.append(alarmNameP);
+  const timeP = document.createElement("p");
+  let timeInput = document.getElementById("set-time");
+  let fT = "";
+  for (let i = 0; i < 2; i++) {
+    fT += timeInput.value.charAt(i);
+  }
+  if (parseInt(fT) > 12) {
+    var time = document.createTextNode(`${timeInput.value} PM`);
+  } else {
+    var time = document.createTextNode(`${timeInput.value} AM`);
+  }
+  console.log(time);
+  timeP.append(time);
+  alarmHolder.append(timeP);
+  const timeOutP = document.createElement("p");
+  timeOutP.classList.add("time-out");
+  const timeOut = document.createTextNode("Ring in 15h 6m");
+  timeOutP.append(timeOut);
+  alarmHolder.append(timeOutP);
+  const onOff = document.createElement("div");
+  onOff.classList.add("on-off");
+  const on = document.createElement("div");
+  on.classList.add("on");
+  on.classList.add("on-state");
+  onOff.append(on);
+  alarmHolder.append(onOff);
+  const editBtn = document.createElement("button");
+  editBtn.classList.add("edit");
+  const editBtnText = document.createTextNode("Edit");
+  editBtn.append(editBtnText);
+  alarmHolder.append(editBtn);
+  const removeBtn = document.createElement("button");
+  removeBtn.classList.add("remove");
+  const removeBtnText = document.createTextNode("remove");
+  removeBtn.append(removeBtnText);
+  alarmHolder.append(removeBtn);
+  alarms.append(alarmHolder);
+  onOffBtn = document.querySelectorAll(".on-off");
+  let onBtn = document.querySelectorAll(".on");
+  const removeAlarmBtn = document.querySelectorAll(".remove");
+  removeAlarmBtn.forEach((e) => {
+    e.addEventListener("click", (ele) => {
+      ele.currentTarget.parentNode.remove();
+    });
+  });
+  timeInput = document.getElementById("set-time");
+
+  console.log(timeInput.value);
+  onOffBtns(onOffBtn);
+  preventDefault();
+});
+
+function onOffBtns(onOffBtn) {
+  onOffBtn.forEach((e) => {
+    e.addEventListener("click", (element) => {
+      if (element.currentTarget.children[0].classList.contains("on-state")) {
+        element.currentTarget.children[0].classList.remove("on-state");
+        element.currentTarget.children[0].classList.add("off-state");
+        e.style.backgroundColor = "black";
+      } else {
+        element.currentTarget.children[0].classList.remove("off-state");
+        element.currentTarget.children[0].classList.add("on-state");
+        e.style.backgroundColor = "red";
+      }
+    });
+  });
+}
