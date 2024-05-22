@@ -1,4 +1,13 @@
 :root {
+    --Blue: #0072c6;
+    --Dark-blue: #004a8f;
+    --Light-blue: #b0e2ff;
+    --Green: #38b44a;
+    --Dark-green: #005a1c;
+    --Light-green: #c6dfb8;
+    --White: #ffffff;
+    --Gray: #808080;
+    --Light-pastel-purple: #d2bde9;
     --down-value: (30.93px + 20px);
     --main-line-height: 1.5;
     --main-color: #1A4D2E;
@@ -87,6 +96,18 @@ body {
     overflow: auto;
 }
 
+@media not all and (min-width:1024px) {}
+
+.logo-side {
+    font-size: 35px;
+
+}
+
+.logo-side span {
+    color: var(--Dark-green);
+    font-weight: bold;
+}
+
 .side-bar::-webkit-scrollbar {
     width: 5px;
     background-color: #131722;
@@ -94,6 +115,22 @@ body {
 
 .side-bar::-webkit-scrollbar-thumb {
     background: linear-gradient(to bottom, var(--red-color), rgb(255, 0, 0));
+}
+
+.time-up {
+    width: 200px;
+    height: 150px;
+    background-color: #1a4d2e70;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    right: -200px;
+}
+
+.show {
+    right: 20px;
 }
 
 /* .side-bar::-webkit-scrollbar-corner {
@@ -342,6 +379,46 @@ body {
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
+    position: relative;
+}
+
+.nav .user-btn .red-alert {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: red;
+}
+
+.user-wishlist {
+    position: relative;
+}
+
+.user-wishlist span {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: calc(100% - 10px);
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: red;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
 }
 
 .nav .wishlist-btn:hover {

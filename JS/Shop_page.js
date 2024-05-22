@@ -186,9 +186,12 @@ function back() {
 }
 
 // Search Bar
-
+const searchForm = document.querySelector(".search-form");
 const searchBar = document.querySelector("input[type = 'search']");
 const productName = document.querySelectorAll(".main .product-name");
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
 searchBar.addEventListener("input", (ele) => {
   productName.forEach((e) => {
     e.parentNode.parentNode.style.display = "none";
@@ -271,7 +274,11 @@ dropDownMenuBtns.forEach(function (e) {
 //Alarm Page
 
 //Set New Alarm
-
+const alarmForm = document.querySelector(".new-alarm-box");
+alarmForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+const alertPopUp = document.querySelector(".time-up");
 const setAlarmBtn = document.querySelector(".set-alarm");
 const alarmBox = document.querySelector(".alarm-box-bg");
 const saveAlarmBtn = document.querySelector(".save-alarm-btn");
@@ -281,20 +288,21 @@ setAlarmBtn.addEventListener("click", () => {
   alarmBox.style.display = "block";
 });
 
-cancelAlarmBtn.addEventListener("click", () => {
+cancelAlarmBtn.addEventListener("click", (e) => {
   alarmBox.style.display = "none";
+  e.preventDefault();
 });
 
 let onOffBtn = document.querySelectorAll(".on-off");
 
-saveAlarmBtn.addEventListener("click", () => {
+saveAlarmBtn.addEventListener("click", (e) => {
   onOffBtns(onOffBtn);
-
+  const alarmSetName = document.querySelector("input[id = 'alarm-name']");
   const alarmHolder = document.createElement("div");
   alarmHolder.classList.add("alarm-holder");
   const alarmNameP = document.createElement("p");
   alarmNameP.classList.add("alarm-name");
-  const alarmName = document.createTextNode("Alarm Name");
+  const alarmName = document.createTextNode(`${alarmSetName.value}`);
   alarmNameP.append(alarmName);
   alarmHolder.append(alarmNameP);
   const timeP = document.createElement("p");
@@ -345,8 +353,16 @@ saveAlarmBtn.addEventListener("click", () => {
   timeInput = document.getElementById("set-time");
 
   console.log(timeInput.value);
+  setInterval(() => {
+    let time = new Date();
+    if (`${time.getHours()}:${time.getMinutes()}` === `${timeInput.value}`) {
+      alertPopUp.classList.add("show");
+    } else {
+      alertPopUp.classList.remove("show");
+    }
+  }, 1000);
   onOffBtns(onOffBtn);
-  preventDefault();
+  e.preventDefault();
 });
 
 function onOffBtns(onOffBtn) {
@@ -366,13 +382,34 @@ function onOffBtns(onOffBtn) {
 }
 
 // Wishlist Page
+
 let cloneProductBox;
 const atwl = document.querySelectorAll(".atwl i");
 const wishlistPage = document.querySelector(".wish-list-page");
+const alertBtn = document.querySelector(".user-wishlist span");
+const userAlert = document.querySelector(".red-alert");
+if (wishlistPage.innerHTML === "") {
+  userAlert.style.display = "none";
+  alertBtn.style.display = "none";
+} else {
+  userAlert.style.display = "block";
+  alertBtn.style.display = "block";
+}
 
 atwl.forEach((e) => {
   e.addEventListener("click", (ele) => {
-    if (ele.currentTarget.classList.contains("fa-regular")) {
+    if (ele.currentTarget.classList.contains("fa-solid")) {
+      ele.currentTarget.classList.replace("fa-solid", "fa-regular");
+      wishlistPage.childNodes.forEach((e) => {
+        if (
+          e.id ===
+          ele.currentTarget.parentNode.parentNode.parentNode.parentNode.id
+        ) {
+          wishlistPage.removeChild(e);
+        }
+      });
+    } else {
+      ele.currentTarget.classList.replace("fa-regular", "fa-solid");
       cloneProductBox =
         ele.currentTarget.parentNode.parentNode.parentNode.parentNode.cloneNode(
           true
@@ -384,13 +421,18 @@ atwl.forEach((e) => {
       cloneProductBox.children[1].children[3].children[0].remove();
       cloneProductBox.children[1].children[3].appendChild(rmBtn);
       wishlistPage.append(cloneProductBox);
-      ele.currentTarget.classList.replace("fa-regular", "fa-solid");
-    } else {
-      ele.currentTarget.classList.replace("fa-solid", "fa-regular");
-      wishlistPage.removeChild(cloneProductBox);
     }
-    console.log(ele);
+
     removeProduct(ele.currentTarget);
+
+    if (wishlistPage.innerHTML === "") {
+      userAlert.style.display = "none";
+      alertBtn.style.display = "none";
+    } else {
+      userAlert.style.display = "block";
+
+      alertBtn.style.display = "block";
+    }
   });
 });
 
@@ -398,9 +440,20 @@ function removeProduct(starIcon) {
   const removeSavedProduct = document.querySelectorAll(".rm-btn");
   removeSavedProduct.forEach((e) => {
     e.addEventListener("click", (ele) => {
-      starIcon.classList.replace("fa-solid", "fa-regular");
+      if (
+        ele.currentTarget.parentNode.parentNode.parentNode.parentNode.id ===
+        starIcon.parentNode.parentNode.parentNode.id
+      )
+        starIcon.classList.replace("fa-solid", "fa-regular");
       ele.currentTarget.parentNode.parentNode.parentNode.remove();
-      console.log(starIcon);
+      if (wishlistPage.innerHTML === "") {
+        userAlert.style.display = "none";
+        alertBtn.style.display = "none";
+      } else {
+        userAlert.style.display = "block";
+
+        alertBtn.style.display = "block";
+      }
     });
   });
 }
@@ -440,3 +493,12 @@ categories.forEach((e) => {
     });
   });
 });
+
+const timeOut = new Date();
+console.log(`0${timeOut.getHours() - 12}`);
+
+// console.log(time.getHours());
+// console.log(time.getMinutes());
+// console.log(`${time.getHours()} : ${time.getMinutes()}`);
+
+// console.log(`${time.getTime() / 1000 / 60 / 60 / 24 / 365}`);

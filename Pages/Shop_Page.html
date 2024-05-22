@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../CSS/all.min.css" />
-
+    <link rel="stylesheet" href="../CSS/output.css" />
     <link rel="stylesheet" href="../CSS/mainPage.css" />
     <link rel="stylesheet" href="../CSS/normalize.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,21 +21,10 @@
   <body>
     <div class="main">
       <div class="side-bar">
-        <p class="text-white self-start">Social Links</p>
-        <div class="social-links">
-          <a href="#" class="facebook"
-            ><i class="fa-brands fa-square-facebook"></i
-          ></a>
-          <a href="#" class="instgram"
-            ><i class="fa-brands fa-square-instagram"></i
-          ></a>
-          <a href="#" class="twitter"
-            ><i class="fa-brands fa-square-x-twitter"></i
-          ></a>
-          <a href="#" class="github"
-            ><i class="fa-brands fa-square-github"></i
-          ></a>
+        <div class="logo-side">
+          <a href="./mainPage.html"><span class="med">Med</span>Culture</a>
         </div>
+
         <ul class="side-bar-links">
           <li class="side-bar-dropped-menu">
             <a href="#3084" class="drop-icon block mb-1 w-fit"
@@ -51,6 +40,21 @@
           <li><a href="#testimonials">Our Story</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
+        <p class="text-white self-start">Social Links</p>
+        <div class="social-links">
+          <a href="#" class="facebook"
+            ><i class="fa-brands fa-square-facebook"></i
+          ></a>
+          <a href="#" class="instgram"
+            ><i class="fa-brands fa-square-instagram"></i
+          ></a>
+          <a href="#" class="twitter"
+            ><i class="fa-brands fa-square-x-twitter"></i
+          ></a>
+          <a href="#" class="github"
+            ><i class="fa-brands fa-square-github"></i
+          ></a>
+        </div>
         <i class="fa-solid fa-xmark" id="side-bar-close-btn"></i>
       </div>
       <div class="body">
@@ -62,6 +66,7 @@
           </form>
 
           <div class="user-btn">
+            <span class="red-alert"></span>
             <span>A</span>
             <div class="user-info">
               <div class="user-img">
@@ -77,6 +82,7 @@
                 <p>Account info</p>
               </div>
               <div class="user-wishlist" data-set="wishlist">
+                <span></span>
                 <i class="fa-solid fa-star"></i>
                 <p>Wishlist</p>
               </div>
@@ -91,6 +97,10 @@
               <div class="user-settings" data-set="settings">
                 <i class="fa-solid fa-gear"></i>
                 <p>Settings</p>
+              </div>
+              <div class="log-out">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p>Log out</p>
               </div>
             </div>
           </div>
@@ -107,7 +117,25 @@
           <div class="right-arrow"><span></span></div>
         </div>
         <div class="products-box">
-          <div data-set="" class="product-holder">
+          <div data-set="" class="product-holder" id="1">
+            <div class="product-img">
+              <img src="" alt="" />
+            </div>
+            <div class="product-details">
+              <p class="product-name">Morfen</p>
+              <p class="product-description">
+                Morphine is a non-synthetic narcotic with a high potential for
+                abuse and is derived from opium. It is used for the treatment of
+                pain
+              </p>
+              <span class="product-price">30.99 <span>EGP</span></span>
+              <div class="btns">
+                <button class="atwl"><i class="fa-regular fa-star"></i></button>
+                <button class="buy-now">Buy Now</button>
+              </div>
+            </div>
+          </div>
+          <div data-set="Medicin" class="product-holder" id="2">
             <div class="product-img">
               <img src="" alt="" />
             </div>
@@ -125,30 +153,12 @@
               </div>
             </div>
           </div>
-          <div data-set="" class="product-holder">
+          <div data-set="" class="product-holder" id="3">
             <div class="product-img">
               <img src="" alt="" />
             </div>
             <div class="product-details">
-              <p class="product-name">Morfe</p>
-              <p class="product-description">
-                Morphine is a non-synthetic narcotic with a high potential for
-                abuse and is derived from opium. It is used for the treatment of
-                pain
-              </p>
-              <span class="product-price">30.99 <span>EGP</span></span>
-              <div class="btns">
-                <button class="atwl"><i class="fa-regular fa-star"></i></button>
-                <button class="buy-now">Buy Now</button>
-              </div>
-            </div>
-          </div>
-          <div data-set="" class="product-holder">
-            <div class="product-img">
-              <img src="" alt="" />
-            </div>
-            <div class="product-details">
-              <p class="product-name">Morfe</p>
+              <p class="product-name">Morf</p>
               <p class="product-description">
                 Morphine is a non-synthetic narcotic with a high potential for
                 abuse and is derived from opium. It is used for the treatment of
@@ -287,7 +297,7 @@
             <i class="fa-solid fa-plus"></i>New Alarm
           </button>
           <div class="alarm-box-bg">
-            <form action="" class="new-alarm-box" method="get">
+            <form action="" class="new-alarm-box">
               <label for="alarm-name">Alarm name</label>
               <input
                 type="text"
@@ -346,9 +356,7 @@
     <div class="order-page">
       <div class="first-step"></div>
     </div>
-
-    <span class="arrow-up center"><i class="fa-solid fa-arrow-up"></i></span>
+    <span class="time-up arrow-up center">Time Up!!!!</span>
     <script src="../JS/Shop_page.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
   </body>
 </html>

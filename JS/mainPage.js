@@ -45,6 +45,7 @@ sideBarOpenBtn.addEventListener("click", function () {
   //   });
   // });
 });
+
 sideBarCloseBtn.addEventListener("click", function () {
   sideBar.classList.remove("side-bar-show");
   document.body.classList.remove("not-touchable");
@@ -104,32 +105,120 @@ let aboutUsDiv = document.querySelector("div[data-set = 'about-us']");
 let servicesDiv = document.querySelector("div[data-set = 'services']");
 let testimonialsDiv = document.querySelector("div[data-set = 'testimonials']");
 let feedBackDiv = document.querySelector("div[data-set = 'feed-back']");
-let landingDiv = document.querySelector("div[data-set = 'landing']");
-
-// sideBarLinks.forEach((e) => {
-//   console.log(e);
-// });
-
+let landingDiv = document.querySelector("div[data-set = 'landing-on']");
+let landingBgDiv = document.querySelector(".bg.one");
+let mainBg = document.querySelector(".main-bg");
 let allSections = [
   aboutUsDiv,
   servicesDiv,
   testimonialsDiv,
   feedBackDiv,
+  landingBgDiv,
   landingDiv,
 ];
 
 let allLinks = [...sideBarLinks, ...navBarLinks];
 
+console.log(landingBgDiv);
+console.log(landingDiv);
+
 allLinks.forEach((e) => {
   e.addEventListener("click", (ele) => {
+    sessionStorage.setItem("CP", ele.target.getAttribute("data-set"));
     allSections.forEach((e) => {
       e.style.display = "none";
-      if (
-        ele.currentTarget.getAttribute("data-set") ===
-        e.getAttribute("data-set")
-      ) {
-        e.style.display = "flex";
+      if (e.getAttribute("data-set") === sessionStorage.CP) {
+        e.style.display = "block";
+        landingBgDiv.style.display = "none";
+        if (e.getAttribute("data-set") === "landing-on")
+          e.style.display = "flex";
+        landingBgDiv.style.display = "block";
       }
     });
+    navBarLinks.forEach((e) => {
+      e.classList.remove("linkes-active");
+      if (e.getAttribute("data-set") === sessionStorage.CP)
+        e.classList.add("linkes-active");
+    });
   });
+});
+
+navBarLinks.forEach((e) => {
+  e.classList.remove("linkes-active");
+  if (e.getAttribute("data-set") === sessionStorage.CP)
+    e.classList.add("linkes-active");
+});
+
+allSections.forEach((e) => {
+  e.style.display = "none";
+  if (e.getAttribute("data-set") === sessionStorage.CP) {
+    e.style.display = "block";
+    landingBgDiv.style.display = "none";
+    if (e.getAttribute("data-set") === "landing-on") e.style.display = "flex";
+    landingBgDiv.style.display = "block";
+  }
+});
+//about us section
+
+let _40K = document.querySelector(".numbers div:nth-child(1) h1");
+let _600 = document.querySelector(".numbers div:nth-child(2) h1");
+let _12 = document.querySelector(".numbers div:nth-child(3) h1");
+let _20K = document.querySelector(".numbers div:nth-child(4) h1");
+let _40Kcounter = 0;
+let _20Kcounter = 0;
+let _600counter = 0;
+let _12counter = 0;
+setInterval((e) => {
+  _40K.innerHTML = `${_40Kcounter}K`;
+  _40Kcounter++;
+  if (_40Kcounter === 41) {
+    clearInterval(1);
+  }
+}, 20);
+setInterval((e) => {
+  _600.innerHTML = `${_600counter}`;
+  _600counter += 20;
+  if (_600counter >= 601) {
+    clearInterval(2);
+  }
+}, 20);
+setInterval((e) => {
+  _20K.innerHTML = `${_20Kcounter}K`;
+  _20Kcounter++;
+  if (_20Kcounter === 21) {
+    clearInterval(3);
+  }
+}, 20);
+setInterval((e) => {
+  _12.innerHTML = `${_12counter}`;
+  _12counter++;
+  if (_12counter === 13) {
+    clearInterval(4);
+  }
+}, 20);
+
+let myAnimatedDiv = document.querySelectorAll(".text-content");
+
+const options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.8,
+};
+
+const observe = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      myAnimatedDiv.forEach((e) => {
+        e.classList.add("anim");
+      });
+    } else {
+      myAnimatedDiv.forEach((e) => {
+        e.classList.remove("anim");
+      });
+    }
+  });
+}, options);
+
+myAnimatedDiv.forEach((e) => {
+  observe.observe(e);
 });
