@@ -1,5 +1,4 @@
 :root {
-
     --Blue: #0072c6;
     --Dark-blue: #004a8f;
     --Light-blue: #b0e2ff;
@@ -53,8 +52,6 @@ html {
 }
 
 body {
-    background-color: rgb(27, 27, 27);
-
     font-family: "Barlow Semi Condensed", sans-serif;
 }
 

@@ -2,20 +2,26 @@
     --Blue: #0072c6;
     --Dark-blue: #004a8f;
     --Light-blue: #b0e2ff;
-    --Green: #38b44a;
-    --Dark-green: #005a1c;
+    --Green: rgb(122 182 206);
+    --Dark-green: rgb(122 182 206);
+    /* --Green: #38b44a;
+    --Dark-green: #005a1c; */
     --Light-green: #c6dfb8;
     --White: #ffffff;
     --Gray: #808080;
     --Light-pastel-purple: #d2bde9;
     --down-value: (30.93px + 20px);
     --main-line-height: 1.5;
-    --main-color: #1A4D2E;
-    --dark-main-color: #0b2b17;
-    --main-v2-color: #E8DFCA;
-    --main-v3-color: #4F6F52;
-    --green-color: #90D26D;
-    --blue-color: #344599c7;
+    --main-color: rgb(18, 71, 94);
+    /* --main-color: #1A4D2E; */
+    --dark-main-color: rgb(122 182 206);
+    /* --dark-main-color: #0b2b17; */
+    --main-v2-color: rgb(18, 161, 218);
+    /* --main-v2-color: #E8DFCA; */
+    --main-v3-color: rgb(122 182 206);
+    /* --main-v3-color: #4F6F52; */
+    --green-color: rgb(7, 118, 165);
+    --sec-color: #344599c7;
     --p-font-size: calc(-5px + 4vmin);
     --font-sans: '__Inter_9da747', '__Inter_Fallback_9da747', "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-alternate: '__degular_c961b9', '__degular_Fallback_c961b9', "Helvetica Neue", Helvetica, Arial, sans-serif, '__Inter_9da747', '__Inter_Fallback_9da747', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -79,7 +85,7 @@ body {
     display: flex;
     width: 100%;
     height: 100vh;
-    background-color: var(--main-color);
+    background: linear-gradient(30deg, rgb(6, 33, 51) 30%, rgb(1, 60, 99) 50%, rgb(6, 33, 51) 100%);
 }
 
 .side-bar {
@@ -439,7 +445,7 @@ body {
     position: absolute;
     top: calc(100% + 10px);
     right: -80px;
-    background-color: var(--dark-main-color);
+    background-color: var(--main-color);
     flex-direction: column;
     justify-content: start;
     cursor: default;
@@ -460,7 +466,7 @@ body {
     position: absolute;
     top: -16px;
     left: 90px;
-    border-color: transparent transparent var(--dark-main-color) transparent;
+    border-color: transparent transparent var(--main-color) transparent;
     border-width: 8px;
     border-style: solid;
 
@@ -506,7 +512,7 @@ body {
 }
 
 .user-info>div:not(:first-child):hover {
-    background-color: var(--main-color);
+    background-color: rgba(29, 140, 184, 0.199);
 }
 
 
@@ -674,7 +680,7 @@ body {
 }
 
 .product-holder .product-img {
-    background-color: var(--dark-main-color);
+    background-color: var(--main-color);
     width: 140px;
     margin-bottom: 10px;
     border-radius: 25px;
@@ -756,7 +762,7 @@ body {
 }
 
 .product-holder .product-details .btns .buy-now {
-    background-color: var(--dark-main-color);
+    background-color: var(--main-color);
     flex-grow: 1;
 }
 
@@ -1154,17 +1160,17 @@ body {
 }
 
 .active {
-    background-color: var(--blue-color);
+    background-color: var(--Blue);
 }
 
 .account-page .account-side-bar>div:hover {
-    background-color: var(--blue-color);
+    background-color: var(--Blue);
 }
 
 .account-page .right-page {
     width: 100%;
     padding: 5px 10px 0 10px;
-
+    background: linear-gradient(130deg, rgb(6, 33, 51) 30%, rgb(1, 60, 99) 50%, rgb(6, 33, 51) 100%);
 }
 
 @media not all and (min-width: 376px) {
@@ -1299,7 +1305,7 @@ body {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    box-shadow: black 0px 0px 2px;
+    box-shadow: -1px 5px 13px 0px black
 }
 
 .account-page .wish-list-page .product-holder .product-img {
