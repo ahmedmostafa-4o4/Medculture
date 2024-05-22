@@ -122,6 +122,8 @@ let allLinks = [...sideBarLinks, ...navBarLinks];
 console.log(landingBgDiv);
 console.log(landingDiv);
 
+sessionStorage.setItem("CP", "landing-on");
+
 allLinks.forEach((e) => {
   e.addEventListener("click", (ele) => {
     sessionStorage.setItem("CP", ele.target.getAttribute("data-set"));
