@@ -587,10 +587,10 @@ ul {
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
+    font-size: 13px;
 }
 
 .logs .log-in-btn {
-    font-size: calc(var(--p-font-size) - 0.3rem);
 
     color: white;
 }
@@ -600,7 +600,6 @@ ul {
 }
 
 .logs .sign-up-btn {
-    font-size: calc(var(--p-font-size) - 0.3rem);
     color: white;
     background-color: var(--green-color);
     padding: 10px;
