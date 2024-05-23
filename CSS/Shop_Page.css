@@ -174,7 +174,7 @@ body {
 }
 
 .facebook:hover {
-    color: var(--blue-color);
+    color: var(--Dark-blue);
 }
 
 .instgram:hover {
@@ -1267,7 +1267,7 @@ body {
 
 
 .account-page .user-info-fields .save-info-btn:hover {
-    background-color: var(--blue-color);
+    background-color: var(--Dark-blue);
 }
 
 .account-page .wish-list-page {
@@ -1390,7 +1390,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    background-color: var(--blue-color);
+    background-color: var(--Dark-blue);
     padding: 10px;
     border-radius: 20px;
     -webkit-border-radius: 20px;

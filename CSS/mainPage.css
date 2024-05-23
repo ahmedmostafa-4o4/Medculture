@@ -207,26 +207,37 @@ ul {
 
 
 .main-bg {
-    background-color: transparent;
     position: fixed;
     z-index: -1;
-    background-color: rgb(13, 54, 70);
+    background: linear-gradient(130deg, rgb(6, 33, 51) 30%, rgb(1, 60, 99) 50%, rgb(6, 33, 51) 100%);
     width: 100%;
     height: 100vh;
-    filter: grayscale(0);
-    -webkit-filter: grayscale(0);
 }
 
 .landing {
     height: 68vh;
     padding: 10px;
-    width: fit-content;
+    width: auto;
     padding-top: 3rem;
     margin-bottom: 32vh;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-.landing div {
+.landing .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    gap: 10px;
+
+}
+
+.landing .hero-content>div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -235,7 +246,7 @@ ul {
 
 }
 
-.landing div img {
+.landing .hero-content img {
     width: calc(var(--p-font-size) + 3.9rem);
     border: 2px solid var(--green-color);
     border-radius: 50%;
@@ -246,7 +257,7 @@ ul {
     padding: 8px;
 }
 
-.landing div h1 {
+.landing .hero-content h1 {
     font-size: calc(var(--p-font-size) + 3rem);
     margin: 0;
 }
@@ -257,6 +268,8 @@ ul {
     min-width: 350px;
     max-width: 50%;
 }
+
+
 
 .main-bg::before {
     content: "";
@@ -607,14 +620,24 @@ ul {
         width: 150px;
     }
 
-    .landing div img {
+    .landing .hero-content img {
         width: calc(var(--p-font-size) + 2.5rem);
     }
 
-    .landing div h1 {
+    .landing .hero-content h1 {
         font-size: calc(var(--p-font-size) + 2.5rem);
     }
 
+    .landing .main-p {
+        font-size: 17px;
+    }
+
+}
+
+@media not all and (min-width: 380px) {
+    .landing .main-p {
+        font-size: 15px;
+    }
 }
 
 .services {
@@ -863,7 +886,6 @@ ul {
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
-    padding-top: 6rem;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -872,8 +894,32 @@ ul {
 }
 
 .head-line {
-    margin-top: 4rem;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: 0.5s;
+    opacity: 0;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transform: translateY(50px);
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    -o-transform: translateY(50px);
+}
+
+.show-header-section {
+    opacity: 1;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
 }
 
 .head-line:before {
@@ -902,6 +948,8 @@ ul {
     min-width: 200px;
     max-width: 550px;
     margin: 20px auto;
+    font-size: 30px;
+    color: #ccc;
 }
 
 .testimonials-section .cards-holder {
@@ -910,6 +958,7 @@ ul {
     gap: 3rem;
     width: 100%;
     justify-items: center;
+    padding-top: 6rem;
 }
 
 @media not all and (min-width: 768px) {
@@ -980,12 +1029,19 @@ ul {
 .landing {
     height: 100vh;
     margin-bottom: 0;
-
 }
 
 .section-name {
     position: relative;
     font-size: 40px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.section-name h1 {
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: -3px;
 }
 
 .section-name p {
@@ -1001,7 +1057,7 @@ ul {
 
 .arrow-btn {
     position: absolute;
-    bottom: 70px;
+    bottom: 0px;
     left: 50%;
     align-self: end;
     cursor: pointer;
@@ -1018,7 +1074,7 @@ ul {
     60%,
     80%,
     100% {
-        bottom: 60px;
+        bottom: 85px;
     }
 
     10%,
@@ -1026,7 +1082,7 @@ ul {
     50%,
     70%,
     90% {
-        bottom: 80px;
+        bottom: 105px;
     }
 }
 

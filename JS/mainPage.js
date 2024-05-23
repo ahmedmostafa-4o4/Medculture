@@ -106,20 +106,17 @@ let servicesDiv = document.querySelector("div[data-set = 'services']");
 let testimonialsDiv = document.querySelector("div[data-set = 'testimonials']");
 let feedBackDiv = document.querySelector("div[data-set = 'feed-back']");
 let landingDiv = document.querySelector("div[data-set = 'landing-on']");
-let landingBgDiv = document.querySelector(".bg.one");
 let mainBg = document.querySelector(".main-bg");
 let allSections = [
   aboutUsDiv,
   servicesDiv,
   testimonialsDiv,
   feedBackDiv,
-  landingBgDiv,
   landingDiv,
 ];
 
 let allLinks = [...sideBarLinks, ...navBarLinks];
 
-console.log(landingBgDiv);
 console.log(landingDiv);
 
 sessionStorage.setItem("CP", "landing-on");
@@ -131,10 +128,8 @@ allLinks.forEach((e) => {
       e.style.display = "none";
       if (e.getAttribute("data-set") === sessionStorage.CP) {
         e.style.display = "block";
-        landingBgDiv.style.display = "none";
         if (e.getAttribute("data-set") === "landing-on")
           e.style.display = "flex";
-        landingBgDiv.style.display = "block";
       }
     });
     navBarLinks.forEach((e) => {
@@ -155,11 +150,80 @@ allSections.forEach((e) => {
   e.style.display = "none";
   if (e.getAttribute("data-set") === sessionStorage.CP) {
     e.style.display = "block";
-    landingBgDiv.style.display = "none";
     if (e.getAttribute("data-set") === "landing-on") e.style.display = "flex";
-    landingBgDiv.style.display = "block";
   }
 });
+
+//Letters Animations && show animation
+
+const headerSection = document.querySelectorAll(".head-line");
+
+allLinks.forEach((e) => {
+  e.addEventListener("click", () => {
+    headerSection.forEach((e) => {
+      e.classList.remove("show-header-section");
+    });
+    setTimeout(() => {
+      headerSection.forEach((e) => {
+        e.classList.add("show-header-section");
+      });
+    }, 200);
+  });
+});
+
+const lettersH1 = document.querySelectorAll(".head-line h1:nth-child(2)");
+const testimonialsHeaderText =
+  "Don't take our word for it. Over 100+ peaple trust us.";
+
+const servicesHeaderText = "Your Trusted Partner for Wellness and Wellbeing.";
+const aboutUsHeaderText =
+  "Dedicated to Providing Quality Healthcare and Personalized Service.";
+let counter = 0;
+allLinks.forEach((e) => {
+  e.addEventListener("click", (ele) => {
+    let intervalId;
+    counter = 0;
+    letterAnimation(intervalId);
+  });
+});
+
+function letterAnimation(intervalId) {
+  lettersH1.forEach((element) => {
+    element.innerHTML = "";
+    if (element.getAttribute("id") === sessionStorage.CP) {
+      if (element.getAttribute("id") === "services") {
+        intervalId = setInterval(() => {
+          element.innerHTML += servicesHeaderText[counter];
+          counter += 1;
+          if (counter >= servicesHeaderText.length) {
+            counter = 0;
+            clearInterval(intervalId);
+          }
+        }, 30);
+      } else if (element.getAttribute("id") === "testimonials") {
+        intervalId = setInterval(() => {
+          element.innerHTML += testimonialsHeaderText[counter];
+          counter += 1;
+          if (counter >= testimonialsHeaderText.length) {
+            counter = 0;
+            clearInterval(intervalId);
+          }
+        }, 30);
+      } else if (element.getAttribute("id") === "about-us") {
+        intervalId = setInterval(() => {
+          element.innerHTML += aboutUsHeaderText[counter];
+          counter += 1;
+          if (counter >= aboutUsHeaderText.length) {
+            counter = 0;
+            clearInterval(intervalId);
+          }
+        }, 30);
+        counter = 0;
+      }
+    }
+  });
+}
+
 //about us section
 
 let _40K = document.querySelector(".numbers div:nth-child(1) h1");
