@@ -14,6 +14,15 @@ sideBarCloseBtn.addEventListener("click", function () {
   document.body.classList.remove("not-touchable");
 });
 
+//Home Button Handel
+const sideBarBtns = document.querySelectorAll(".side-bar-drop-down-menu li a");
+
+sideBarBtns.forEach((e) => {
+  e.addEventListener("click", (ele) => {
+    sessionStorage.setItem("CP", ele.target.getAttribute("data-set"));
+  });
+});
+
 const showLinks = document.querySelector(".side-bar-dropped-menu");
 const showedList = document.querySelector(".side-bar-drop-down-menu");
 

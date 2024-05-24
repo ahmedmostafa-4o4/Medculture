@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+nav {
+    width: 100%;
+    box-shadow: 0px 0px 8px black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    z-index: 999999;
+    background-color: white;
+}
+
+nav a {}
+
+nav a h1 {
+    width: fit-content;
+    color: black;
+    margin-left: 20px;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.main .items-holder {
+    width: 50%;
+    flex: 1;
+}
+
+.main .items-holder h1 {
+    text-align: center;
+}
+
+.main .items-holder .items {
+    width: 100%;
+}
+
+.main .items-holder .items .item-box form {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.main .items-holder .items .item-box img {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.main .items-holder .items .item-box p {
+    text-align: center;
+
+}
+
+
+.main .items-holder .items .item-box form input[type="number"] {
+    width: 50px;
+    text-align: center;
+    padding: 5px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.main .items-holder .items .item-box form input[type="number"]:hover {
+    outline: 2px solid #ccc;
+}
+
+.main .items-holder .items .item-box form input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+.order-side-bar {
+    position: fixed;
+    top: 80px;
+    right: 0px;
+    width: 300px;
+    height: calc(100vh - 80px);
+    padding: 10px;
+    box-shadow: 0px 0px 8px black;
+    z-index: 99999;
+    background-color: white;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.order-side-bar .openner {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: -12px;
+    width: 25px;
+    height: 25px;
+    border-style: solid;
+    border-color: var(--Dark-blue) transparent transparent var(--Dark-blue);
+    border-width: 3px;
+    rotate: -45deg;
+    z-index: 111;
+    cursor: pointer;
+}
+
+
+
+
+@media not all and (min-width: 768px) {
+    .order-side-bar .openner {
+        display: block;
+    }
+
+    .order-side-bar {
+        right: -300px;
+    }
+
+    .side-bar-contain {
+        display: none;
+    }
+}
+
+.orders-and-price {
+    display: flex;
+    justify-content: space-around;
+}
+
+.orders-and-price>div {
+    text-align: center;
+}
+
+.orders-and-price>div h1 {
+    font-size: 25px;
+}
+
+.orders-and-price>div p {
+    font-size: 20px;
+}
+
+.order-side-bar form {
+    margin-top: 20px;
+}
+
+.order-side-bar form>div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    gap: 5px;
+}
+
+.order-side-bar form>div label {}
+
+.order-side-bar form>div input {
+    border: 1px solid #ccc;
+    padding: 6px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+.order-side-bar form>div input:focus,
+.order-side-bar form>div input:hover {
+    outline: 1px solid #bdbcbc;
+}
+
+.order-side-bar form .payment-method {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.order-side-bar form .payment-method h1 {
+    font-size: 20px;
+}
+
+.order-side-bar form .payment-method div {
+    margin-bottom: 10px;
+}
+
+.order-side-bar form button {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--Dark-blue);
+    color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.order-side-bar form button:hover {
+    opacity: 0.9;
+}

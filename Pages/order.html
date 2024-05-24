@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/all.min.css" />
+    <link rel="stylesheet" href="../CSS/output.css" />
+    <link rel="stylesheet" href="../CSS/order.css" />
+    <link rel="stylesheet" href="../CSS/mainPage.css" />
+    <link rel="stylesheet" href="../CSS/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../Images/Logo.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <a href="./mainPage.html">
+        <h1><span class="med">Med</span>Culture</h1></a
+      >
+    </nav>
+    <div style="height: 80px"></div>
+    <div class="main container mx-auto">
+      <div class="items-holder">
+        <h1>Your items</h1>
+        <div class="items">
+          <div class="item-box">
+            <form action="">
+              <img src="../Images/Medicin 1.jpg" alt="" />
+              <p>Name</p>
+              <p>Catigory</p>
+              <p class="item-price">30</p>
+              <input
+                type="number"
+                name="item-quantity"
+                id="item-quantity"
+                min="1"
+                max="10"
+                value="1"
+              />
+              <input
+                type="checkbox"
+                name="check-order"
+                id="check-order"
+                checked
+              />
+            </form>
+          </div>
+          <div class="item-box">
+            <form action="">
+              <img src="../Images/Medicin 1.jpg" alt="" />
+              <p>Name</p>
+              <p>Catigory</p>
+              <p class="item-price">20</p>
+              <input
+                type="number"
+                name="item-quantity"
+                id="item-quantity"
+                min="1"
+                max="10"
+                value="1"
+              />
+              <input
+                type="checkbox"
+                name="check-order"
+                id="check-order"
+                checked
+              />
+            </form>
+          </div>
+          <div class="item-box">
+            <form action="">
+              <img src="../Images/Medicin 1.jpg" alt="" />
+              <p>Name</p>
+              <p>Catigory</p>
+              <p class="item-price">15</p>
+              <input
+                type="number"
+                name="item-quantity"
+                id="item-quantity"
+                min="1"
+                max="10"
+                value="1"
+              />
+              <input type="checkbox" name="check-order" id="check-order" />
+            </form>
+          </div>
+        </div>
+      </div>
+      <div style="width: 300px" class="side-bar-contain"></div>
+    </div>
+    <div class="order-side-bar">
+      <div class="openner"></div>
+      <div class="orders-and-price">
+        <div>
+          <h1>Total</h1>
+          <p id="total-price"></p>
+        </div>
+        <div>
+          <h1>Orders</h1>
+          <p id="orders-num">10</p>
+        </div>
+      </div>
+      <form action="" class="user-info">
+        <div class="full-name">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full-name" />
+        </div>
+        <div class="address">
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" />
+        </div>
+        <div class="phone-number">
+          <label for="phone-number">Phone Number</label>
+          <input type="text" id="phone-number" name="phone-number" />
+        </div>
+        <div class="payment-method">
+          <h1>Payment Method</h1>
+          <div>
+            <input type="radio" name="cash" id="cash" />
+            <label for="cash">Cash</label>
+          </div>
+          <div>
+            <input type="radio" name="credit-card" id="credit-card" />
+            <label for="credit-card">Credit Card</label>
+          </div>
+        </div>
+        <button type="submit" name="order" id="order">Order</button>
+      </form>
+    </div>
+
+    <script src="../JS/order.js"></script>
+  </body>
+</html>
