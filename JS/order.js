@@ -134,7 +134,7 @@ inputs.forEach((e) => {
     ele.target.parentNode.children[0].style.fontSize = "12px";
   });
   e.addEventListener("blur", (ele) => {
-    if (e.value > 0) {
+    if (e.value.length > 0) {
       ele.target.parentNode.children[0].style.top = "-16px";
       ele.target.parentNode.children[0].style.left = "0px";
       ele.target.parentNode.children[0].style.fontSize = "12px";
@@ -200,7 +200,5 @@ cardNumber.addEventListener("input", () => {
   c++;
   console.log(cardNumber.value.length);
 });
-
-cardNumber.addEventListener("blur", () => {});
 
 //End Payment Methods Handle
