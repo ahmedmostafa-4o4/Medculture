@@ -222,3 +222,321 @@ nav a h1 {
 .order-side-bar form button:hover {
     opacity: 0.9;
 }
+
+.blured-bg {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.39);
+    z-index: 999999;
+}
+
+.credit-card-page {
+    display: none;
+    justify-content: space-between;
+    width: 900px;
+    height: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+
+    z-index: 999999999999;
+}
+
+@media not all and (min-width: 900px) {
+    .credit-card-page {
+        width: 380px;
+        overflow-x: auto;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+    }
+}
+
+@media not all and (min-width: 380px) {
+    .credit-card-page {
+        width: 320px;
+
+    }
+}
+
+.credit-card-page .cards {
+    width: 50%;
+    height: 100%;
+    background-color: #ccc;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 30px 60px;
+    color: #555555;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+@media not all and (min-width: 900px) {
+    .credit-card-page .cards {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0px;
+        z-index: 1;
+    }
+}
+
+@media not all and (min-width: 380px) {
+    .credit-card-page .cards {
+        padding: 30px 30px;
+
+    }
+}
+
+.credit-card-page .card {
+    width: 270px;
+    height: 150px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    position: relative;
+}
+
+.credit-card-page .cards .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -5px;
+    width: 2px;
+    height: 100%;
+    background-color: black;
+    display: none;
+
+}
+
+.credit-card-page .card:hover::before {
+    display: block;
+}
+
+.credit-card-page .card-1 {
+    background: linear-gradient(45deg, #5950c6, #36b3c5);
+}
+
+.credit-card-page .card-2 {
+    background: linear-gradient(45deg, #8b5aa5, #e14ba5);
+
+}
+
+.credit-card-page .card-3 {
+    background: linear-gradient(45deg, #27282a, #656668);
+
+}
+
+.credit-card-page .card h1 {
+    margin: 0;
+    font-size: 25px;
+    color: white;
+    text-align: end;
+}
+
+.credit-card-page .card .card-number {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    vertical-align: middle;
+
+}
+
+.credit-card-page .card .card-number p {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+
+.credit-card-page .card .card-number p:not(:last-child) {
+    padding-top: 10px;
+}
+
+.credit-card-page .card .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.credit-card-page .card .info div {
+    color: white;
+}
+
+.credit-card-page .card .info div p {
+    font-size: 10px;
+}
+
+.credit-card-page .card .info div p:not(:first-child) {
+    color: white;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.credit-card-page .card:hover {}
+
+.credit-card-page .payment-details {
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 30px 60px;
+    position: relative;
+}
+
+@media not all and (min-width: 900px) {
+    .credit-card-page .payment-details {
+        width: 100%;
+    }
+}
+
+@media not all and (min-width: 380px) {
+    .credit-card-page .payment-details {
+        padding: 30px 30px;
+
+    }
+}
+
+
+.credit-card-page .payment-details>h1 {
+    text-align: center;
+    font-size: 25px;
+
+}
+
+.payment-details .user-detailes {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.payment-details .user-detailes div {
+    margin-bottom: 30px;
+    position: relative;
+    background-color: transparent;
+}
+
+.payment-details .user-detailes div p {
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    color: #8a8989;
+    font-size: 15px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.payment-details .user-detailes div input {
+    border-bottom: 1px solid blue;
+    width: 100%;
+    padding: 3px 6px;
+    background-color: transparent;
+}
+
+.payment-details .user-detailes div input:focus {
+    outline: none;
+}
+
+
+.payment-details .user-detailes .date-cvv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-details .user-detailes .date-cvv div {
+    width: 45%;
+}
+
+.payment-details .user-detailes button {
+    display: block;
+    padding: 10px;
+    background: linear-gradient(60deg, var(--Dark-blue), rgb(36, 145, 247));
+    align-self: center;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.credit-card-page .arrow {
+    display: none;
+    position: absolute;
+    top: 52px;
+    width: 20px;
+    height: 20px;
+    border-style: solid;
+    border-width: 3px;
+    cursor: pointer;
+}
+
+.credit-card-page .arrow.right {
+    display: none;
+    right: 30px;
+    border-color: rgb(59, 59, 59) transparent transparent rgb(59, 59, 59);
+    rotate: 135deg;
+}
+
+.credit-card-page .arrow.left {
+    left: 30px;
+    border-color: transparent rgb(59, 59, 59) rgb(59, 59, 59) transparent;
+    rotate: 135deg;
+}
+
+@media not all and (min-width: 900px) {
+    .credit-card-page .arrow {
+        display: block;
+    }
+}
+
+@media not all and (min-width: 380px) {
+    .credit-card-page .arrow.right {
+        right: 10px;
+        top: 32px;
+        border-width: 2px;
+        width: 15px;
+        height: 15px;
+    }
+}
+
+.show {
+    display: block;
+}
