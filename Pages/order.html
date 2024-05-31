@@ -121,7 +121,7 @@
         <div class="payment-method">
           <h1>Payment Method</h1>
           <div>
-            <input type="radio" name="cash" id="cash" />
+            <input type="radio" name="cash" id="cash" checked />
             <label for="cash">Cash</label>
           </div>
           <div>
@@ -203,20 +203,22 @@
         <form action="" class="user-detailes">
           <div>
             <p>Cardholder Name</p>
-            <input type="text" name="card-holder-name" />
+            <input type="text" name="card-holder-name" maxlength="25" />
           </div>
-          <div>
-            <p>Card Number</p>
-            <input type="text" name="card-number" maxlength="19" />
+          <div class="card-number-input">
+            <input type="text" name="card-number-1" maxlength="4" />
+            <input type="text" name="card-number-2" maxlength="4" />
+            <input type="text" name="card-number-3" maxlength="4" />
+            <input type="text" name="card-number-4" maxlength="4" />
           </div>
           <div class="date-cvv">
             <div>
               <p>Expire Date</p>
-              <input type="text" name="card-number" />
+              <input type="text" name="card-expire" maxlength="5" />
             </div>
             <div>
               <p>CVC/CVV</p>
-              <input type="text" name="card-number" maxlength="3" />
+              <input type="text" name="card-CVV" maxlength="3" />
             </div>
           </div>
           <button type="submit">Purchase</button>

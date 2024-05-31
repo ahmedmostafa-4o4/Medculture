@@ -84,9 +84,11 @@
                 <span>A</span>
               </div>
               <p class="user-name">Ahmed Mostafa</p>
+
               <div
                 class="user-account-info"
                 data-set="account"
+                name="account-info"
                 onclick="openAccountPage()"
               >
                 <i class="fa-solid fa-user"></i>
@@ -116,7 +118,12 @@
             </div>
           </div>
 
-          <div class="notification"><i class="fa-regular fa-bell"></i></div>
+          <div class="notification" data-set="notification">
+            <i class="fa-regular fa-bell"></i>
+            <ul class="notification-list">
+              <form action=""></form>
+            </ul>
+          </div>
           <div class="wishlist-btn"><i class="fa-solid fa-star"></i></div>
         </div>
         <div class="scroll-bar">
@@ -310,53 +317,56 @@
           data-set="notification"
         ></div>
         <div class="alarms-page page-hidden" data-set="alarm">
-          <button class="set-alarm">
+          <button
+            class="set-alarm"
+            onclick="toggleAlarmForm(), requestNotificationPermission()"
+          >
             <i class="fa-solid fa-plus"></i>New Alarm
           </button>
-          <div class="alarm-box-bg">
+          <div class="alarm-box-bg" id="alarmForm" style="display: none">
             <form action="" class="new-alarm-box">
               <label for="alarm-name">Alarm name</label>
               <input
                 type="text"
                 maxlength="10"
                 placeholder="Alarm"
-                id="alarm-name"
+                id="alarmName"
               />
-              <label for="set-time">Set time</label>
-              <input type="time" name="set-time" id="set-time" />
+              <label for="alarmTime">Set time</label>
+              <input type="time" name="set-time" id="alarmTime" />
               <label for="">Repeat</label>
-              <div class="check-day">
+              <div class="check-day input-group">
                 <div>
-                  <input type="checkbox" id="Saturday" />
+                  <input type="checkbox" id="Saturday" value="0" />
                   <label for="Saturday">Saturday</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="Sunday" />
+                  <input type="checkbox" id="Sunday" value="1" />
                   <label for="Sunday">Sunday</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="Monday" />
+                  <input type="checkbox" id="Monday" value="2" />
                   <label for="Monday">Monday</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="Tuesday" />
+                  <input type="checkbox" id="Tuesday" value="3" />
                   <label for="Tuesday">Tuesday</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="Wednesday" />
+                  <input type="checkbox" id="Wednesday" value="4" />
                   <label for="Wednesday">Wednesday</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="Thursday" />
+                  <input type="checkbox" id="Thursday" value="5" />
                   <label for="Thursday">Thursday</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="Friday" />
+                  <input type="checkbox" id="Friday" value="6" />
                   <label for="Friday">Friday</label>
                 </div>
               </div>
               <div class="btns">
-                <button class="save-alarm-btn" onclick="preventDefault()">
+                <button class="save-alarm-btn" onclick="addAlarm()">
                   Save
                 </button>
                 <button class="cancel-alarm-btn">Cancel</button>
@@ -364,7 +374,7 @@
             </form>
           </div>
 
-          <div class="alarms"></div>
+          <div class="alarms" id="alarmList"></div>
         </div>
         <div class="settings-page page-hidden" data-set="settings"></div>
       </div>

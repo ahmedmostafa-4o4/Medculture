@@ -2,6 +2,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
 }
 
 
@@ -78,6 +83,7 @@ nav a h1 {
     width: 50px;
     text-align: center;
     padding: 5px;
+    border: 1px solid #ccc;
     transition: 0.5s;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
@@ -471,6 +477,17 @@ nav a h1 {
     outline: none;
 }
 
+.card-number-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-number-input input {
+    text-align: center;
+
+}
 
 .payment-details .user-detailes .date-cvv {
     display: flex;

@@ -280,115 +280,34 @@ dropDownMenuBtns.forEach(function (e) {
   });
 });
 
+const alarmBtn = document.querySelector(".notification");
+
+alarmBtn.addEventListener("click", (ele) => {
+  sideBarbtns.forEach(function (element) {
+    element.classList.remove("active");
+    if (
+      ele.currentTarget.getAttribute("data-set") ===
+      element.getAttribute("data-set")
+    ) {
+      element.classList.add("active");
+    }
+  });
+  rightPages.forEach(function (e) {
+    if (
+      e.getAttribute("data-set") === ele.currentTarget.getAttribute("data-set")
+    ) {
+      openAccountPage();
+      e.classList.remove("page-hidden");
+    } else {
+      openAccountPage();
+      e.classList.add("page-hidden");
+    }
+  });
+});
+
 //Alarm Page
 
 //Set New Alarm
-const alarmForm = document.querySelector(".new-alarm-box");
-alarmForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
-const alertPopUp = document.querySelector(".time-up");
-const setAlarmBtn = document.querySelector(".set-alarm");
-const alarmBox = document.querySelector(".alarm-box-bg");
-const saveAlarmBtn = document.querySelector(".save-alarm-btn");
-const cancelAlarmBtn = document.querySelector(".cancel-alarm-btn");
-const alarms = document.querySelector(".alarms");
-setAlarmBtn.addEventListener("click", () => {
-  alarmBox.style.display = "block";
-});
-
-cancelAlarmBtn.addEventListener("click", (e) => {
-  alarmBox.style.display = "none";
-  e.preventDefault();
-});
-
-let onOffBtn = document.querySelectorAll(".on-off");
-
-saveAlarmBtn.addEventListener("click", (e) => {
-  onOffBtns(onOffBtn);
-  const alarmSetName = document.querySelector("input[id = 'alarm-name']");
-  const alarmHolder = document.createElement("div");
-  alarmHolder.classList.add("alarm-holder");
-  const alarmNameP = document.createElement("p");
-  alarmNameP.classList.add("alarm-name");
-  const alarmName = document.createTextNode(`${alarmSetName.value}`);
-  alarmNameP.append(alarmName);
-  alarmHolder.append(alarmNameP);
-  const timeP = document.createElement("p");
-  let timeInput = document.getElementById("set-time");
-  let fT = "";
-  for (let i = 0; i < 2; i++) {
-    fT += timeInput.value.charAt(i);
-  }
-  if (parseInt(fT) > 12) {
-    var time = document.createTextNode(`${timeInput.value} PM`);
-  } else {
-    var time = document.createTextNode(`${timeInput.value} AM`);
-  }
-  console.log(time);
-  timeP.append(time);
-  alarmHolder.append(timeP);
-  const timeOutP = document.createElement("p");
-  timeOutP.classList.add("time-out");
-  const timeOut = document.createTextNode("Ring in 15h 6m");
-  timeOutP.append(timeOut);
-  alarmHolder.append(timeOutP);
-  const onOff = document.createElement("div");
-  onOff.classList.add("on-off");
-  const on = document.createElement("div");
-  on.classList.add("on");
-  on.classList.add("on-state");
-  onOff.append(on);
-  alarmHolder.append(onOff);
-  const editBtn = document.createElement("button");
-  editBtn.classList.add("edit");
-  const editBtnText = document.createTextNode("Edit");
-  editBtn.append(editBtnText);
-  alarmHolder.append(editBtn);
-  const removeBtn = document.createElement("button");
-  removeBtn.classList.add("remove");
-  const removeBtnText = document.createTextNode("remove");
-  removeBtn.append(removeBtnText);
-  alarmHolder.append(removeBtn);
-  alarms.append(alarmHolder);
-  onOffBtn = document.querySelectorAll(".on-off");
-  let onBtn = document.querySelectorAll(".on");
-  const removeAlarmBtn = document.querySelectorAll(".remove");
-  removeAlarmBtn.forEach((e) => {
-    e.addEventListener("click", (ele) => {
-      ele.currentTarget.parentNode.remove();
-    });
-  });
-  timeInput = document.getElementById("set-time");
-
-  console.log(timeInput.value);
-  setInterval(() => {
-    let time = new Date();
-    if (`${time.getHours()}:${time.getMinutes()}` === `${timeInput.value}`) {
-      alertPopUp.classList.add("show");
-    } else {
-      alertPopUp.classList.remove("show");
-    }
-  }, 1000);
-  onOffBtns(onOffBtn);
-  e.preventDefault();
-});
-
-function onOffBtns(onOffBtn) {
-  onOffBtn.forEach((e) => {
-    e.addEventListener("click", (element) => {
-      if (element.currentTarget.children[0].classList.contains("on-state")) {
-        element.currentTarget.children[0].classList.remove("on-state");
-        element.currentTarget.children[0].classList.add("off-state");
-        e.style.backgroundColor = "black";
-      } else {
-        element.currentTarget.children[0].classList.remove("off-state");
-        element.currentTarget.children[0].classList.add("on-state");
-        e.style.backgroundColor = "red";
-      }
-    });
-  });
-}
 
 // Wishlist Page
 
@@ -467,21 +386,6 @@ function removeProduct(starIcon) {
   });
 }
 
-// atwl.forEach((e) => {
-//   e.addEventListener("click", function (e) {
-//     productWindowImg.src = this.children[0].children[0].src;
-//     textParagraphNode = this.children[1].children[1].firstChild.cloneNode(true);
-//     textHeaderNode = this.children[1].children[0].firstChild.cloneNode(true);
-//     priceNode = this.children[1].children[2].cloneNode(true);
-//     productWindowParagraph.append(textParagraphNode);
-//     productWindowHeader.append(textHeaderNode);
-//     productPrice.append(priceNode);
-//     productWindowbg.classList.add("show");
-//     productWindowDetials.classList.add("clicked-product-box-animation");
-//     document.body.style.overflow = "hidden";
-//   });
-// });
-
 // Categories
 
 const categories = document.querySelectorAll(".departs div");
@@ -503,11 +407,277 @@ categories.forEach((e) => {
   });
 });
 
-const timeOut = new Date();
-console.log(`0${timeOut.getHours() - 12}`);
+//Alarm
 
-// console.log(time.getHours());
-// console.log(time.getMinutes());
-// console.log(`${time.getHours()} : ${time.getMinutes()}`);
+let alarms = [];
+let alarmTimeouts = {};
+let countdownIntervals = {};
 
-// console.log(`${time.getTime() / 1000 / 60 / 60 / 24 / 365}`);
+function toggleAlarmForm() {
+  const alarmForm = document.getElementById("alarmForm");
+  alarmForm.style.display =
+    alarmForm.style.display === "none" ? "block" : "none";
+}
+
+document.querySelector(".new-alarm-box").addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+
+function addAlarm() {
+  const alarmName = document.getElementById("alarmName").value;
+  const alarmTimeValue = document.getElementById("alarmTime").value;
+
+  if (!alarmName || !alarmTimeValue) {
+    alert("الرجاء إدخال اسم المنبه ووقت صحيح");
+    return;
+  }
+
+  const selectedDays = [];
+  for (let i = 0; i < 7; i++) {
+    if (
+      document.getElementById(
+        [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ][i]
+      ).checked
+    ) {
+      selectedDays.push(i);
+    }
+  }
+
+  if (selectedDays.length === 0) {
+    alert("الرجاء اختيار يوم واحد على الأقل");
+    return;
+  }
+
+  const alarm = {
+    name: alarmName,
+    time: alarmTimeValue,
+    days: selectedDays,
+    active: true,
+    nextAlarmTime: null,
+  };
+
+  alarms.push(alarm);
+  displayAlarms();
+  toggleAlarmForm();
+}
+
+function displayAlarms() {
+  const alarmList = document.getElementById("alarmList");
+  alarmList.innerHTML = "";
+  alarms.forEach((alarm, index) => {
+    const alarmItem = document.createElement("div");
+    alarmItem.className = "alarm-holder";
+    alarmItem.innerHTML = `
+    <div class = 'alarm-info'>
+                        <p class = 'alarm-name'>${alarm.name}</p>
+                        ${formatTime(alarm.time)}
+                        ${alarm.days
+                          .map(
+                            (day) =>
+                              [
+                                "Sunday",
+                                "Monday",
+                                "Tuesday",
+                                "Wednesday",
+                                "Thursday",
+                                "Friday",
+                                "Saturday",
+                              ][day]
+                          )
+                          .join(", ")}<br>
+                        <span id="countdown-${index}"Ring in: --:--:--</span>
+                        </div>
+                    <div class = 'btns'>
+                        <button onclick="toggleAlarm(${index})">${
+      alarm.active ? "Pause" : "Play"
+    }</button>
+                        <button onclick="removeAlarm(${index})" class = 'rm-btn'>Delete</button>
+                        </div>
+                `;
+    alarmList.appendChild(alarmItem);
+
+    if (alarm.active) {
+      setAlarm(alarm, index);
+    }
+  });
+}
+
+function formatTime(time) {
+  const [hour, minute] = time.split(":").map(Number);
+  const ampm = hour >= 12 ? "PM" : "AM";
+  const hour12 = hour % 12 || 12;
+  return `${hour12}:${minute.toString().padStart(2, "0")} ${ampm}`;
+}
+
+function setAlarm(alarm, index) {
+  const alarmTimeParts = alarm.time.split(":");
+  const alarmHours = parseInt(alarmTimeParts[0]);
+  const alarmMinutes = parseInt(alarmTimeParts[1]);
+
+  clearTimeout(alarmTimeouts[index]);
+  clearInterval(countdownIntervals[index]);
+
+  const currentTime = new Date();
+  const currentDay = currentTime.getDay();
+  const currentHours = currentTime.getHours();
+  const currentMinutes = currentTime.getMinutes();
+  const currentSeconds = currentTime.getSeconds();
+
+  let nextAlarmTime;
+  let daysUntilAlarm = 0;
+
+  for (let i = 0; i < 7; i++) {
+    const potentialDay = (currentDay + i) % 7;
+    if (alarm.days.includes(potentialDay)) {
+      nextAlarmTime = new Date(currentTime);
+      nextAlarmTime.setDate(currentTime.getDate() + i);
+      nextAlarmTime.setHours(alarmHours);
+      nextAlarmTime.setMinutes(alarmMinutes);
+      nextAlarmTime.setSeconds(0);
+      if (nextAlarmTime > currentTime) {
+        daysUntilAlarm = i;
+        break;
+      } else if (i === 0 && nextAlarmTime < currentTime) {
+        // إذا كان اليوم نفسه ولكن الوقت قد انتهى، ضعه للأسبوع القادم
+        nextAlarmTime.setDate(currentTime.getDate() + 7);
+        daysUntilAlarm = 7;
+        break;
+      }
+    }
+  }
+
+  alarm.nextAlarmTime = nextAlarmTime;
+  const timeDifference = nextAlarmTime - currentTime;
+
+  alarmTimeouts[index] = setTimeout(() => {
+    showNotification("Med Culture Alarm", "Time up please take your medicin.");
+    const notificationItem = document.createElement("div");
+    notificationItem.className = "items";
+    notificationItem.innerHTML = `
+    <h2>Alarm</h2>
+                  <p>Alarm name: ${alarm.name}</p>
+                  <p>Ringed!!</p>
+                  <button type="submit">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+    `;
+    document
+      .querySelector(".notification-list form")
+      .appendChild(notificationItem);
+    let alarmShow = setInterval(() => {
+      document.querySelector(".time-up").style.right = "0";
+    }, 1000);
+    setTimeout(() => {
+      clearInterval(alarmShow);
+      document.querySelector(".time-up").style.right = "-200px";
+    }, 2000);
+  }, timeDifference);
+
+  alarmTimeouts[index] = setTimeout(() => {
+    showNotification(
+      "Med Culture Alarm",
+      `Your Alarm Will Ring In ${Math.floor(timeDifference / 1000 / 60)} Mins!`
+    );
+    const notificationItem = document.createElement("div");
+    notificationItem.className = "items";
+    notificationItem.innerHTML = `
+    <h2>Alarm</h2>
+                  <p>Alarm name: ${alarm.name}</p>
+                  <p>Will Ring After ${Math.floor(
+                    timeDifference / 1000 / 60
+                  )} Mins</p>
+                  <button type="submit">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+    `;
+    document
+      .querySelector(".notification-list form")
+      .appendChild(notificationItem);
+    let alarmShow = setInterval(() => {
+      document.querySelector(".time-up").style.right = "0";
+    }, 1000);
+    setTimeout(() => {
+      clearInterval(alarmShow);
+      document.querySelector(".time-up").style.right = "-200px";
+    }, 2000);
+  }, timeDifference - 15 * 60 * 1000);
+
+  updateCountdown(nextAlarmTime, index);
+}
+
+function updateCountdown(alarmTime, index) {
+  countdownIntervals[index] = setInterval(() => {
+    const currentTime = new Date();
+    const timeDifference = alarmTime - currentTime;
+
+    if (timeDifference <= 0) {
+      clearInterval(countdownIntervals[index]);
+      document.getElementById(`countdown-${index}`).textContent =
+        "Ring in : 00:00:00";
+      return;
+    }
+
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor(
+      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    document.getElementById(
+      `countdown-${index}`
+    ).textContent = `Ring in: ${days} Day ${hours
+      .toString()
+      .padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds
+      .toString()
+      .padStart(2, "0")}`;
+  }, 1000);
+}
+
+function removeAlarm(index) {
+  clearTimeout(alarmTimeouts[index]);
+  clearInterval(countdownIntervals[index]);
+  alarms.splice(index, 1);
+  displayAlarms();
+}
+
+function toggleAlarm(index) {
+  alarms[index].active = !alarms[index].active;
+  if (alarms[index].active) {
+    setAlarm(alarms[index], index);
+  } else {
+    clearTimeout(alarmTimeouts[index]);
+    clearInterval(countdownIntervals[index]);
+    document.getElementById(`countdown-${index}`).textContent =
+      "Ring in : --:--:--";
+  }
+  displayAlarms();
+}
+
+function requestNotificationPermission() {
+  Notification.requestPermission().then(function (result) {
+    if (result === "granted") {
+      console.log("Notification permission granted.");
+    } else {
+      console.log("Notification permission denied.");
+    }
+  });
+}
+
+function showNotification(header, body) {
+  if (Notification.permission === "granted") {
+    new Notification(header, {
+      body: body,
+    });
+  }
+}

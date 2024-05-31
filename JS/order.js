@@ -124,7 +124,7 @@ const inputPlaceHolder = document.querySelectorAll(
   ".payment-details .user-detailes div p"
 );
 const inputs = document.querySelectorAll(
-  ".payment-details .user-detailes div input"
+  ".payment-details .user-detailes div input:not(.card-number-input input)"
 );
 
 inputs.forEach((e) => {
@@ -151,15 +151,12 @@ const toggleBtnToLeft = document.querySelector(".arrow.left");
 const cardsPage = document.querySelector(".cards");
 const cards = document.querySelectorAll(".card");
 const paymentPage = document.querySelector(".payment-details .appended");
-let selectedCard;
 cards.forEach((e) => {
   e.addEventListener("click", (ele) => {
-    selectedCard = document.querySelector(
-      ".payment-details .card .card-number"
-    );
-
+    cardNumberInputs.forEach((input, index) => {
+      input.value = "";
+    });
     cardsPage.style.left = "-380px";
-    cardsPage.style.opacity = "0";
     console.log(paymentPage.firstChild);
     if (paymentPage.firstChild == null)
       paymentPage.append(ele.currentTarget.cloneNode(true));
@@ -172,33 +169,88 @@ cards.forEach((e) => {
 
 toggleBtnToLeft.addEventListener("click", () => {
   cardsPage.style.left = "0";
-  cardsPage.style.opacity = "1";
 });
 
 //Inputs Handle
+const cardNumberInputs = document.querySelectorAll(".card-number-input input");
 
-const cardNumber = document.querySelector("input[name = 'card-number']");
-let container;
-let c = 0;
-let i = 0;
-cardNumber.addEventListener("input", () => {
-  if (cardNumber.value.length > c) {
-    if (
-      cardNumber.value.length === 4 ||
-      cardNumber.value.length === 9 ||
-      cardNumber.value.length === 14
-    )
-      cardNumber.value += " ";
-  }
-  if (
-    cardNumber.value.length === 4 ||
-    cardNumber.value.length === 9 ||
-    cardNumber.value.length === 14
-  )
-    selectedCard.children.innerHTML = cardNumber.value;
+cardNumberInputs.forEach((input, index) => {
+  input.addEventListener("input", () => {
+    if (input.value.length === input.maxLength) {
+      if (index === 3)
+        paymentPage.children[0].children[1].children[index].innerHTML =
+          input.value;
+      else
+        paymentPage.children[0].children[1].children[index].innerHTML = "****";
+      const nextInput = cardNumberInputs[index + 1];
 
-  c++;
-  console.log(cardNumber.value.length);
+      if (nextInput) {
+        nextInput.focus();
+      }
+    }
+  });
+
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Backspace" && input.value.length === 0) {
+      paymentPage.children[0].children[1].children[index].innerHTML = "";
+      const prevInput = cardNumberInputs[index - 1];
+      if (prevInput) {
+        prevInput.focus();
+      }
+    }
+  });
+});
+
+const cardHolderName = document.querySelector(
+  "input[name = 'card-holder-name']"
+);
+
+const cardExpireDate = document.querySelector("input[name = 'card-expire']");
+let holderName;
+let expireDate;
+cards.forEach((e) => {
+  e.addEventListener("click", () => {
+    holderName = paymentPage.querySelector(".name");
+    expireDate = paymentPage.querySelector(".date");
+    cardHolderName.value = "";
+    cardExpireDate.value = "";
+  });
+});
+
+cardHolderName.addEventListener("input", (e) => {
+  holderName.innerHTML = cardHolderName.value;
+});
+cardExpireDate.addEventListener("input", (e) => {
+  expireDate.innerHTML = cardExpireDate.value;
 });
 
 //End Payment Methods Handle
+
+//Start Order Form Handle
+
+const orderFormInputs = document.forms[3].querySelectorAll("input");
+
+document.forms[3].addEventListener("submit", (ele) => {
+  orderFormInputs.forEach((e) => {
+    if (e.value === "") {
+      e.style.borderColor = "red";
+      ele.preventDefault();
+    } else {
+      e.style.borderColor = "#ccc";
+    }
+  });
+});
+const creditFormInputs = document.forms[4].querySelectorAll("input");
+
+document.forms[4].addEventListener("submit", (ele) => {
+  creditFormInputs.forEach((e) => {
+    if (e.value === "") {
+      e.style.borderColor = "red";
+      ele.preventDefault();
+    } else {
+      e.style.borderColor = "#ccc";
+    }
+  });
+});
+
+//End Order Form Handle

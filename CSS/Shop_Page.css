@@ -515,7 +515,65 @@ body {
     background-color: rgba(29, 140, 184, 0.199);
 }
 
+.notification:hover .notification-list {
+    display: flex;
+}
 
+.notification-list {
+    min-width: 200px;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: -50px;
+    background-color: var(--main-color);
+    flex-direction: column;
+    justify-content: start;
+    cursor: default;
+    gap: 20px;
+    padding: 20px;
+    padding-left: 10px;
+    z-index: 99;
+    display: none;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.notification-list::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 120px;
+    border-color: transparent transparent var(--main-color) transparent;
+    border-width: 8px;
+    border-style: solid;
+}
+
+.notification-list form {}
+
+.notification-list form .items {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid var(--Dark-blue);
+    border-radius: 20px;
+    gap: 5px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.notification-list form .items h2 {
+    font-weight: bold;
+}
+
+.notification-list form .items button {
+    color: red;
+}
 
 .user-btn {
     background-color: var(--main-v3-color);
@@ -1535,16 +1593,16 @@ body {
     font-size: 20px;
 }
 
-.alarm-box-bg .new-alarm-box #alarm-name {
+.alarm-box-bg .new-alarm-box #alarmName {
     text-align: center;
     width: 70%;
 }
 
-.alarm-box-bg .new-alarm-box #alarm-name:focus {
+.alarm-box-bg .new-alarm-box #alarmName:focus {
     outline: none;
 }
 
-.alarm-box-bg .new-alarm-box #set-time {
+.alarm-box-bg .new-alarm-box #alarmTime {
     width: 70%;
     padding: 5px;
     border: 2px solid #ccc;
@@ -1557,7 +1615,7 @@ body {
 }
 
 @media not all and (min-width: 500px) {
-    .alarm-box-bg .new-alarm-box #set-time {
+    .alarm-box-bg .new-alarm-box #alarmTime {
         font-size: 10px;
     }
 }
@@ -1575,6 +1633,13 @@ body {
     font-size: 15px;
 }
 
+.alarm-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+    gap: 20px;
+}
 
 .alarm-box-bg .new-alarm-box .btns {
     width: 100%;
@@ -1582,6 +1647,15 @@ body {
     justify-content: space-around;
     align-items: end;
     flex-grow: 0;
+}
+
+.alarm-holder .btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 .alarm-box-bg .new-alarm-box .btns button {
