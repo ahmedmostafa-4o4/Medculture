@@ -288,3 +288,35 @@ const observe = new IntersectionObserver((entries, observer) => {
 myAnimatedDiv.forEach((e) => {
   observe.observe(e);
 });
+
+//Overlay Handle
+
+function showLoadingOverlay() {
+  const loadingOverlay = document.getElementById("loadingOverlay");
+  loadingOverlay.classList.add("visible");
+}
+
+// Function to hide the loading overlay
+function hideLoadingOverlay() {
+  const loadingOverlay = document.getElementById("loadingOverlay");
+  loadingOverlay.classList.remove("visible");
+}
+
+// Add click event listeners to navigation links
+document.querySelectorAll(".linkedPage").forEach((link) => {
+  link.addEventListener("click", function (event) {
+    showLoadingOverlay();
+  });
+});
+
+// Hide the loading overlay once the page is fully loaded
+window.addEventListener("load", function () {
+  hideLoadingOverlay();
+});
+
+// Handle browser back and forward navigation
+window.addEventListener("pageshow", function (event) {
+  if (event.persisted) {
+    hideLoadingOverlay();
+  }
+});

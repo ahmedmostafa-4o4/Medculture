@@ -96,40 +96,40 @@ let passwordSignIn = document.getElementById("password-field");
 let emailSignInWarning = document.getElementById("emailSignIn-span");
 let passwordSignInWarning = document.getElementById("passwordSignIn-span");
 let signInForm = document.querySelector(".sign-in");
-signInForm.onsubmit = function () {
-  if (newArray.includes(emailSignIn.value)) {
-    emailSignIn.style.marginBottom = "30px";
-    emailSignInWarning.style.display = "none";
-    if (
-      passwordSignIn.value === newArray[newArray.indexOf(emailSignIn.value) + 1]
-    ) {
-      localStorage.setItem(
-        "Current Account",
-        newArray[newArray.indexOf(emailSignIn.value) + 2]
-      );
-      localStorage.setItem(
-        "Current Email",
-        newArray[newArray.indexOf(emailSignIn.value)]
-      );
-      passwordSignInWarning.style.display = "none";
-      passwordSignIn.style.marginBottom = "30px";
-      localStorage.setItem("State", "signed");
-      return true;
-    } else {
-      passwordSignInWarning.style.display = "block";
-      passwordSignIn.style.marginBottom = "0";
-      passwordSignInWarning.style.marginTop = "15px";
-      localStorage.setItem("State", "not signed");
-      return false;
-    }
-  } else {
-    emailSignIn.style.marginBottom = "0";
-    emailSignInWarning.style.display = "block";
-    emailSignInWarning.style.marginTop = "15px";
-    emailSignInWarning.style.marginBottom = "5px";
-    return false;
-  }
-};
+// signInForm.onsubmit = function () {
+//   if (newArray.includes(emailSignIn.value)) {
+//     emailSignIn.style.marginBottom = "30px";
+//     emailSignInWarning.style.display = "none";
+//     if (
+//       passwordSignIn.value === newArray[newArray.indexOf(emailSignIn.value) + 1]
+//     ) {
+//       localStorage.setItem(
+//         "Current Account",
+//         newArray[newArray.indexOf(emailSignIn.value) + 2]
+//       );
+//       localStorage.setItem(
+//         "Current Email",
+//         newArray[newArray.indexOf(emailSignIn.value)]
+//       );
+//       passwordSignInWarning.style.display = "none";
+//       passwordSignIn.style.marginBottom = "30px";
+//       localStorage.setItem("State", "signed");
+//       return true;
+//     } else {
+//       passwordSignInWarning.style.display = "block";
+//       passwordSignIn.style.marginBottom = "0";
+//       passwordSignInWarning.style.marginTop = "15px";
+//       localStorage.setItem("State", "not signed");
+//       return false;
+//     }
+//   } else {
+//     emailSignIn.style.marginBottom = "0";
+//     emailSignInWarning.style.display = "block";
+//     emailSignInWarning.style.marginTop = "15px";
+//     emailSignInWarning.style.marginBottom = "5px";
+//     return false;
+//   }
+// };
 
 let toggleEyeIn = document.querySelector(".pass-eye-in");
 toggleEyeIn.addEventListener("click", function () {

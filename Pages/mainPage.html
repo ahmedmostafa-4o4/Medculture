@@ -17,6 +17,17 @@
     <title>Med Culture</title>
   </head>
   <body>
+    <div class="overlay" id="loadingOverlay">
+      <dotlottie-player
+        src="https://lottie.host/ecd81636-c8bb-4fc2-af50-d5c637458e6e/QVodgYC0Ci.json"
+        background="transparent"
+        speed="1"
+        style="width: 300px; height: 300px"
+        loop
+        autoplay
+      ></dotlottie-player>
+    </div>
+
     <div class="main-bg"></div>
     <div class="nav-bar">
       <div class="container mx-auto flex h-54 items-center justify-between">
@@ -38,7 +49,11 @@
                   </ul></a
                 >
               </li>
-              <li><a href="../Pages/Shop_Page.html">Shop Now</a></li>
+              <li>
+                <a href="../Pages/Shop_Page.html" class="linkedPage"
+                  >Shop Now</a
+                >
+              </li>
               <li><a href="#" data-set="services">Services</a></li>
               <li>
                 <a href="#" data-set="testimonials">Testimonials</a>
@@ -70,7 +85,9 @@
               </ul> -->
             </a>
           </li>
-          <li><a href="../Pages/Shop_Page.html">Shop Now</a></li>
+          <li>
+            <a href="../Pages/Shop_Page.html" class="linkedPage">Shop Now</a>
+          </li>
           <li><a href="#" data-set="about-us">About Us</a></li>
           <li><a href="#" data-set="services">Services</a></li>
           <li><a href="#" data-set="testimonials">Testimonials</a></li>
@@ -106,7 +123,7 @@
         <button
           class="rounded-full border-2 p-4 w-36 btn-home transition-all duration-500 text-white"
         >
-          <a href="../Pages/Shop_Page.html">Shop now</a>
+          <a href="../Pages/Shop_Page.html" class="linkedPage">Shop now</a>
         </button>
       </div>
     </div>
@@ -756,6 +773,10 @@
       </div>
     </footer>
     <span class="arrow-up center"><i class="fa-solid fa-arrow-up"></i></span>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
 
     <script src="../JS/mainPage.js"></script>
   </body>

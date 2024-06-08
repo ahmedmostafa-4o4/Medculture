@@ -99,6 +99,23 @@ ul {
     color: var(--green-color);
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999999999999;
+    background-color: white;
+}
+
+.visible {
+    display: flex;
+}
+
 .arrow-up {
     position: fixed;
     bottom: 10px;

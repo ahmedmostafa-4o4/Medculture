@@ -19,10 +19,22 @@
     <title>Products</title>
   </head>
   <body>
+    <div class="overlay" id="loadingOverlay">
+      <dotlottie-player
+        src="https://lottie.host/ecd81636-c8bb-4fc2-af50-d5c637458e6e/QVodgYC0Ci.json"
+        background="transparent"
+        speed="1"
+        style="width: 300px; height: 300px"
+        loop
+        autoplay
+      ></dotlottie-player>
+    </div>
     <div class="main">
       <div class="side-bar">
         <div class="logo-side">
-          <a href="./mainPage.html"><span class="med">Med</span>Culture</a>
+          <a href="./mainPage.html" class="linkedPage"
+            ><span class="med">Med</span>Culture</a
+          >
         </div>
 
         <ul class="side-bar-links">
@@ -384,6 +396,10 @@
       <div class="first-step"></div>
     </div>
     <span class="time-up arrow-up center">Time Up!!!!</span>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
     <script src="../JS/Shop_page.js"></script>
   </body>
 </html>
