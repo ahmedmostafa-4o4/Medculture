@@ -351,7 +351,7 @@ atwl.forEach((e) => {
       wishlistPage.append(cloneProductBox);
     }
 
-    document.querySelectorAll(".linkedPage, .buy-now a").forEach((link) => {
+    document.querySelectorAll(".buy-now a").forEach((link) => {
       link.addEventListener("click", function (event) {
         showLoadingOverlay();
       });
@@ -701,11 +701,13 @@ function hideLoadingOverlay() {
 }
 
 // Add click event listeners to navigation links
-document.querySelectorAll(".linkedPage, .buy-now a").forEach((link) => {
-  link.addEventListener("click", function (event) {
-    showLoadingOverlay();
+document
+  .querySelectorAll(".linkedPage, .buy-now a, .side-bar-drop-down-menu a")
+  .forEach((link) => {
+    link.addEventListener("click", function (event) {
+      showLoadingOverlay();
+    });
   });
-});
 
 // Hide the loading overlay once the page is fully loaded
 window.addEventListener("load", function () {
