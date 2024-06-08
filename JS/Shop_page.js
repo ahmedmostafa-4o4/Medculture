@@ -351,6 +351,11 @@ atwl.forEach((e) => {
       wishlistPage.append(cloneProductBox);
     }
 
+    document.querySelectorAll(".linkedPage, .buy-now a").forEach((link) => {
+      link.addEventListener("click", function (event) {
+        showLoadingOverlay();
+      });
+    });
     removeProduct(ele.currentTarget);
 
     if (wishlistPage.innerHTML === "") {
