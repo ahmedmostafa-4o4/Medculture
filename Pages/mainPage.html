@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../CSS/all.min.css" />
     <link rel="stylesheet" href="../CSS/output.css" />
+    <link rel="stylesheet" href="../CSS/Shop_Page.css" />
+
     <link rel="stylesheet" href="../CSS/mainPage.css" />
     <link rel="stylesheet" href="../CSS/normalize.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,9 +16,14 @@
       rel="stylesheet"
     />
     <link rel="icon" href="../Images/Logo.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <title>Med Culture</title>
   </head>
   <body>
+    <div class="overlay-sidebar"></div>
     <div class="overlay" id="loadingOverlay">
       <dotlottie-player
         src="https://lottie.host/ecd81636-c8bb-4fc2-af50-d5c637458e6e/QVodgYC0Ci.json"
@@ -62,7 +69,7 @@
               </li>
               <li><a href="#" data-set="about-us">About Us</a></li>
               <li>
-                <a href="#" data-set="feed-back">Give Us Your Feedback</a>
+                <a href="#" data-set="feed-back">Contact us</a>
               </li>
             </ul>
             <i class="fa-solid fa-xmark" id="side-bar-close-btn"></i>
@@ -94,7 +101,7 @@
           <li><a href="#" data-set="services">Services</a></li>
           <li><a href="#" data-set="testimonials">Testimonials</a></li>
           <li>
-            <a href="#" data-set="feed-back">Give Us Your Feedback</a>
+            <a href="#" data-set="feed-back">Contact us</a>
           </li>
         </ul>
 
@@ -106,27 +113,228 @@
     </div>
 
     <div
-      class="landing center w-4/5 flex-col text-center mx-auto gap-12"
+      class="landing center w-4/5 flex-col text-center mx-auto gap-12 anima-off"
       data-set="landing-on"
     >
+      <!-- <div class="hero-content-img">
+        <img src="../Images/hero-content-bg.jpg" alt="" />
+      </div> -->
       <div class="hero-content">
         <div>
-          <img src="../Images/Logo.jpg" alt="" />
-          <h1 class="text-slate-300 font-bold">
-            <span class="med">Med</span>Culture
-          </h1>
+          <div>
+            <!-- <img src="../Images/Logo.jpg" alt="" /> -->
+            <h1 class="text-slate-300 font-bold">
+              <span class="med">Med</span>Culture
+            </h1>
+          </div>
+          <h1>YOUR TRUSTED ONLINE PHARMACY</h1>
+          <p class="text-white main-p">
+            Get Your Medications Delivered Fast and Easy
+          </p>
+          <button class="shop-now-btn">
+            <a href="../Pages/Shop_Page.html" class="linkedPage">Shop now</a>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
+        <div class="social-links">
+          <a href="#" class="facebook"
+            ><i class="fa-brands fa-square-facebook"></i
+          ></a>
+          <a href="#" class="instgram"
+            ><i class="fa-brands fa-square-instagram"></i
+          ></a>
+          <a href="#" class="twitter"
+            ><i class="fa-brands fa-square-x-twitter"></i
+          ></a>
+          <a href="#" class="github"
+            ><i class="fa-brands fa-square-github"></i
+          ></a>
+        </div>
+      </div>
+      <!-- Slider main container -->
+      <div class="shared-products container mx-auto anima-off">
+        <div class="pop-products">
+          <h1>TAKE A LOOK FOR OUR POPULER PRODUCTS</h1>
+        </div>
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div data-set="" class="product-holder slider-product" id="1">
+                <div class="product-img">
+                  <img src="" alt="" />
+                </div>
+                <div class="product-details">
+                  <p class="product-name">Morfen</p>
+                  <p class="product-description">
+                    Morphine is a non-synthetic narcotic with a high potential
+                    for abuse and is derived from opium. It is used for the
+                    treatment of pain
+                  </p>
+                  <span class="product-price">30.99 <span>EGP</span></span>
+                  <div class="btns">
+                    <button class="atwl">
+                      <i class="fa-regular fa-star"></i>
+                    </button>
+                    <button class="buy-now">
+                      <a href="./order.html">Buy Now</a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div data-set="" class="product-holder slider-product" id="1">
+                <div class="product-img">
+                  <img src="" alt="" />
+                </div>
+                <div class="product-details">
+                  <p class="product-name">Morfen</p>
+                  <p class="product-description">
+                    Morphine is a non-synthetic narcotic with a high potential
+                    for abuse and is derived from opium. It is used for the
+                    treatment of pain
+                  </p>
+                  <span class="product-price">30.99 <span>EGP</span></span>
+                  <div class="btns">
+                    <button class="atwl">
+                      <i class="fa-regular fa-star"></i>
+                    </button>
+                    <button class="buy-now">
+                      <a href="./order.html">Buy Now</a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div data-set="" class="product-holder slider-product" id="1">
+                <div class="product-img">
+                  <img src="" alt="" />
+                </div>
+                <div class="product-details">
+                  <p class="product-name">Morfen</p>
+                  <p class="product-description">
+                    Morphine is a non-synthetic narcotic with a high potential
+                    for abuse and is derived from opium. It is used for the
+                    treatment of pain
+                  </p>
+                  <span class="product-price">30.99 <span>EGP</span></span>
+                  <div class="btns">
+                    <button class="atwl">
+                      <i class="fa-regular fa-star"></i>
+                    </button>
+                    <button class="buy-now">
+                      <a href="./order.html">Buy Now</a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            ...
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
 
-        <p class="text-white main-p">
-          Discover a world of health and vitality at our medicine store. We
-          offer an exceptional range of premium medications and healthcare
-          products to empower you to live your best life.
-        </p>
-        <button
-          class="rounded-full border-2 p-4 w-36 btn-home transition-all duration-500 text-white"
-        >
-          <a href="../Pages/Shop_Page.html" class="linkedPage">Shop now</a>
-        </button>
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <!-- If we need scrollbar -->
+        </div>
+      </div>
+      <div class="shared-products container mx-auto anima-off">
+        <div class="pop-products">
+          <h1>TAKE A LOOK FOR OUR LATEST PRODUCTS</h1>
+        </div>
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div data-set="" class="product-holder slider-product" id="1">
+                <div class="product-img">
+                  <img src="" alt="" />
+                </div>
+                <div class="product-details">
+                  <p class="product-name">Morfen</p>
+                  <p class="product-description">
+                    Morphine is a non-synthetic narcotic with a high potential
+                    for abuse and is derived from opium. It is used for the
+                    treatment of pain
+                  </p>
+                  <span class="product-price">30.99 <span>EGP</span></span>
+                  <div class="btns">
+                    <button class="atwl">
+                      <i class="fa-regular fa-star"></i>
+                    </button>
+                    <button class="buy-now">
+                      <a href="./order.html">Buy Now</a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div data-set="" class="product-holder slider-product" id="1">
+                <div class="product-img">
+                  <img src="" alt="" />
+                </div>
+                <div class="product-details">
+                  <p class="product-name">Morfen</p>
+                  <p class="product-description">
+                    Morphine is a non-synthetic narcotic with a high potential
+                    for abuse and is derived from opium. It is used for the
+                    treatment of pain
+                  </p>
+                  <span class="product-price">30.99 <span>EGP</span></span>
+                  <div class="btns">
+                    <button class="atwl">
+                      <i class="fa-regular fa-star"></i>
+                    </button>
+                    <button class="buy-now">
+                      <a href="./order.html">Buy Now</a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div data-set="" class="product-holder slider-product" id="1">
+                <div class="product-img">
+                  <img src="" alt="" />
+                </div>
+                <div class="product-details">
+                  <p class="product-name">Morfen</p>
+                  <p class="product-description">
+                    Morphine is a non-synthetic narcotic with a high potential
+                    for abuse and is derived from opium. It is used for the
+                    treatment of pain
+                  </p>
+                  <span class="product-price">30.99 <span>EGP</span></span>
+                  <div class="btns">
+                    <button class="atwl">
+                      <i class="fa-regular fa-star"></i>
+                    </button>
+                    <button class="buy-now">
+                      <a href="./order.html">Buy Now</a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            ...
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <!-- If we need scrollbar -->
+        </div>
       </div>
     </div>
 
@@ -151,7 +359,7 @@
         </div>
       </div>
       <div id="services-content"></div>
-      <div class="services-content">
+      <div class="services-content anima-off">
         <h1>OUR SERVICES</h1>
         <div class="services-boxs cards">
           <div>
@@ -247,62 +455,8 @@
           </div>
         </div>
       </div>
-      <!-- <div class="services-bg bg"></div>
-      <div class="header">
-        <h1>SERVICES</h1>
-        <p>
-          <span class="med font-black">MED</span
-          ><span class="font-black text-white">CULTURE</span> OFFERS A VARIETY
-          OF SERVICES TO ITS CUSTOMERS
-        </p>
-      </div>
-      <div class="container services-section">
-        <div>
-          <i class="fa-solid fa-notes-medical"></i>
-          <h3>HEALTHY KNOW-HOW</h3>
-          <p class="text-balance">
-            Your Go-To Source for Accurate and Reliable Medical Information
-          </p>
-        </div>
-        <div>
-          <i class="fa-solid fa-truck-fast"></i>
-          <h3>GET IT FAST!</h3>
-          <p class="text-balance">Lightning-Fast Delivery to Your Doorstep!</p>
-        </div>
-        <div>
-          <i class="fa-solid fa-percent"></i>
-          <h3>SHOP SMART</h3>
-          <p class="text-balance">
-            Incredible Savings with Our Exclusive Discounts and Offers!
-          </p>
-        </div>
-        <div>
-          <i class="fa-solid fa-money-bill"></i>
-          <h3>PAYMENt MADE EASY</h3>
-          <p class="text-balance">
-            Convenient Payment Options for Hassle-Free Transactions
-          </p>
-        </div>
-        <div>
-          <i class="fa-regular fa-clipboard"></i>
-          <h3>MEDCULTURE HEALTHCARE WALLET</h3>
-          <p class="text-balance">
-            Pay your medical service with MEDMISR points and benefit from
-            discounts across our medical network.
-          </p>
-        </div>
-        <div>
-          <i class="fa-regular fa-clipboard"></i>
-          <h3>Clip</h3>
-          <p class="text-balance">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident,
-            dolore?
-          </p>
-        </div>
-      </div> -->
     </div>
 
-    <!-- <div class="bg three center"></div> -->
     <div
       class="testimonials container mx-auto center flex-col justify-start"
       id="testimonials"
@@ -512,9 +666,9 @@
         </div>
       </div>
       <div class="about-us-content" id="about-us-content">
-        <div class="partners">
+        <div class="partners anima-off">
           <div>
-            <div class="text-content">
+            <div class="text-content anima-off">
               <p>About Our Agency</p>
               <h1>Your trusted medicin store</h1>
               <p>
@@ -539,8 +693,8 @@
             />
           </div>
         </div>
-        <div class="our-numbers">
-          <div class="text-content">
+        <div class="our-numbers anima-off">
+          <div class="text-content anima-off">
             <h1>Our fun fact</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut error
@@ -557,8 +711,8 @@
           </div>
           <div></div>
         </div>
-        <div class="why-choose-us">
-          <div class="text-content">
+        <div class="why-choose-us anima-off">
+          <div class="text-content anima-off">
             <p>About Our Agency</p>
             <h1>Your trusted medicin store</h1>
             <p>
@@ -577,8 +731,8 @@
           </div>
         </div>
 
-        <div class="team-members">
-          <div class="text-content">
+        <div class="team-members anima-off">
+          <div class="text-content anima-off">
             <p>Our Team</p>
             <h1>Awesome team members</h1>
           </div>
@@ -596,127 +750,91 @@
             <div></div>
           </div>
         </div>
-        <div class="branding">
+        <div class="branding anima-off">
           <h1></h1>
           <p></p>
         </div>
       </div>
-      <!-- <div class="feed-back-section container mx-auto" id="about-us">
-        <div class="header head-line mb-10"><h1>About us</h1></div>
-        <div class="content">
-          <div>
-            <h2>Company Information</h2>
-            <p>
-              <span class="med">Med</span> <span>Culture</span> is a
-              cutting-edge online medicine store that is changing the way people
-              shop for medication. were inspired to create a better alternative
-              to traditional pharmacies after struggling to find affordable and
-              convenient medications for their own family.
-            </p>
-          </div>
-          <div>
-            <h2>Products and Services</h2>
-            <p>
-              At <span class="med">Med</span> <span>Culture</span>, we offer a
-              wide range of products and services to meet all of your medicine
-              needs. Our selection includes OTC medications, prescription drugs,
-              vitamins and supplements, first aid supplies, and much more. We
-              also offer telemedicine services to patients who are unable to
-              visit a physician in person.
-            </p>
-          </div>
-          <div>
-            <h2>Quality and Safety</h2>
-            <p>
-              At <span class="med">Med</span> <span>Culture</span>, patient
-              safety and healthcare quality is our top priority. We work only
-              with reputable vendors, and our products undergo rigorous testing
-              to ensure the highest quality and safety standards.
-            </p>
-          </div>
-          <div>
-            <h2>Customer Service</h2>
-            <p>
-              We are dedicated to providing exceptional customer service to all
-              of our clients. Our friendly and knowledgeable staff is available
-              24/7 by phone, email, or online chat to assist you with any
-              questions or concerns.
-            </p>
-          </div>
-          <div>
-            <h2>Team Members</h2>
-            <p>
-              Our team at <span class="med">Med</span> <span>Culture</span> is
-              composed of skilled and experienced professionals who are
-              passionate about providing quality healthcare. Our pharmacists are
-              fully licensed and have years of experience, ensuring that you
-              receive accurate and reliable advice on all your medicine needs.
-            </p>
-          </div>
-          <div>
-            <h2>Awards and Achievements</h2>
-            <p>
-              We are proud to have been recognized with numerous awards and
-              accolades, including Best Online Pharmacy, Top Healthcare
-              Provider, and Excellence in Patient Safety. These awards are a
-              testament to our commitment to providing quality care and
-              exceptional service to our clients.
-            </p>
-          </div>
-          <div>
-            <h2>Community Involvement</h2>
-            <p>
-              At <span class="med">Med</span> <span>Culture</span>, we believe
-              in giving back to the community we serve. We regularly sponsor
-              local health fairs, provide free health screenings at community
-              events, and partner with local organizations to promote healthcare
-              awareness and patient education.
-            </p>
-          </div>
-          <div>
-            <h2>Contact Information</h2>
-            <p>
-              You can reach us via phone at(1-800-999-6337), email us at
-              info@medculture.com, or visit our physical location at 1234 Main
-              Street Anytown, USA. Our online contact form is also available on
-              the website.
-            </p>
-          </div>
-        </div>
-      </div> -->
     </div>
     <div class="feed-back" data-set="feed-back">
       <div class="feed-back-section container mx-auto" id="feed-back">
-        <div class="header head-line mb-10">
-          <h1 class="text-center">Feedback</h1>
-        </div>
-        <form action="">
-          <div class="left">
-            <label for="feed-back">Feedback</label>
-            <textarea
-              name="feed-back"
-              id="feed-back"
-              cols="30"
-              rows="10"
-            ></textarea>
+        <div class="head-line">
+          <div class="section-name">
+            <h1>CONTACT US</h1>
+            <p><span>Home</span> |CONTACT US</p>
           </div>
-          <div class="right">
-            <div class="name">
-              <label for="fname">First Name</label>
-              <input type="text" name="fname" />
-              <label for="lname">Last Name</label>
-              <input type="text" name="lname" />
-            </div>
-            <div class="stars">
+          <h1 id="about-us"></h1>
+          <a class="arrow-btn" href="#contact-form">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+        <h1 id="contact-form">GET IN TOUCH WITH US</h1>
+        <div class="container mx-auto anima-off">
+          <form action="">
+            <div class="right">
+              <div class="name">
+                <div>
+                  <label for="fname">FULL NAME</label>
+                  <input type="text" name="fname" />
+                </div>
+                <div>
+                  <label for="lname">EMAIL</label>
+                  <input type="email" name="lname" />
+                </div>
+              </div>
+              <!-- <div class="stars">
               <i class="fa-regular fa-star" data-set="1"></i>
               <i class="fa-regular fa-star" data-set="2"></i>
               <i class="fa-regular fa-star" data-set="3"></i>
               <i class="fa-regular fa-star" data-set="4"></i>
               <i class="fa-regular fa-star" data-set="5"></i>
+            </div> -->
             </div>
+            <div class="left">
+              <label for="feed-back">YOUR MASSEGE </label>
+              <textarea
+                name="feed-back"
+                id="feed-back"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
+
             <button type="submit">Submit</button>
+          </form>
+          <div class="contact-info">
+            <h2>Contact Information</h2>
+            <div>
+              <i class="fa-solid fa-location-crosshairs"></i>
+              <p>256 Main Street Fayoum, Egypt 27500</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-phone"></i>
+              <p>Phone: +20 101 232 1234</p>
+            </div>
+            <div>
+              <i class="fa-regular fa-envelope"></i>
+              <p>
+                Email:
+                <a href="mailto:info@medculture.com">info@medculture.com</a>
+              </p>
+            </div>
+            <div class="social-links">
+              <a href="#" class="facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="#" class="instgram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" class="twitter"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a href="#" class="github"><i class="fa-brands fa-github"></i></a>
+            </div>
           </div>
-        </form>
+        </div>
       </div>
     </div>
     <footer id="footer">
@@ -775,11 +893,76 @@
       </div>
     </footer>
     <span class="arrow-up center"><i class="fa-solid fa-arrow-up"></i></span>
+
     <script
       src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
       type="module"
     ></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        // Optional parameters
+        direction: "horizontal",
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+      });
+    </script>
+    <script
+      src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"
+      type="module"
+    ></script>
     <script src="../JS/mainPage.js"></script>
+
+    <script>
+      allLinks.forEach((e) => {
+        e.addEventListener("click", (ele) => {
+          letterAnimation();
+        });
+      });
+
+      function letterAnimation() {
+        lettersH1.forEach((element) => {
+          element.innerHTML = "";
+          if (element.getAttribute("id") === sessionStorage.CP) {
+            if (element.getAttribute("id") === "services") {
+              const typed = new Typed(element, {
+                strings: ["Your Trusted Partner for Wellness and Wellbeing."],
+                typeSpeed: 20,
+              });
+            } else if (element.getAttribute("id") === "testimonials") {
+              const typed = new Typed(element, {
+                strings: [
+                  "Don't take our word for it. Over 100+ peaple trust us.",
+                ],
+                typeSpeed: 20,
+              });
+            } else if (element.getAttribute("id") === "about-us") {
+              const typed = new Typed(element, {
+                strings: [
+                  "Dedicated to Providing Quality Healthcare and Personalized Service.",
+                ],
+                typeSpeed: 20,
+              });
+            }
+          }
+        });
+      }
+    </script>
   </body>
 </html>

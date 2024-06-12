@@ -37,18 +37,13 @@ const sideBar = document.querySelector(".side-bar");
 sideBarOpenBtn.addEventListener("click", function () {
   sideBar.classList.add("side-bar-show");
   document.body.classList.add("not-touchable");
-  // const x = document.querySelectorAll("*:not(.side-bar)");
-  // x.forEach(function (e) {
-  //   e.addEventListener("focus", function () {
-  //     sideBar.classList.remove("side-bar-show");
-  //     document.body.classList.remove("not-touchable");
-  //   });
-  // });
+  overlaySidebar.classList.add("display");
 });
 
 sideBarCloseBtn.addEventListener("click", function () {
   sideBar.classList.remove("side-bar-show");
   document.body.classList.remove("not-touchable");
+  overlaySidebar.classList.remove("display");
 });
 
 const showLinks = document.querySelector(
@@ -58,13 +53,13 @@ const showedList = document.querySelector(
   ".side-bar .side-bar-links .side-bar-dropped-menu .side-bar-drop-down-menu"
 );
 
-showLinks.addEventListener("click", function () {
-  if (showedList.style.height === "165px") {
-    showedList.style.height = "0px";
-  } else {
-    showedList.style.height = "165px";
-  }
-});
+// showLinks.addEventListener("click", function () {
+//   if (showedList.style.height === "165px") {
+//     showedList.style.height = "0px";
+//   } else {
+//     showedList.style.height = "165px";
+//   }
+// });
 
 //FeedBack Section
 scrollBtn.attr;
@@ -116,10 +111,25 @@ let allSections = [
 ];
 
 let allLinks = [...sideBarLinks, ...navBarLinks];
+let overlaySidebar = document.querySelector(".overlay-sidebar");
 
 console.log(landingDiv);
 
 sessionStorage.setItem("CP", "landing-on");
+
+overlaySidebar.addEventListener("click", () => {
+  sideBar.classList.remove("side-bar-show");
+  document.body.classList.remove("not-touchable");
+  overlaySidebar.classList.remove("display");
+});
+
+sideBarLinks.forEach((e) => {
+  e.addEventListener("click", () => {
+    overlaySidebar.classList.remove("display");
+    sideBar.classList.remove("side-bar-show");
+    document.body.classList.remove("not-touchable");
+  });
+});
 
 allLinks.forEach((e) => {
   e.addEventListener("click", (ele) => {
@@ -179,50 +189,6 @@ const servicesHeaderText = "Your Trusted Partner for Wellness and Wellbeing.";
 const aboutUsHeaderText =
   "Dedicated to Providing Quality Healthcare and Personalized Service.";
 let counter = 0;
-allLinks.forEach((e) => {
-  e.addEventListener("click", (ele) => {
-    let intervalId;
-    counter = 0;
-    letterAnimation(intervalId);
-  });
-});
-
-function letterAnimation(intervalId) {
-  lettersH1.forEach((element) => {
-    element.innerHTML = "";
-    if (element.getAttribute("id") === sessionStorage.CP) {
-      if (element.getAttribute("id") === "services") {
-        intervalId = setInterval(() => {
-          element.innerHTML += servicesHeaderText[counter];
-          counter += 1;
-          if (counter >= servicesHeaderText.length) {
-            counter = 0;
-            clearInterval(intervalId);
-          }
-        }, 30);
-      } else if (element.getAttribute("id") === "testimonials") {
-        intervalId = setInterval(() => {
-          element.innerHTML += testimonialsHeaderText[counter];
-          counter += 1;
-          if (counter >= testimonialsHeaderText.length) {
-            counter = 0;
-            clearInterval(intervalId);
-          }
-        }, 30);
-      } else if (element.getAttribute("id") === "about-us") {
-        intervalId = setInterval(() => {
-          element.innerHTML += aboutUsHeaderText[counter];
-          counter += 1;
-          if (counter >= aboutUsHeaderText.length) {
-            counter = 0;
-            clearInterval(intervalId);
-          }
-        }, 30);
-        counter = 0;
-      }
-    }
-  });
-}
 
 //about us section
 
@@ -263,31 +229,50 @@ setInterval((e) => {
   }
 }, 20);
 
-let myAnimatedDiv = document.querySelectorAll(".text-content");
+let myAnimatedDiv = document.querySelectorAll(".anima-off");
 
-const options = {
-  root: null,
-  rootMargin: "0px",
-  threshold: 0.8,
-};
+document.addEventListener("DOMContentLoaded", function () {
+  const observerOptions = {
+    threshold: 0.1,
+  };
 
-const observe = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      myAnimatedDiv.forEach((e) => {
-        e.classList.add("anim");
-      });
-    } else {
-      myAnimatedDiv.forEach((e) => {
-        e.classList.remove("anim");
-      });
-    }
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("anim");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  myAnimatedDiv.forEach((element) => {
+    observer.observe(element);
   });
-}, options);
-
-myAnimatedDiv.forEach((e) => {
-  observe.observe(e);
 });
+
+// const options = {
+//   root: null,
+//   rootMargin: "0px",
+//   threshold: 0.8,
+// };
+
+// const observe = new IntersectionObserver((entries, observer) => {
+//   entries.forEach((entry) => {
+//     if (entry.isIntersecting) {
+//       myAnimatedDiv.forEach((e) => {
+//         e.classList.add("anim");
+//       });
+//     } else {
+//       myAnimatedDiv.forEach((e) => {
+//         e.classList.remove("anim");
+//       });
+//     }
+//   });
+// }, options);
+
+// myAnimatedDiv.forEach((e) => {
+//   observe.observe(e);
+// });
 
 //Overlay Handle
 

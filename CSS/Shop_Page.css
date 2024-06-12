@@ -1252,6 +1252,48 @@ body {
     width: 200px;
     height: 200px;
     margin: 0 auto 30px auto;
+    position: relative;
+}
+
+.upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    bottom: 20px;
+    right: 0;
+    cursor: pointer;
+
+}
+
+.btn {
+    color: white;
+    background-color: var(--Blue);
+    width: 40px;
+    height: 40px;
+    padding: 8px 20px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.upload-btn-wrapper input[type=file] {
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
 }
 
 .account-page .user-info-page .user-info-fields {

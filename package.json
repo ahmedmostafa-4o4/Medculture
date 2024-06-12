@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "@vercel/speed-insights": "^1.0.10"
+    "@vercel/speed-insights": "^1.0.10",
+    "swiper": "^11.1.4",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.3"
