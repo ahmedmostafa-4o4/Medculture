@@ -158,7 +158,7 @@ allSections.forEach((e) => {
 regex = /mainPage\.html$/;
 regex2 = /app\/$/;
 
-if (regex.test(location.href) || regex2.text(location.href))
+if (regex.test(location.href) || regex2.test(location.href))
   landingDiv.style.display = "flex";
 else landingDiv.style.display = "none";
 
