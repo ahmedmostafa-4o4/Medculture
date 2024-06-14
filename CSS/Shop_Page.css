@@ -1200,6 +1200,7 @@ body {
     width: 100%;
     padding: 5px 10px 0 10px;
     background: linear-gradient(130deg, rgb(6, 33, 51) 30%, rgb(1, 60, 99) 50%, rgb(6, 33, 51) 100%);
+
 }
 
 @media not all and (min-width: 376px) {
@@ -1207,6 +1208,7 @@ body {
         width: 100%;
         height: calc(100vh - 54px);
         overflow: auto;
+        margin-bottom: 54px;
     }
 }
 
