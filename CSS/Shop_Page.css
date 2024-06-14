@@ -1274,6 +1274,7 @@ body {
     gap: 30px;
     width: 80%;
     margin: 0 auto;
+    margin-bottom: 34px;
 }
 
 .account-page .user-info-page .user-info-fields>div {
@@ -1706,4 +1707,61 @@ body {
     .alarm-box-bg .new-alarm-box .btns button {
         font-size: 10px;
     }
+}
+
+.settings-page {}
+
+.settings-page h2 {
+    color: white;
+    font-size: 25px;
+    margin: 20px;
+}
+
+.settings-page form {
+    padding: 10px;
+}
+
+.settings-page form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+}
+
+.settings-page form div label {
+    color: white;
+}
+
+.settings-page form div input {
+    color: black;
+    width: 100%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    flex: 1;
+}
+
+.settings-page form div input:focus {
+    outline: none;
+}
+
+.settings-page form button {
+    padding: 10px;
+    background-color: #0072c6;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    color: white;
+}
+
+.settings-page form button:hover {
+    background-color: #0073c6a8;
 }
