@@ -53,14 +53,6 @@ const showedList = document.querySelector(
   ".side-bar .side-bar-links .side-bar-dropped-menu .side-bar-drop-down-menu"
 );
 
-// showLinks.addEventListener("click", function () {
-//   if (showedList.style.height === "165px") {
-//     showedList.style.height = "0px";
-//   } else {
-//     showedList.style.height = "165px";
-//   }
-// });
-
 //FeedBack Section
 scrollBtn.attr;
 const stars = document.querySelectorAll(".feed-back-section form .stars i");
@@ -115,8 +107,6 @@ let overlaySidebar = document.querySelector(".overlay-sidebar");
 
 console.log(landingDiv);
 
-// sessionStorage.setItem("CP", "landing-on");
-
 overlaySidebar.addEventListener("click", () => {
   sideBar.classList.remove("side-bar-show");
   document.body.classList.remove("not-touchable");
@@ -164,6 +154,11 @@ allSections.forEach((e) => {
     e.style.display = "none";
   }
 });
+
+regex = /mainPage\.html$/;
+
+if (regex.test(location.href)) landingDiv.style.display = "flex";
+else landingDiv.style.display = "none";
 
 //Letters Animations && show animation
 
@@ -258,30 +253,6 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(element);
   });
 });
-
-// const options = {
-//   root: null,
-//   rootMargin: "0px",
-//   threshold: 0.8,
-// };
-
-// const observe = new IntersectionObserver((entries, observer) => {
-//   entries.forEach((entry) => {
-//     if (entry.isIntersecting) {
-//       myAnimatedDiv.forEach((e) => {
-//         e.classList.add("anim");
-//       });
-//     } else {
-//       myAnimatedDiv.forEach((e) => {
-//         e.classList.remove("anim");
-//       });
-//     }
-//   });
-// }, options);
-
-// myAnimatedDiv.forEach((e) => {
-//   observe.observe(e);
-// });
 
 //Overlay Handle
 

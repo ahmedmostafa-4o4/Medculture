@@ -23,14 +23,6 @@ overlaySidebar.addEventListener("click", () => {
   overlaySidebar.classList.remove("display");
 });
 
-const sidebarLinks = document.querySelectorAll(".side-bar-links li a");
-
-sidebarLinks.forEach((e) => {
-  e.addEventListener("click", (element) => {
-    sessionStorage.setItem("CP", `${element.target.getAttribute("data-set")}`);
-  });
-});
-
 //Start Product Description
 const productDes = document.querySelectorAll(".product-description");
 let desBox;
@@ -54,10 +46,27 @@ productDes.forEach((product) => {
 //End Product Description
 //Home Button Handel
 const sideBarBtns = document.querySelectorAll(".side-bar-drop-down-menu li a");
+const homeBtn = document.querySelector(".drop-icon");
+const sidebarLinks = document.querySelectorAll(".side-bar-links li a");
+
+sidebarLinks.forEach((e) => {
+  e.addEventListener("click", (element) => {
+    sessionStorage.setItem("CP", `${element.target.getAttribute("data-set")}`);
+    sessionStorage.setItem("FT", null);
+  });
+});
+
+sessionStorage.counter = 0;
+
+homeBtn.addEventListener("click", () => {
+  sessionStorage.FT = "firstOpen";
+});
 
 sideBarBtns.forEach((e) => {
   e.addEventListener("click", (ele) => {
+    sessionStorage.setItem("FT", null);
     sessionStorage.setItem("CP", ele.target.getAttribute("data-set"));
+    homeBtn.addEventListener("click", () => {});
   });
 });
 
