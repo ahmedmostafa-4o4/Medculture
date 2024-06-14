@@ -20,6 +20,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+
     <title>Med Culture</title>
   </head>
   <body>
@@ -34,56 +35,58 @@
         autoplay
       ></dotlottie-player>
     </div>
-
-    <div class="main-bg"></div>
-    <div class="nav-bar">
-      <div class="container mx-auto flex h-54 items-center justify-between">
-        <div class="side-bar-holder">
-          <i class="fa-solid fa-bars-staggered" id="side-bar-open-btn"></i>
-          <div class="side-bar">
-            <div class="logo-side">
-              <a href="" class="linkedPage"
-                ><span class="med">Med</span>Culture</a
-              >
+    <div class="main">
+      <div class="main-bg"></div>
+      <div class="nav-bar">
+        <div class="container mx-auto flex h-54 items-center justify-between">
+          <div class="side-bar-holder">
+            <i class="fa-solid fa-bars-staggered" id="side-bar-open-btn"></i>
+            <div class="side-bar">
+              <div class="logo-side">
+                <a href="" class="linkedPage"
+                  ><span class="med">Med</span>Culture</a
+                >
+              </div>
+              <ul class="side-bar-links">
+                <li class="side-bar-dropped-menu">
+                  <a
+                    href="#3084"
+                    class="drop-icon block mb-1 w-fit"
+                    data-set="landing-on"
+                    >Home
+                    <ul class="side-bar-drop-down-menu show-list">
+                      <!-- <li><a href="#feed-back">Feedback</a></li> -->
+                    </ul></a
+                  >
+                </li>
+                <li>
+                  <a href="../Pages/Shop_Page.html" class="linkedPage"
+                    >Shop Now</a
+                  >
+                </li>
+                <li><a href="#" data-set="services">Services</a></li>
+                <li>
+                  <a href="#" data-set="testimonials">Testimonials</a>
+                </li>
+                <li><a href="#" data-set="about-us">About Us</a></li>
+                <li>
+                  <a href="#" data-set="feed-back">Contact us</a>
+                </li>
+              </ul>
+              <i class="fa-solid fa-xmark" id="side-bar-close-btn"></i>
             </div>
-            <ul class="side-bar-links">
-              <li class="side-bar-dropped-menu">
-                <a
-                  href="#3084"
-                  class="drop-icon block mb-1 w-fit"
-                  data-set="landing-on"
-                  >Home
-                  <ul class="side-bar-drop-down-menu show-list">
-                    <!-- <li><a href="#feed-back">Feedback</a></li> -->
-                  </ul></a
-                >
-              </li>
-              <li>
-                <a href="../Pages/Shop_Page.html" class="linkedPage"
-                  >Shop Now</a
-                >
-              </li>
-              <li><a href="#" data-set="services">Services</a></li>
-              <li>
-                <a href="#" data-set="testimonials">Testimonials</a>
-              </li>
-              <li><a href="#" data-set="about-us">About Us</a></li>
-              <li>
-                <a href="#" data-set="feed-back">Contact us</a>
-              </li>
-            </ul>
-            <i class="fa-solid fa-xmark" id="side-bar-close-btn"></i>
           </div>
-        </div>
-        <div class="logo">
-          <a href="" class="linkedPage"><span class="med">Med</span>Culture</a>
-        </div>
+          <div class="logo">
+            <a href="" data-set="landing-on" class="linkedPage"
+              ><span class="med">Med</span>Culture</a
+            >
+          </div>
 
-        <ul class="links gap-7 text-white font-medium text-sm">
-          <li class="dropped-menu">
-            <a href="#" class="drop-icon" data-set="landing-on"
-              >Home
-              <!-- <ul class="drop-down-menu">
+          <ul class="links gap-7 text-white font-medium text-sm">
+            <li class="dropped-menu">
+              <a href="#" class="drop-icon" data-set="landing-on"
+                >Home
+                <!-- <ul class="drop-down-menu">
                 <li><a href="#services" data-set="services">Services</a></li>
                 <li>
                   <a href="#testimonials" data-set="testimonials"
@@ -92,582 +95,668 @@
                 </li>
                 <li><a href="#about-us" data-set="about-us">About Us</a></li>
               </ul> -->
-            </a>
-          </li>
-          <li>
-            <a href="../Pages/Shop_Page.html" class="linkedPage">Shop Now</a>
-          </li>
-          <li><a href="#" data-set="about-us">About Us</a></li>
-          <li><a href="#" data-set="services">Services</a></li>
-          <li><a href="#" data-set="testimonials">Testimonials</a></li>
-          <li>
-            <a href="#" data-set="feed-back">Contact us</a>
-          </li>
-        </ul>
+              </a>
+            </li>
+            <li>
+              <a href="../Pages/Shop_Page.html" class="linkedPage">Shop Now</a>
+            </li>
+            <li><a href="#" data-set="about-us">About Us</a></li>
+            <li><a href="#" data-set="services">Services</a></li>
+            <li><a href="#" data-set="testimonials">Testimonials</a></li>
+            <li>
+              <a href="#" data-set="feed-back">Contact us</a>
+            </li>
+          </ul>
 
-        <div class="logs">
-          <button class="log-in-btn">Log in</button>
-          <button class="sign-up-btn">Sign up</button>
+          <div class="logs">
+            <button class="log-in-btn">Log in</button>
+            <button class="sign-up-btn">Sign up</button>
+          </div>
+          <!-- <div class="user-btn" style="margin-left: 70px">
+            <span class="red-alert"></span>
+            <span>A</span>
+            <div class="user-info" style="right: -35px">
+              <div class="user-img">
+                <span>A</span>
+              </div>
+              <p class="user-name">Ahmed Mostafa</p>
+
+              <div
+                class="user-account-info"
+                data-set="account"
+                name="account-info"
+                onclick=""
+              >
+                <i class="fa-solid fa-user"></i>
+                <p>Account info</p>
+              </div>
+              <div class="user-wishlist" data-set="wishlist">
+                <span></span>
+                <i class="fa-solid fa-star"></i>
+                <p>Wishlist</p>
+              </div>
+              <div class="user-notification" data-set="notification">
+                <i class="fa-regular fa-bell"></i>
+                <p>Notifications</p>
+              </div>
+              <div class="user-alarm" data-set="alarm">
+                <i class="fa-solid fa-stopwatch"></i>
+                <p>Set Alarm</p>
+              </div>
+              <div class="user-settings" data-set="settings">
+                <i class="fa-solid fa-gear"></i>
+                <p>Settings</p>
+              </div>
+              <div class="log-out">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p>Log out</p>
+              </div>
+            </div>
+          </div> -->
         </div>
       </div>
-    </div>
 
-    <div
-      class="landing center w-4/5 flex-col text-center mx-auto gap-12 anima-off"
-      data-set="landing-on"
-    >
-      <!-- <div class="hero-content-img">
+      <div
+        class="landing center w-4/5 flex-col text-center mx-auto gap-12 anima-off"
+        data-set="landing-on"
+        style="display: flex"
+      >
+        <!-- <div class="hero-content-img">
         <img src="../Images/hero-content-bg.jpg" alt="" />
       </div> -->
-      <div class="hero-content">
-        <div>
+        <div class="hero-content">
           <div>
-            <!-- <img src="../Images/Logo.jpg" alt="" /> -->
-            <h1 class="text-slate-300 font-bold">
-              <span class="med">Med</span>Culture
-            </h1>
+            <div>
+              <!-- <img src="../Images/Logo.jpg" alt="" /> -->
+              <h1 class="text-slate-300 font-bold">
+                <span class="med">Med</span>Culture
+              </h1>
+            </div>
+            <h1>YOUR TRUSTED ONLINE PHARMACY</h1>
+            <p class="text-white main-p">
+              Get Your Medications Delivered Fast and Easy
+            </p>
+            <button class="shop-now-btn">
+              <a href="../Pages/Shop_Page.html" class="linkedPage">Shop now</a>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
-          <h1>YOUR TRUSTED ONLINE PHARMACY</h1>
-          <p class="text-white main-p">
-            Get Your Medications Delivered Fast and Easy
-          </p>
-          <button class="shop-now-btn">
-            <a href="../Pages/Shop_Page.html" class="linkedPage">Shop now</a>
-            <i class="fa-solid fa-arrow-right"></i>
-          </button>
+          <div class="social-links">
+            <a href="#" class="facebook"
+              ><i class="fa-brands fa-square-facebook"></i
+            ></a>
+            <a href="#" class="instgram"
+              ><i class="fa-brands fa-square-instagram"></i
+            ></a>
+            <a href="#" class="twitter"
+              ><i class="fa-brands fa-square-x-twitter"></i
+            ></a>
+            <a href="#" class="github"
+              ><i class="fa-brands fa-square-github"></i
+            ></a>
+          </div>
         </div>
-        <div class="social-links">
-          <a href="#" class="facebook"
-            ><i class="fa-brands fa-square-facebook"></i
-          ></a>
-          <a href="#" class="instgram"
-            ><i class="fa-brands fa-square-instagram"></i
-          ></a>
-          <a href="#" class="twitter"
-            ><i class="fa-brands fa-square-x-twitter"></i
-          ></a>
-          <a href="#" class="github"
-            ><i class="fa-brands fa-square-github"></i
-          ></a>
+        <!-- Slider main container -->
+        <div class="shared-products container mx-auto anima-off">
+          <div class="pop-products">
+            <h1>TAKE A LOOK FOR OUR POPULER PRODUCTS</h1>
+          </div>
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div data-set="" class="product-holder slider-product" id="1">
+                  <div class="product-img">
+                    <img src="" alt="" />
+                  </div>
+                  <div class="product-details">
+                    <p class="product-name">Morfen</p>
+                    <p class="product-description">
+                      Morphine is a non-synthetic narcotic with a high potential
+                      for abuse and is derived from opium. It is used for the
+                      treatment of pain
+                    </p>
+                    <span class="product-price">30.99 <span>EGP</span></span>
+                    <div class="btns">
+                      <button class="atwl">
+                        <i class="fa-regular fa-star"></i>
+                      </button>
+                      <button class="buy-now">
+                        <a href="./order.html">Buy Now</a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div data-set="" class="product-holder slider-product" id="1">
+                  <div class="product-img">
+                    <img src="" alt="" />
+                  </div>
+                  <div class="product-details">
+                    <p class="product-name">Morfen</p>
+                    <p class="product-description">
+                      Morphine is a non-synthetic narcotic with a high potential
+                      for abuse and is derived from opium. It is used for the
+                      treatment of pain
+                    </p>
+                    <span class="product-price">30.99 <span>EGP</span></span>
+                    <div class="btns">
+                      <button class="atwl">
+                        <i class="fa-regular fa-star"></i>
+                      </button>
+                      <button class="buy-now">
+                        <a href="./order.html">Buy Now</a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div data-set="" class="product-holder slider-product" id="1">
+                  <div class="product-img">
+                    <img src="" alt="" />
+                  </div>
+                  <div class="product-details">
+                    <p class="product-name">Morfen</p>
+                    <p class="product-description">
+                      Morphine is a non-synthetic narcotic with a high potential
+                      for abuse and is derived from opium. It is used for the
+                      treatment of pain
+                    </p>
+                    <span class="product-price">30.99 <span>EGP</span></span>
+                    <div class="btns">
+                      <button class="atwl">
+                        <i class="fa-regular fa-star"></i>
+                      </button>
+                      <button class="buy-now">
+                        <a href="./order.html">Buy Now</a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+          </div>
+        </div>
+        <div class="shared-products container mx-auto anima-off">
+          <div class="pop-products">
+            <h1>TAKE A LOOK FOR OUR LATEST PRODUCTS</h1>
+          </div>
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div data-set="" class="product-holder slider-product" id="1">
+                  <div class="product-img">
+                    <img src="" alt="" />
+                  </div>
+                  <div class="product-details">
+                    <p class="product-name">Morfen</p>
+                    <p class="product-description">
+                      Morphine is a non-synthetic narcotic with a high potential
+                      for abuse and is derived from opium. It is used for the
+                      treatment of pain
+                    </p>
+                    <span class="product-price">30.99 <span>EGP</span></span>
+                    <div class="btns">
+                      <button class="atwl">
+                        <i class="fa-regular fa-star"></i>
+                      </button>
+                      <button class="buy-now">
+                        <a href="./order.html">Buy Now</a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div data-set="" class="product-holder slider-product" id="1">
+                  <div class="product-img">
+                    <img src="" alt="" />
+                  </div>
+                  <div class="product-details">
+                    <p class="product-name">Morfen</p>
+                    <p class="product-description">
+                      Morphine is a non-synthetic narcotic with a high potential
+                      for abuse and is derived from opium. It is used for the
+                      treatment of pain
+                    </p>
+                    <span class="product-price">30.99 <span>EGP</span></span>
+                    <div class="btns">
+                      <button class="atwl">
+                        <i class="fa-regular fa-star"></i>
+                      </button>
+                      <button class="buy-now">
+                        <a href="./order.html">Buy Now</a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div data-set="" class="product-holder slider-product" id="1">
+                  <div class="product-img">
+                    <img src="" alt="" />
+                  </div>
+                  <div class="product-details">
+                    <p class="product-name">Morfen</p>
+                    <p class="product-description">
+                      Morphine is a non-synthetic narcotic with a high potential
+                      for abuse and is derived from opium. It is used for the
+                      treatment of pain
+                    </p>
+                    <span class="product-price">30.99 <span>EGP</span></span>
+                    <div class="btns">
+                      <button class="atwl">
+                        <i class="fa-regular fa-star"></i>
+                      </button>
+                      <button class="buy-now">
+                        <a href="./order.html">Buy Now</a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+          </div>
         </div>
       </div>
-      <!-- Slider main container -->
-      <div class="shared-products container mx-auto anima-off">
-        <div class="pop-products">
-          <h1>TAKE A LOOK FOR OUR POPULER PRODUCTS</h1>
-        </div>
-        <div class="swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-              <div data-set="" class="product-holder slider-product" id="1">
-                <div class="product-img">
-                  <img src="" alt="" />
-                </div>
-                <div class="product-details">
-                  <p class="product-name">Morfen</p>
-                  <p class="product-description">
-                    Morphine is a non-synthetic narcotic with a high potential
-                    for abuse and is derived from opium. It is used for the
-                    treatment of pain
-                  </p>
-                  <span class="product-price">30.99 <span>EGP</span></span>
-                  <div class="btns">
-                    <button class="atwl">
-                      <i class="fa-regular fa-star"></i>
-                    </button>
-                    <button class="buy-now">
-                      <a href="./order.html">Buy Now</a>
-                    </button>
-                  </div>
-                </div>
-              </div>
+
+      <!-- <div class="bg two"></div> -->
+
+      <div class="services container mx-auto" id="services" data-set="services">
+        <div
+          class="landing center w-4/5 flex-col text-center mx-auto gap-12"
+          data-set="landing"
+        >
+          <div class="head-line">
+            <div class="section-name">
+              <h1>Services</h1>
+              <p><span>Home</span> | Services</p>
             </div>
-            <div class="swiper-slide">
-              <div data-set="" class="product-holder slider-product" id="1">
-                <div class="product-img">
-                  <img src="" alt="" />
-                </div>
-                <div class="product-details">
-                  <p class="product-name">Morfen</p>
-                  <p class="product-description">
-                    Morphine is a non-synthetic narcotic with a high potential
-                    for abuse and is derived from opium. It is used for the
-                    treatment of pain
-                  </p>
-                  <span class="product-price">30.99 <span>EGP</span></span>
-                  <div class="btns">
-                    <button class="atwl">
-                      <i class="fa-regular fa-star"></i>
-                    </button>
-                    <button class="buy-now">
-                      <a href="./order.html">Buy Now</a>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div data-set="" class="product-holder slider-product" id="1">
-                <div class="product-img">
-                  <img src="" alt="" />
-                </div>
-                <div class="product-details">
-                  <p class="product-name">Morfen</p>
-                  <p class="product-description">
-                    Morphine is a non-synthetic narcotic with a high potential
-                    for abuse and is derived from opium. It is used for the
-                    treatment of pain
-                  </p>
-                  <span class="product-price">30.99 <span>EGP</span></span>
-                  <div class="btns">
-                    <button class="atwl">
-                      <i class="fa-regular fa-star"></i>
-                    </button>
-                    <button class="buy-now">
-                      <a href="./order.html">Buy Now</a>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            ...
-          </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-
-          <!-- If we need scrollbar -->
-        </div>
-      </div>
-      <div class="shared-products container mx-auto anima-off">
-        <div class="pop-products">
-          <h1>TAKE A LOOK FOR OUR LATEST PRODUCTS</h1>
-        </div>
-        <div class="swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-              <div data-set="" class="product-holder slider-product" id="1">
-                <div class="product-img">
-                  <img src="" alt="" />
-                </div>
-                <div class="product-details">
-                  <p class="product-name">Morfen</p>
-                  <p class="product-description">
-                    Morphine is a non-synthetic narcotic with a high potential
-                    for abuse and is derived from opium. It is used for the
-                    treatment of pain
-                  </p>
-                  <span class="product-price">30.99 <span>EGP</span></span>
-                  <div class="btns">
-                    <button class="atwl">
-                      <i class="fa-regular fa-star"></i>
-                    </button>
-                    <button class="buy-now">
-                      <a href="./order.html">Buy Now</a>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div data-set="" class="product-holder slider-product" id="1">
-                <div class="product-img">
-                  <img src="" alt="" />
-                </div>
-                <div class="product-details">
-                  <p class="product-name">Morfen</p>
-                  <p class="product-description">
-                    Morphine is a non-synthetic narcotic with a high potential
-                    for abuse and is derived from opium. It is used for the
-                    treatment of pain
-                  </p>
-                  <span class="product-price">30.99 <span>EGP</span></span>
-                  <div class="btns">
-                    <button class="atwl">
-                      <i class="fa-regular fa-star"></i>
-                    </button>
-                    <button class="buy-now">
-                      <a href="./order.html">Buy Now</a>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div data-set="" class="product-holder slider-product" id="1">
-                <div class="product-img">
-                  <img src="" alt="" />
-                </div>
-                <div class="product-details">
-                  <p class="product-name">Morfen</p>
-                  <p class="product-description">
-                    Morphine is a non-synthetic narcotic with a high potential
-                    for abuse and is derived from opium. It is used for the
-                    treatment of pain
-                  </p>
-                  <span class="product-price">30.99 <span>EGP</span></span>
-                  <div class="btns">
-                    <button class="atwl">
-                      <i class="fa-regular fa-star"></i>
-                    </button>
-                    <button class="buy-now">
-                      <a href="./order.html">Buy Now</a>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            ...
-          </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-
-          <!-- If we need scrollbar -->
-        </div>
-      </div>
-    </div>
-
-    <!-- <div class="bg two"></div> -->
-
-    <div class="services container mx-auto" id="services" data-set="services">
-      <div
-        class="landing center w-4/5 flex-col text-center mx-auto gap-12"
-        data-set="landing"
-      >
-        <div class="head-line">
-          <div class="section-name">
-            <h1>Services</h1>
-            <p><span>Home</span> | Services</p>
-          </div>
-          <h1 id="services"></h1>
-          <a class="arrow-btn" href="#services-content">
-            <span></span>
-            <span></span>
-            <span></span>
-          </a>
-        </div>
-      </div>
-      <div id="services-content"></div>
-      <div class="services-content anima-off">
-        <h1>OUR SERVICES</h1>
-        <div class="services-boxs cards">
-          <div>
-            <div class="back-circle"></div>
-            <i class="fa-solid fa-notes-medical"></i>
-            <h1>HEALTHY KNOW-HOW</h1>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse qui
-              ullam ad quibusdam iste veritatis aliquid non necessitatibus
-              consequatur eius optio rem a, minus voluptatum ea ratione dolorem
-              beatae. Libero?
-            </p>
-          </div>
-          <div>
-            <div class="back-circle"></div>
-            <i class="fa-solid fa-truck-fast"></i>
-            <h1>GET IT FAST!</h1>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse qui
-              ullam ad quibusdam iste veritatis aliquid non necessitatibus
-              consequatur eius optio rem a, minus voluptatum ea ratione dolorem
-              beatae. Libero?
-            </p>
-          </div>
-          <div>
-            <div class="back-circle"></div>
-            <i class="fa-solid fa-percent"></i>
-
-            <h1>SHOP SMART</h1>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse qui
-              ullam ad quibusdam iste veritatis aliquid non necessitatibus
-              consequatur eius optio rem a, minus voluptatum ea ratione dolorem
-              beatae. Libero?
-            </p>
-          </div>
-          <div>
-            <div class="back-circle"></div>
-            <i class="fa-solid fa-money-bill"></i>
-            <h1>PAYMENT MADE EASY</h1>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse qui
-              ullam ad quibusdam iste veritatis aliquid non necessitatibus
-              consequatur eius optio rem a, minus voluptatum ea ratione dolorem
-              beatae. Libero?
-            </p>
+            <h1 id="services"></h1>
+            <a class="arrow-btn" href="#services-content">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
           </div>
         </div>
-        <div class="process">
-          <div class="process-content">
-            <div class="head">
-              <div>OUR PROCESS</div>
-              <h1><span>Process</span> We Follow</h1>
+        <div id="services-content"></div>
+        <div class="services-content anima-off">
+          <h1>OUR SERVICES</h1>
+          <div class="services-boxs cards">
+            <div>
+              <div class="back-circle"></div>
+              <i class="fa-solid fa-notes-medical"></i>
+              <h1>HEALTHY KNOW-HOW</h1>
               <p>
-                Our detailed process involves consultation with you and your
-                medical practitioner. It ensures the right medication and dose
-                for your specific needs.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
+                qui ullam ad quibusdam iste veritatis aliquid non necessitatibus
+                consequatur eius optio rem a, minus voluptatum ea ratione
+                dolorem beatae. Libero?
               </p>
             </div>
-            <div class="circels">
-              <div>
-                <div>01</div>
-                <h2>Medication Dispensing</h2>
+            <div>
+              <div class="back-circle"></div>
+              <i class="fa-solid fa-truck-fast"></i>
+              <h1>GET IT FAST!</h1>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
+                qui ullam ad quibusdam iste veritatis aliquid non necessitatibus
+                consequatur eius optio rem a, minus voluptatum ea ratione
+                dolorem beatae. Libero?
+              </p>
+            </div>
+            <div>
+              <div class="back-circle"></div>
+              <i class="fa-solid fa-percent"></i>
+
+              <h1>SHOP SMART</h1>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
+                qui ullam ad quibusdam iste veritatis aliquid non necessitatibus
+                consequatur eius optio rem a, minus voluptatum ea ratione
+                dolorem beatae. Libero?
+              </p>
+            </div>
+            <div>
+              <div class="back-circle"></div>
+              <i class="fa-solid fa-money-bill"></i>
+              <h1>PAYMENT MADE EASY</h1>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
+                qui ullam ad quibusdam iste veritatis aliquid non necessitatibus
+                consequatur eius optio rem a, minus voluptatum ea ratione
+                dolorem beatae. Libero?
+              </p>
+            </div>
+          </div>
+          <div class="process">
+            <div class="process-content">
+              <div class="head">
+                <div>OUR PROCESS</div>
+                <h1><span>Process</span> We Follow</h1>
                 <p>
-                  We put safety first when packaging and dispensing your
-                  prescription medications. With our advanced technology, we
-                  assure that you receive the precise medication and dosage
-                  every time.
+                  Our detailed process involves consultation with you and your
+                  medical practitioner. It ensures the right medication and dose
+                  for your specific needs.
                 </p>
               </div>
+              <div class="circels">
+                <div>
+                  <div>01</div>
+                  <h2>Medication Dispensing</h2>
+                  <p>
+                    We put safety first when packaging and dispensing your
+                    prescription medications. With our advanced technology, we
+                    assure that you receive the precise medication and dosage
+                    every time.
+                  </p>
+                </div>
 
-              <div>
-                <div>02</div>
-                <h2>Insurance Billing</h2>
-                <p>
-                  Our team at ABC Pharmacy personalizes prescription management
-                  to meet individual healthcare needs. We use leading-edge
-                  technology to accurately dispense medications and ensure that
-                  our customers receive the correct dosage.
-                </p>
-              </div>
+                <div>
+                  <div>02</div>
+                  <h2>Insurance Billing</h2>
+                  <p>
+                    Our team at ABC Pharmacy personalizes prescription
+                    management to meet individual healthcare needs. We use
+                    leading-edge technology to accurately dispense medications
+                    and ensure that our customers receive the correct dosage.
+                  </p>
+                </div>
 
-              <div>
-                <div>03</div>
-                <h2>Product Selection</h2>
-                <p>
-                  We offer diverse healthcare products, from prescription meds
-                  to OTC drugs and equipment. Our experts can help you choose
-                  the right ones, tailored to your needs.
-                </p>
+                <div>
+                  <div>03</div>
+                  <h2>Product Selection</h2>
+                  <p>
+                    We offer diverse healthcare products, from prescription meds
+                    to OTC drugs and equipment. Our experts can help you choose
+                    the right ones, tailored to your needs.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div
-      class="testimonials container mx-auto center flex-col justify-start"
-      id="testimonials"
-      data-set="testimonials"
-    >
-      <div class="testimonials-section header items-start">
-        <div class="mb-10 head-line">
-          <div class="section-name">
-            <h1>TESTIMONIALS</h1>
-            <p><span>Home</span> | Testimonials</p>
-          </div>
-          <h1 id="testimonials"></h1>
-          <a class="arrow-btn" href="#cards-holder">
-            <span></span>
-            <span></span>
-            <span></span>
-          </a>
-        </div>
-        <div class="cards-holder" id="cards-holder">
-          <div class="card">
-            <div class="stars text-yellow-400">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-            </div>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates, amet consequuntur. Hic similique illo libero a vitae
-              doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Voluptates, amet consequuntur. Hic similique
-              illo libero a vitae doloremque esse incidunt.
-            </p>
-            <div class="p-img-name-holder">
-              <img src="../Images/image-daniel.jpg" alt="" />
-              <p>Ahmed Mostafa</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="stars text-yellow-400">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-            </div>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates, amet consequuntur. Hic similique illo libero a vitae
-              doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Voluptates, amet consequuntur. Hic similique
-              illo libero a vitae doloremque esse incidunt.
-            </p>
-            <div class="p-img-name-holder">
-              <img src="../Images/image-daniel.jpg" alt="" />
-              <p>Ahmed Mostafa</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="stars text-yellow-400">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-            </div>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates, amet consequuntur. Hic similique illo libero a vitae
-              doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Voluptates, amet consequuntur. Hic similique
-              illo libero a vitae doloremque esse incidunt.
-            </p>
-            <div class="p-img-name-holder">
-              <img src="../Images/image-daniel.jpg" alt="" />
-              <p>Ahmed Mostafa</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="stars text-yellow-400">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates, amet consequuntur. Hic similique illo libero a vitae
-              doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Voluptates, amet consequuntur. Hic similique
-              illo libero a vitae doloremque esse incidunt.
-            </p>
-            <div class="p-img-name-holder">
-              <img src="../Images/image-daniel.jpg" alt="" />
-              <p>Ahmed Mostafa</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="stars text-yellow-400">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates, amet consequuntur. Hic similique illo libero a vitae
-              doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Voluptates, amet consequuntur. Hic similique
-              illo libero a vitae doloremque esse incidunt.
-            </p>
-            <div class="p-img-name-holder">
-              <img src="../Images/image-daniel.jpg" alt="" />
-              <p>Ahmed Mostafa</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="stars text-yellow-400">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates, amet consequuntur. Hic similique illo libero a vitae
-              doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Voluptates, amet consequuntur. Hic similique
-              illo libero a vitae doloremque esse incidunt.
-            </p>
-            <div class="p-img-name-holder">
-              <img src="../Images/image-daniel.jpg" alt="" />
-              <p>Ahmed Mostafa</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="stars text-yellow-400">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates, amet consequuntur. Hic similique illo libero a vitae
-              doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Voluptates, amet consequuntur. Hic similique
-              illo libero a vitae doloremque esse incidunt.
-            </p>
-            <div class="p-img-name-holder">
-              <img src="../Images/image-daniel.jpg" alt="" />
-              <p>Ahmed Mostafa</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="stars text-yellow-400">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates, amet consequuntur. Hic similique illo libero a vitae
-              doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Voluptates, amet consequuntur. Hic similique
-              illo libero a vitae doloremque esse incidunt.
-            </p>
-            <div class="p-img-name-holder">
-              <img src="../Images/image-daniel.jpg" alt="" />
-              <p>Ahmed Mostafa</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="about-us container mx-auto" data-set="about-us">
       <div
-        class="landing center w-4/5 flex-col text-center mx-auto gap-12"
-        data-set="landing"
+        class="testimonials container mx-auto center flex-col justify-start"
+        id="testimonials"
+        data-set="testimonials"
       >
-        <div class="head-line">
-          <div class="section-name">
-            <h1>ABOUT US</h1>
-            <p><span>Home</span> | About us</p>
+        <div class="testimonials-section header items-start">
+          <div class="mb-10 head-line">
+            <div class="section-name">
+              <h1>TESTIMONIALS</h1>
+              <p><span>Home</span> | Testimonials</p>
+            </div>
+            <h1 id="testimonials"></h1>
+            <a class="arrow-btn" href="#cards-holder">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
           </div>
-          <h1 id="about-us"></h1>
-          <a class="arrow-btn" href="#about-us-content">
-            <span></span>
-            <span></span>
-            <span></span>
-          </a>
+          <div class="cards-holder" id="cards-holder">
+            <div class="card">
+              <div class="stars text-yellow-400">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptates, amet consequuntur. Hic similique illo libero a vitae
+                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Voluptates, amet consequuntur. Hic similique
+                illo libero a vitae doloremque esse incidunt.
+              </p>
+              <div class="p-img-name-holder">
+                <img src="../Images/image-daniel.jpg" alt="" />
+                <p>Ahmed Mostafa</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="stars text-yellow-400">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptates, amet consequuntur. Hic similique illo libero a vitae
+                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Voluptates, amet consequuntur. Hic similique
+                illo libero a vitae doloremque esse incidunt.
+              </p>
+              <div class="p-img-name-holder">
+                <img src="../Images/image-daniel.jpg" alt="" />
+                <p>Ahmed Mostafa</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="stars text-yellow-400">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptates, amet consequuntur. Hic similique illo libero a vitae
+                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Voluptates, amet consequuntur. Hic similique
+                illo libero a vitae doloremque esse incidunt.
+              </p>
+              <div class="p-img-name-holder">
+                <img src="../Images/image-daniel.jpg" alt="" />
+                <p>Ahmed Mostafa</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="stars text-yellow-400">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptates, amet consequuntur. Hic similique illo libero a vitae
+                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Voluptates, amet consequuntur. Hic similique
+                illo libero a vitae doloremque esse incidunt.
+              </p>
+              <div class="p-img-name-holder">
+                <img src="../Images/image-daniel.jpg" alt="" />
+                <p>Ahmed Mostafa</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="stars text-yellow-400">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptates, amet consequuntur. Hic similique illo libero a vitae
+                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Voluptates, amet consequuntur. Hic similique
+                illo libero a vitae doloremque esse incidunt.
+              </p>
+              <div class="p-img-name-holder">
+                <img src="../Images/image-daniel.jpg" alt="" />
+                <p>Ahmed Mostafa</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="stars text-yellow-400">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptates, amet consequuntur. Hic similique illo libero a vitae
+                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Voluptates, amet consequuntur. Hic similique
+                illo libero a vitae doloremque esse incidunt.
+              </p>
+              <div class="p-img-name-holder">
+                <img src="../Images/image-daniel.jpg" alt="" />
+                <p>Ahmed Mostafa</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="stars text-yellow-400">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptates, amet consequuntur. Hic similique illo libero a vitae
+                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Voluptates, amet consequuntur. Hic similique
+                illo libero a vitae doloremque esse incidunt.
+              </p>
+              <div class="p-img-name-holder">
+                <img src="../Images/image-daniel.jpg" alt="" />
+                <p>Ahmed Mostafa</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="stars text-yellow-400">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptates, amet consequuntur. Hic similique illo libero a vitae
+                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Voluptates, amet consequuntur. Hic similique
+                illo libero a vitae doloremque esse incidunt.
+              </p>
+              <div class="p-img-name-holder">
+                <img src="../Images/image-daniel.jpg" alt="" />
+                <p>Ahmed Mostafa</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="about-us-content" id="about-us-content">
-        <div class="partners anima-off">
-          <div>
+      <div class="about-us container mx-auto" data-set="about-us">
+        <div
+          class="landing center w-4/5 flex-col text-center mx-auto gap-12"
+          data-set="landing"
+        >
+          <div class="head-line">
+            <div class="section-name">
+              <h1>ABOUT US</h1>
+              <p><span>Home</span> | About us</p>
+            </div>
+            <h1 id="about-us"></h1>
+            <a class="arrow-btn" href="#about-us-content">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+          </div>
+        </div>
+        <div class="about-us-content" id="about-us-content">
+          <div class="partners anima-off">
+            <div>
+              <div class="text-content anima-off">
+                <p>About Our Agency</p>
+                <h1>Your trusted medicin store</h1>
+                <p>
+                  At Med Culture, we are committed to providing a safe,
+                  supportive, and welcoming environment for our customers. We
+                  take great pride in ensuring that our store is always
+                  well-stocked with the latest medications and healthcare
+                  products, and that our staff is knowledgeable and friendly.
+                </p>
+              </div>
+            </div>
+            <div>
+              <img src="../Images/1384.jpg" alt="" />
+            </div>
+            <div>
+              <img src="../Images/3513.jpg" alt="" />
+            </div>
+            <div>
+              <img
+                src="../Images/business-concept-with-team-close-up.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="our-numbers anima-off">
+            <div class="text-content anima-off">
+              <h1>Our fun fact</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+                error voluptates consequatur totam eos facilis ipsum corrupti
+                sunt rerum expedita vitae voluptatum tenetur, obcaecati hic esse
+                similique ullam sint repellendus!
+              </p>
+            </div>
+            <div class="numbers">
+              <div><h1>50K</h1></div>
+              <div><h1>600</h1></div>
+              <div><h1>12</h1></div>
+              <div><h1>20K</h1></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="why-choose-us anima-off">
             <div class="text-content anima-off">
               <p>About Our Agency</p>
               <h1>Your trusted medicin store</h1>
@@ -677,222 +766,338 @@
                 great pride in ensuring that our store is always well-stocked
                 with the latest medications and healthcare products, and that
                 our staff is knowledgeable and friendly.
+                <br />
+                <br />
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Magnam, et eos quia consectetur perspiciatis perferendis, quam
+                excepturi aliquam sunt culpa dignissimos cum assumenda eaque
+                aliquid tempora dolor in quis temporibus?
               </p>
             </div>
           </div>
-          <div>
-            <img src="../Images/1384.jpg" alt="" />
-          </div>
-          <div>
-            <img src="../Images/3513.jpg" alt="" />
-          </div>
-          <div>
-            <img
-              src="../Images/business-concept-with-team-close-up.jpg"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="our-numbers anima-off">
-          <div class="text-content anima-off">
-            <h1>Our fun fact</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut error
-              voluptates consequatur totam eos facilis ipsum corrupti sunt rerum
-              expedita vitae voluptatum tenetur, obcaecati hic esse similique
-              ullam sint repellendus!
-            </p>
-          </div>
-          <div class="numbers">
-            <div><h1></h1></div>
-            <div><h1>600</h1></div>
-            <div><h1>12</h1></div>
-            <div><h1>20K</h1></div>
-          </div>
-          <div></div>
-        </div>
-        <div class="why-choose-us anima-off">
-          <div class="text-content anima-off">
-            <p>About Our Agency</p>
-            <h1>Your trusted medicin store</h1>
-            <p>
-              At Med Culture, we are committed to providing a safe, supportive,
-              and welcoming environment for our customers. We take great pride
-              in ensuring that our store is always well-stocked with the latest
-              medications and healthcare products, and that our staff is
-              knowledgeable and friendly.
-              <br />
-              <br />
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam,
-              et eos quia consectetur perspiciatis perferendis, quam excepturi
-              aliquam sunt culpa dignissimos cum assumenda eaque aliquid tempora
-              dolor in quis temporibus?
-            </p>
-          </div>
-        </div>
 
-        <div class="team-members anima-off">
-          <div class="text-content anima-off">
-            <p>Our Team</p>
-            <h1>Awesome team members</h1>
+          <div class="team-members anima-off">
+            <div class="text-content anima-off">
+              <p>Our Team</p>
+              <h1>Awesome team members</h1>
+            </div>
+            <div class="cards">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
-          <div class="cards">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+          <div class="branding anima-off">
+            <h1></h1>
+            <p></p>
           </div>
-        </div>
-        <div class="branding anima-off">
-          <h1></h1>
-          <p></p>
         </div>
       </div>
-    </div>
-    <div class="feed-back" data-set="feed-back">
-      <div class="feed-back-section container mx-auto" id="feed-back">
-        <div class="head-line">
-          <div class="section-name">
-            <h1>CONTACT US</h1>
-            <p><span>Home</span> |CONTACT US</p>
+      <div class="feed-back" data-set="feed-back">
+        <div class="feed-back-section container mx-auto" id="feed-back">
+          <div class="head-line">
+            <div class="section-name">
+              <h1>CONTACT US</h1>
+              <p><span>Home</span> |CONTACT US</p>
+            </div>
+            <h1 id="about-us"></h1>
+            <a class="arrow-btn" href="#contact-form">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
           </div>
-          <h1 id="about-us"></h1>
-          <a class="arrow-btn" href="#contact-form">
-            <span></span>
-            <span></span>
-            <span></span>
-          </a>
-        </div>
-        <h1 id="contact-form">GET IN TOUCH WITH US</h1>
-        <div class="container mx-auto anima-off">
-          <form action="">
-            <div class="right">
-              <div class="name">
-                <div>
-                  <label for="fname">FULL NAME</label>
-                  <input type="text" name="fname" />
+          <h1 id="contact-form">GET IN TOUCH WITH US</h1>
+          <div class="container mx-auto anima-off">
+            <form action="">
+              <div class="right">
+                <div class="name">
+                  <div>
+                    <label for="fname">FULL NAME</label>
+                    <input type="text" name="fname" />
+                  </div>
+                  <div>
+                    <label for="lname">EMAIL</label>
+                    <input type="email" name="lname" />
+                  </div>
                 </div>
-                <div>
-                  <label for="lname">EMAIL</label>
-                  <input type="email" name="lname" />
-                </div>
-              </div>
-              <!-- <div class="stars">
+                <!-- <div class="stars">
               <i class="fa-regular fa-star" data-set="1"></i>
               <i class="fa-regular fa-star" data-set="2"></i>
               <i class="fa-regular fa-star" data-set="3"></i>
               <i class="fa-regular fa-star" data-set="4"></i>
               <i class="fa-regular fa-star" data-set="5"></i>
             </div> -->
-            </div>
-            <div class="left">
-              <label for="feed-back">YOUR MASSEGE </label>
-              <textarea
-                name="feed-back"
-                id="feed-back"
-                cols="30"
-                rows="10"
-              ></textarea>
-            </div>
+              </div>
+              <div class="left">
+                <label for="feed-back">YOUR MASSEGE </label>
+                <textarea
+                  name="feed-back"
+                  id="feed-back"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
 
-            <button type="submit">Submit</button>
-          </form>
-          <div class="contact-info">
-            <h2>Contact Information</h2>
-            <div>
-              <i class="fa-solid fa-location-crosshairs"></i>
-              <p>256 Main Street Fayoum, Egypt 27500</p>
-            </div>
-            <div>
-              <i class="fa-solid fa-phone"></i>
-              <p>Phone: +20 101 232 1234</p>
-            </div>
-            <div>
-              <i class="fa-regular fa-envelope"></i>
-              <p>
-                Email:
-                <a href="mailto:info@medculture.com">info@medculture.com</a>
-              </p>
-            </div>
-            <div class="social-links">
-              <a href="#" class="facebook"
-                ><i class="fa-brands fa-facebook-f"></i
-              ></a>
-              <a href="#" class="instgram"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-              <a href="#" class="twitter"
-                ><i class="fa-brands fa-x-twitter"></i
-              ></a>
-              <a href="#" class="github"><i class="fa-brands fa-github"></i></a>
+              <button type="submit">Submit</button>
+            </form>
+            <div class="contact-info">
+              <h2>Contact Information</h2>
+              <div>
+                <i class="fa-solid fa-location-crosshairs"></i>
+                <p>256 Main Street Fayoum, Egypt 27500</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-phone"></i>
+                <p>Phone: +20 101 232 1234</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-envelope"></i>
+                <p>
+                  Email:
+                  <a href="mailto:info@medculture.com">info@medculture.com</a>
+                </p>
+              </div>
+              <div class="social-links">
+                <a href="#" class="facebook"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+                <a href="#" class="instgram"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a href="#" class="twitter"
+                  ><i class="fa-brands fa-x-twitter"></i
+                ></a>
+                <a href="#" class="github"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <footer id="footer">
-      <div class="holder">
-        <div class="logo">
-          <img src="../Images/Logo.jpg" alt="" />
-          <span class="med">Med</span>
-          Culture
-        </div>
+      <footer>
+        <div class="holder">
+          <div class="logo">
+            <img src="../Images/Logo.jpg" alt="" />
+            <span class="med">Med</span>
+            Culture
+          </div>
 
-        <div class="legal">
-          <h2>Legal</h2>
-          <p>Business Registration Number: 12345678</p>
-          <p>Pharmacy License Number: PH12345</p>
+          <div class="legal">
+            <h2>Legal</h2>
+            <p>Business Registration Number: 12345678</p>
+            <p>Pharmacy License Number: PH12345</p>
+          </div>
+          <div class="payment">
+            <h2>Payment Methods</h2>
+            <p>
+              We accept all major credit cards, PayPal, Apple Pay, and Google
+              Wallet. All transactions are securely processed using SSL
+              encryption.
+            </p>
+          </div>
+          <div class="contact-us">
+            <h2>Contact Us</h2>
+            <p>256 Main Street Fayoum, Egypt 27500</p>
+            <p>Phone: +20 101 232 1234</p>
+            <p>
+              Email:
+              <a href="mailto:info@medculture.com">info@medculture.com</a>
+            </p>
+          </div>
+          <div class="social-links">
+            <h1>Follow Us:</h1>
+            <a href="#" class="facebook"
+              ><i class="fa-brands fa-square-facebook"></i
+            ></a>
+            <a href="#" class="instgram"
+              ><i class="fa-brands fa-square-instagram"></i
+            ></a>
+            <a href="#" class="twitter"
+              ><i class="fa-brands fa-square-x-twitter"></i
+            ></a>
+            <a href="#" class="github"
+              ><i class="fa-brands fa-square-github"></i
+            ></a>
+          </div>
+          <div class="rights">
+            <p>
+              Copyright &copy; 2024 <span class="med">Med</span
+              ><span>Culture</span>. All Rights Reserved
+            </p>
+          </div>
+          <div class="policy">
+            <p>Privacy Policy | Terms and Conditions</p>
+          </div>
         </div>
-        <div class="payment">
-          <h2>Payment Methods</h2>
-          <p>
-            We accept all major credit cards, PayPal, Apple Pay, and Google
-            Wallet. All transactions are securely processed using SSL
-            encryption.
-          </p>
+      </footer>
+    </div>
+
+    <div class="account-page">
+      <div class="account-side-bar">
+        <div class="back" onclick="back()">
+          <i class="fa-solid fa-arrow-left"></i>
         </div>
-        <div class="contact-us">
-          <h2>Contact Us</h2>
-          <p>256 Main Street Fayoum, Egypt 27500</p>
-          <p>Phone: +20 101 232 1234</p>
-          <p>
-            Email: <a href="mailto:info@medculture.com">info@medculture.com</a>
-          </p>
+        <div class="side-bar-account-info active" data-set="account">
+          <i class="fa-solid fa-user"></i>
+          <p>Account information</p>
         </div>
-        <div class="social-links">
-          <h1>Follow Us:</h1>
-          <a href="#" class="facebook"
-            ><i class="fa-brands fa-square-facebook"></i
-          ></a>
-          <a href="#" class="instgram"
-            ><i class="fa-brands fa-square-instagram"></i
-          ></a>
-          <a href="#" class="twitter"
-            ><i class="fa-brands fa-square-x-twitter"></i
-          ></a>
-          <a href="#" class="github"
-            ><i class="fa-brands fa-square-github"></i
-          ></a>
+        <div class="side-bar-wishlist" data-set="wishlist">
+          <i class="fa-solid fa-star"></i>
+          <p>Wishlist</p>
         </div>
-        <div class="rights">
-          <p>
-            Copyright &copy; 2024 <span class="med">Med</span
-            ><span>Culture</span>. All Rights Reserved
-          </p>
+        <div class="side-bar-notification" data-set="notification">
+          <i class="fa-regular fa-bell"></i>
+          <p>Notification</p>
         </div>
-        <div class="policy">
-          <p>Privacy Policy | Terms and Conditions</p>
+        <div class="side-bar-alarm" data-set="alarm">
+          <i class="fa-solid fa-stopwatch"></i>
+          <p>Alarms</p>
+        </div>
+        <div class="side-bar-settings" data-set="settings">
+          <i class="fa-solid fa-gear"></i>
+          <p>Settings</p>
         </div>
       </div>
-    </footer>
+      <div class="right-page">
+        <div class="user-info-page page-hidden" data-set="account">
+          <div class="user-img">
+            <img src="" alt="" />
+            <div class="upload-btn-wrapper">
+              <button class="btn"><i class="fa-solid fa-camera"></i></button>
+              <input type="file" name="myfile" />
+            </div>
+          </div>
+          <form action="" class="user-info-fields">
+            <div>
+              <label for="user-first-name">First Name</label>
+
+              <input type="text" id="user-first-name" value="Ahmed" disabled />
+              <p id="change-first-name">Change</p>
+            </div>
+            <div>
+              <label for="user-last-name">last Name</label>
+              <input type="text" id="user-last-name" value="Mostafa" disabled />
+              <p id="change-last-name">Change</p>
+            </div>
+            <div>
+              <label for="user-email">Your Email</label>
+              <input
+                type="text"
+                id="user-email"
+                value="ahmedmostafa00@gmail.com"
+                disabled
+              />
+              <p id="change-email">Change</p>
+            </div>
+            <div>
+              <label for="user-birthdate">Birthdate</label>
+              <input
+                type="text"
+                id="user-birthdate"
+                value="31/3/2003"
+                disabled
+              />
+              <p id="change-birthdate">Change</p>
+            </div>
+            <div>
+              <label for="user-address">Your Address</label>
+              <input
+                type="text"
+                id="user-address"
+                value="New Fayoum"
+                disabled
+              />
+              <p id="change-address">Change</p>
+            </div>
+            <button
+              class="save-info-btn-false save-info-btn"
+              id="save-info-btn"
+              disabled
+            >
+              Save
+            </button>
+          </form>
+        </div>
+        <div class="wish-list-page page-hidden" data-set="wishlist"></div>
+        <div
+          class="notification-page page-hidden"
+          data-set="notification"
+        ></div>
+        <div class="alarms-page page-hidden" data-set="alarm">
+          <button
+            class="set-alarm"
+            onclick="toggleAlarmForm(), requestNotificationPermission()"
+          >
+            <i class="fa-solid fa-plus"></i>New Alarm
+          </button>
+          <div class="alarm-box-bg" id="alarmForm" style="display: none">
+            <form action="" class="new-alarm-box">
+              <label for="alarm-name">Alarm name</label>
+              <input
+                type="text"
+                maxlength="10"
+                placeholder="Alarm"
+                id="alarmName"
+              />
+              <label for="alarmTime">Set time</label>
+              <input type="time" name="set-time" id="alarmTime" />
+              <label for="">Repeat</label>
+              <div class="check-day input-group">
+                <div>
+                  <input type="checkbox" id="Saturday" value="0" />
+                  <label for="Saturday">Saturday</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="Sunday" value="1" />
+                  <label for="Sunday">Sunday</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="Monday" value="2" />
+                  <label for="Monday">Monday</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="Tuesday" value="3" />
+                  <label for="Tuesday">Tuesday</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="Wednesday" value="4" />
+                  <label for="Wednesday">Wednesday</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="Thursday" value="5" />
+                  <label for="Thursday">Thursday</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="Friday" value="6" />
+                  <label for="Friday">Friday</label>
+                </div>
+              </div>
+              <div class="btns">
+                <button class="save-alarm-btn" onclick="addAlarm()">
+                  Save
+                </button>
+                <button class="cancel-alarm-btn">Cancel</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="alarms" id="alarmList"></div>
+        </div>
+        <div class="settings-page page-hidden" data-set="settings"></div>
+      </div>
+    </div>
     <span class="arrow-up center"><i class="fa-solid fa-arrow-up"></i></span>
+    <script src="../JS/mainPage.js"></script>
 
     <script
       src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
@@ -900,6 +1105,7 @@
     ></script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
       const swiper = new Swiper(".swiper", {
         // Optional parameters
@@ -927,9 +1133,11 @@
       src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"
       type="module"
     ></script>
-    <script src="../JS/mainPage.js"></script>
 
     <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        letterAnimation();
+      });
       allLinks.forEach((e) => {
         e.addEventListener("click", (ele) => {
           letterAnimation();
@@ -937,22 +1145,26 @@
       });
 
       function letterAnimation() {
+        const lettersH1 = document.querySelectorAll(
+          ".head-line h1:nth-child(2)"
+        );
+
         lettersH1.forEach((element) => {
           element.innerHTML = "";
           if (element.getAttribute("id") === sessionStorage.CP) {
-            if (element.getAttribute("id") === "services") {
+            if (sessionStorage.CP === "services") {
               const typed = new Typed(element, {
                 strings: ["Your Trusted Partner for Wellness and Wellbeing."],
                 typeSpeed: 20,
               });
-            } else if (element.getAttribute("id") === "testimonials") {
+            } else if (sessionStorage.CP === "testimonials") {
               const typed = new Typed(element, {
                 strings: [
                   "Don't take our word for it. Over 100+ peaple trust us.",
                 ],
                 typeSpeed: 20,
               });
-            } else if (element.getAttribute("id") === "about-us") {
+            } else if (sessionStorage.CP === "about-us") {
               const typed = new Typed(element, {
                 strings: [
                   "Dedicated to Providing Quality Healthcare and Personalized Service.",

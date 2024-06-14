@@ -66,9 +66,7 @@ html {
     -webkit-tap-highlight-color: transparent;
 }
 
-body {
-    font-family: var(--font-alternate);
-}
+
 
 .time-up {
     width: 200px;
@@ -235,8 +233,17 @@ ul {
 }
 
 
+.main {
+    display: block;
+    height: 100%;
+    background: none;
+}
 
 
+
+.user-info::before {
+    left: 135px;
+}
 
 .main-bg {
     position: fixed;
@@ -278,16 +285,43 @@ ul {
 }
 
 .landing .hero-content .social-links {
+    height: fit-content;
     position: absolute;
-    top: 0;
-
+    top: 13%;
     right: 10px;
+}
+
+.landing .hero-content .facebook {
+    background-clip: text;
+
+    color: rgb(22, 22, 199);
+}
+
+.landing .hero-content .instgram {
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.landing .hero-content .github,
+.landing .hero-content .twitter {
+    color: rgb(27, 27, 27);
 }
 
 @media not all and (min-width: 400px) {
     .landing .hero-content .social-links {
-        right: 2px;
-
+        flex-direction: row;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        right: initial;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
     }
 
     .landing .hero-content .social-links i {
@@ -391,10 +425,35 @@ ul {
 .landing .shop-now-btn i {
     position: absolute;
     top: 35%;
-    right: 8px;
+    right: 10px;
     color: white;
     font-size: 15px;
+    animation: for-back 4s 0.5s infinite ease-out;
+    -webkit-animation: for-back 4s 0.5s infinite ease-out;
 }
+
+@keyframes for-back {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        right: 3px;
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        right: 10px;
+    }
+}
+
+
+
 
 .landing .shop-now-btn:hover {
     background: linear-gradient(to right, #004a8f 30%, #0072c6);
@@ -412,8 +471,7 @@ ul {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative;
-    z-index: -2;
+    z-index: 2;
 }
 
 .bg {
@@ -463,6 +521,10 @@ ul {
     justify-content: space-around;
     align-items: center;
     margin-left: 72px;
+}
+
+.logo {
+    font-weight: bold;
 }
 
 @media not all and (min-width: 1024px) {
@@ -548,7 +610,6 @@ ul {
     }
 
     .side-bar-links {
-        flex-grow: 1;
         position: relative;
     }
 
@@ -563,29 +624,6 @@ ul {
         position: relative;
 
     }
-
-    /* .side-bar-links>li>.drop-icon:after {
-        content: "";
-        position: absolute;
-        right: -40%;
-        top: 30%;
-        width: 5px;
-        height: 5px;
-        background-color: transparent;
-        border-width: 1px;
-        border-style: solid;
-        border-color: transparent white white transparent;
-        transform: rotate(45deg);
-        transition: 0.5s;
-        -webkit-transition: 0.5s;
-        -moz-transition: 0.5s;
-        -ms-transition: 0.5s;
-        -o-transition: 0.5s;
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-} */
 
 
 
@@ -640,23 +678,7 @@ ul {
     color: var(--Blue);
 }
 
-.links>.dropped-menu::after {
-    content: "";
-    position: absolute;
-    left: 110%;
-    top: 30%;
-    width: 5px;
-    height: 5px;
-    background-color: transparent;
-    border-width: 1px;
-    border-style: solid;
-    border-color: transparent white white transparent;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-}
+
 
 .drop-down-menu {
     position: absolute;
@@ -1062,13 +1084,13 @@ ul {
 }
 
 .head-line h1:nth-child(2) {
-    font-weight: 100;
+    font-weight: 400;
     letter-spacing: 0;
     min-width: 200px;
     max-width: 550px;
     margin: 20px auto;
     font-size: 30px;
-    color: #ccc;
+    color: white;
 }
 
 .testimonials-section .cards-holder {
@@ -1893,7 +1915,8 @@ footer {
     align-items: center;
     padding: 10px;
     height: fit-content;
-
+    position: absolute;
+    left: 0;
 }
 
 

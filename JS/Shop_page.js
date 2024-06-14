@@ -1,19 +1,57 @@
+// Side Bar
+
 const sideBarOpenBtn = document.getElementById("side-bar-open-btn");
 const sideBarCloseBtn = document.getElementById("side-bar-close-btn");
 
 const sideBar = document.querySelector(".side-bar");
+let overlaySidebar = document.querySelector(".overlay-sidebar");
 
 sideBarOpenBtn.addEventListener("click", function () {
-  productWindowbg.classList.add("show");
   sideBar.classList.add("side-bar-show");
   document.body.classList.add("not-touchable");
+  overlaySidebar.classList.add("display");
 });
 sideBarCloseBtn.addEventListener("click", function () {
-  productWindowbg.classList.remove("show");
   sideBar.classList.remove("side-bar-show");
   document.body.classList.remove("not-touchable");
+  overlaySidebar.classList.remove("display");
 });
 
+overlaySidebar.addEventListener("click", () => {
+  sideBar.classList.remove("side-bar-show");
+  document.body.classList.remove("not-touchable");
+  overlaySidebar.classList.remove("display");
+});
+
+const sidebarLinks = document.querySelectorAll(".side-bar-links li a");
+
+sidebarLinks.forEach((e) => {
+  e.addEventListener("click", (element) => {
+    sessionStorage.setItem("CP", `${element.target.getAttribute("data-set")}`);
+  });
+});
+
+//Start Product Description
+const productDes = document.querySelectorAll(".product-description");
+let desBox;
+let description;
+productDes.forEach((product) => {
+  product.addEventListener("mouseover", (element) => {
+    desBox = document.createElement("p");
+    desBox.className = "product-hover";
+    description = document.createTextNode(`${element.currentTarget.innerHTML}`);
+    desBox.append(description);
+    element.currentTarget.append(desBox);
+    product.addEventListener("mouseleave", (element) => {
+      desBox.remove();
+    });
+  });
+  product.addEventListener("mouseleave", (element) => {
+    desBox.remove();
+  });
+});
+
+//End Product Description
 //Home Button Handel
 const sideBarBtns = document.querySelectorAll(".side-bar-drop-down-menu li a");
 
@@ -53,75 +91,10 @@ scrollBtn.addEventListener("click", function () {
 
 let productBox = document.querySelectorAll(".product-holder .product-name");
 
-let productWindowbg = document.querySelector(
-  ".clicked-product-bg:not(.clicked-product-box)"
-);
-let productWindowDetials = document.querySelector(".clicked-product-box");
-let productWindowCloseBtn = document.querySelector(".clicked-product-box>i");
-let productWindowImg = document.querySelector(
-  ".clicked-product-box-img-holder img"
-);
-
-let productWindowHeader = document.querySelector(
-  ".clicked-product-box-img-holder h2"
-);
-let productWindowParagraph = document.querySelector(
-  ".clicked-product-box-img-holder p"
-);
-
-let productPrice = document.querySelector(
-  ".clicked-product-box .product-price"
-);
-
-let upperPart = document.querySelector(".clicked-product-box-img-holder");
-let downPart = document.querySelector(".clicked-product-box-detailes");
-
 let imgSrc;
 let textHeaderNode;
 let textParagraphNode;
 let priceNode;
-
-productBox.forEach((e) => {
-  e.addEventListener("click", function (e) {
-    productWindowImg.src =
-      e.currentTarget.parentNode.parentNode.children[0].children[0].src;
-    textParagraphNode =
-      e.currentTarget.parentNode.parentNode.children[1].children[1].firstChild.cloneNode(
-        true
-      );
-    textHeaderNode =
-      e.currentTarget.parentNode.parentNode.children[1].children[0].firstChild.cloneNode(
-        true
-      );
-    priceNode =
-      e.currentTarget.parentNode.parentNode.children[1].children[2].cloneNode(
-        true
-      );
-    productWindowParagraph.append(textParagraphNode);
-    productWindowHeader.append(textHeaderNode);
-    productPrice.append(priceNode);
-    productWindowbg.classList.add("show");
-    productWindowDetials.classList.add("clicked-product-box-animation");
-    document.body.style.overflow = "hidden";
-  });
-});
-
-productWindowCloseBtn.addEventListener("click", function () {
-  productWindowParagraph.firstChild.remove();
-  productWindowHeader.firstChild.remove();
-  productPrice.firstChild.remove();
-  productWindowbg.classList.remove("show");
-  productWindowDetials.classList.remove("clicked-product-box-animation");
-  document.body.style.overflow = "auto";
-});
-
-productWindowbg.addEventListener("click", function () {
-  productWindowParagraph.firstChild.remove();
-  productWindowHeader.firstChild.remove();
-  productWindowbg.classList.remove("show");
-  productWindowDetials.classList.remove("clicked-product-box-animation");
-  document.body.style.overflow = "auto";
-});
 
 const scrollBarLeftArrow = document.querySelector(".left-arrow");
 const scrollBarRightArrow = document.querySelector(".right-arrow");
@@ -135,58 +108,13 @@ scrollBarRightArrow.addEventListener("click", function () {
   scrollBar.scrollLeft += 70;
 });
 
-let productBoxDiv = document.createElement("div");
-productBoxDiv.classList.add("products-box");
-let dataSetDiv = document.createElement("div");
-dataSetDiv.setAttribute("data-set", "1");
-let productImgDiv = document.createElement("div");
-productImgDiv.classList.add("product-img");
-let productImgElement = document.createElement("img");
-productImgElement.setAttribute("src", `${localStorage}`);
-let productDetailsDiv = document.createElement("div");
-productDetailsDiv.classList.add("product-details");
-let productNameElement = document.createElement("p");
-productNameElement.classList.add("product-name");
-let innerProductNameElement = document.createTextNode(`${localStorage}`);
-let productDescriptionElement = document.createElement("p");
-productDescriptionElement.classList.add("product-description");
-let innerProductDescriptionElement = document.createTextNode(`${localStorage}`);
-let productPriceElement = document.createElement("span");
-productPriceElement.classList.add("product-price");
-let innerproductPriceElement = document.createTextNode(`${localStorage}`);
-let btnsDiv = document.createElement("div");
-btnsDiv.classList.add("btns");
-let atwlBtn = document.createElement("button");
-atwlBtn.classList.add("atwl");
-let buyNowBtn = document.createElement("button");
-atwlBtn.classList.add("buy-now");
-// let productImg = document.querySelectorAll(".product-img");
-// let img;
-// let header;
-// let description;
-// let detailes = document.createTextNode(` <div class="product-details"></div>`);
-// let price = document.createTextNode(`<span class="product-price">30.99 <span>EGP</span></span>`);
-// for(let i = 0 ; i < localStorage.length ; i++) {
-//   if(i === 0) {
-//     img = document.createTextNode(`<div class="product-img">
-//     <img src= "../Images/${localStorage.getItem(localStorage.key(i))}" alt="" />
-//   </div>`)
-//   }
-//   else if (i === 1) {
-//     header = document.createTextNode(`<p class="product-name">${localStorage.getItem(localStorage.key(i))}</p>`)
-//   }
-//   else if(i === 2) {
-//     description = document.createTextNode(`<p class="product-description"> ${localStorage.getItem(localStorage.key(i))}</p>`)
-//   }
-// }
-// e.children[0].src = `${localStorage.getItem("Product Image")}`;
-
 let mainPage = document.querySelector(".main");
 let accountPage = document.querySelector(".account-page");
 
 function openAccountPage() {
   mainPage.style.display = "none";
   accountPage.style.display = "flex";
+  console.log("Opened");
 }
 
 function back() {

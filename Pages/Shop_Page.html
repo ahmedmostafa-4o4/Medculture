@@ -19,6 +19,8 @@
     <title>Products</title>
   </head>
   <body>
+    <div class="overlay-sidebar"></div>
+
     <div class="overlay" id="loadingOverlay">
       <dotlottie-player
         src="https://lottie.host/ecd81636-c8bb-4fc2-af50-d5c637458e6e/QVodgYC0Ci.json"
@@ -39,29 +41,25 @@
 
         <ul class="side-bar-links">
           <li class="side-bar-dropped-menu">
-            <a href="#3084" class="drop-icon block mb-1 w-fit"
+            <a
+              href="./mainPage.html"
+              class="drop-icon block w-fit"
+              data-set="landing-on"
               >Home
-              <ul class="side-bar-drop-down-menu show-list">
-                <li>
-                  <a href="./mainPage.html" data-set="services">Services</a>
-                </li>
-                <li>
-                  <a href="./mainPage.html" data-set="testimonials"
-                    >Testimonials</a
-                  >
-                </li>
-                <li>
-                  <a href="./mainPage.html" data-set="about-us">About us</a>
-                </li>
-                <li>
-                  <a href="./mainPage.html" data-set="feed-back">Feedback</a>
-                </li>
-              </ul></a
-            >
+            </a>
           </li>
-          <li><a href="./Shop_Page.html">Shop Now</a></li>
-          <li><a href="#testimonials">Our Story</a></li>
-          <li><a href="#">Contact</a></li>
+          <li>
+            <a href="./mainPage.html" data-set="feed-back">Contact us</a>
+          </li>
+          <li>
+            <a href="./mainPage.html" data-set="about-us">About us</a>
+          </li>
+          <li>
+            <a href="./mainPage.html" data-set="services">Services</a>
+          </li>
+          <li>
+            <a href="./mainPage.html" data-set="testimonials">Testimonials</a>
+          </li>
         </ul>
         <p class="text-white self-start">Social Links</p>
         <div class="social-links">
@@ -87,6 +85,10 @@
 
             <input type="search" placeholder="Search" />
           </form>
+          <!-- <div class="logs">
+            <button class="log-in-btn">Log in</button>
+            <button class="sign-up-btn">Sign up</button>
+          </div> -->
 
           <div class="user-btn">
             <span class="red-alert"></span>
@@ -156,7 +158,10 @@
               <p class="product-description">
                 Morphine is a non-synthetic narcotic with a high potential for
                 abuse and is derived from opium. It is used for the treatment of
-                pain
+                pain Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quis veritatis consequuntur ipsam, vel, inventore provident
+                magni rerum itaque nulla quam blanditiis magnam reiciendis eos
+                ad voluptate! Odit debitis facilis dolor?
               </p>
               <span class="product-price">30.99 <span>EGP</span></span>
               <div class="btns">
@@ -205,36 +210,6 @@
                   <a href="./order.html">Buy Now</a>
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="clicked-product-bg"></div>
-        <div class="clicked-product-box">
-          <i class="fa-solid fa-xmark"></i>
-          <div class="clicked-product-box-img-holder">
-            <img src="" alt="" />
-            <h2></h2>
-            <p class="main-des"></p>
-          </div>
-
-          <div class="clicked-product-box-detailes">
-            <h3>Indications and usage</h3>
-            <p></p>
-            <h3>Precautions</h3>
-            <p></p>
-            <h3>Storage and handling</h3>
-            <p></p>
-            <h3>Expiration date</h3>
-            <p></p>
-            <h3>Manufacturer and distributor</h3>
-            <p></p>
-            <h3>Prescription or over-the-counter</h3>
-            <p></p>
-            <span class="product-price"></span>
-
-            <div class="clicked-product-btns">
-              <button>Add to wishlist</button>
-              <button>Order now</button>
             </div>
           </div>
         </div>
@@ -396,9 +371,6 @@
       </div>
     </div>
 
-    <div class="order-page">
-      <div class="first-step"></div>
-    </div>
     <span class="time-up arrow-up center">Time Up!!!!</span>
     <script
       src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"

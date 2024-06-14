@@ -100,6 +100,7 @@ body {
     gap: 20px;
     padding-top: 30px;
     overflow: auto;
+    z-index: 99;
 }
 
 @media not all and (min-width:1024px) {}
@@ -209,36 +210,6 @@ body {
 
 }
 
-.side-bar-links>li>.drop-icon::after {
-    content: "";
-    position: absolute;
-    right: -40%;
-    top: 30%;
-    width: 5px;
-    height: 5px;
-    background-color: transparent;
-    border-width: 1px;
-    border-style: solid;
-    border-color: transparent white white transparent;
-    transform: rotate(45deg);
-    transition: 0.5s;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-}
-
-.side-bar-links>li>.drop-icon:hover::after {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-}
 
 
 
@@ -364,7 +335,7 @@ body {
     border: 2px solid var(--green-color);
 }
 
-.nav .user-btn,
+.user-btn,
 .nav .wishlist-btn,
 .nav .notification {
     width: 45px;
@@ -388,7 +359,7 @@ body {
     position: relative;
 }
 
-.nav .user-btn .red-alert {
+.user-btn .red-alert {
     display: none;
     position: absolute;
     top: 0;
@@ -435,8 +406,7 @@ body {
     background-color: var(--main-v3-color);
 }
 
-
-.nav .user-btn:hover .user-info {
+.user-btn:hover .user-info {
     display: flex;
 }
 
@@ -790,6 +760,7 @@ body {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    position: relative;
 }
 
 .product-holder .product-details .btns {
@@ -1441,7 +1412,24 @@ body {
 }
 
 .account-page .wish-list-page .product-holder .product-details .product-description {
+    position: relative;
     color: rgba(0, 0, 0, 0.616);
+}
+
+.product-hover {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.521);
+    padding: 10px;
+    width: 350px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    text-wrap: pretty;
+    line-height: 1.8;
 }
 
 .account-page .wish-list-page .product-holder .product-details .product-price {
