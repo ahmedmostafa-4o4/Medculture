@@ -156,8 +156,10 @@ allSections.forEach((e) => {
 });
 
 regex = /mainPage\.html$/;
+regex2 = /app$/;
 
-if (regex.test(location.href)) landingDiv.style.display = "flex";
+if (regex.test(location.href) || regex2.text(location.href))
+  landingDiv.style.display = "flex";
 else landingDiv.style.display = "none";
 
 //Letters Animations && show animation
