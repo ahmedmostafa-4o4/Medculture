@@ -253,6 +253,9 @@ const atwl = document.querySelectorAll(".atwl i");
 const wishlistPage = document.querySelector(".wish-list-page");
 const alertBtn = document.querySelector(".user-wishlist span");
 const userAlert = document.querySelector(".red-alert");
+
+let counter = 0;
+
 if (counter === 0) {
   userAlert.style.display = "none";
   alertBtn.style.display = "none";
@@ -260,8 +263,6 @@ if (counter === 0) {
   userAlert.style.display = "block";
   alertBtn.style.display = "block";
 }
-
-let counter = 0;
 
 atwl.forEach((e) => {
   e.addEventListener("click", (ele) => {
