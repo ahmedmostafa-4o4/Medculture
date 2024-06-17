@@ -382,7 +382,9 @@ const atwl = document.querySelectorAll(".atwl i");
 const wishlistPage = document.querySelector(".wish-list-page");
 const alertBtn = document.querySelector(".user-wishlist span");
 const userAlert = document.querySelector(".red-alert");
-if (wishlistPage.innerHTML === "") {
+
+let myCounter = 0;
+if (myCounter === 0) {
   userAlert.style.display = "none";
   alertBtn.style.display = "none";
 } else {
@@ -402,6 +404,7 @@ atwl.forEach((e) => {
           wishlistPage.removeChild(e);
         }
       });
+      myCounter--;
     } else {
       ele.currentTarget.classList.replace("fa-regular", "fa-solid");
       cloneProductBox =
@@ -415,6 +418,7 @@ atwl.forEach((e) => {
       cloneProductBox.children[1].children[3].children[0].remove();
       cloneProductBox.children[1].children[3].appendChild(rmBtn);
       wishlistPage.append(cloneProductBox);
+      myCounter++;
     }
 
     document.querySelectorAll(".buy-now a").forEach((link) => {
@@ -424,7 +428,7 @@ atwl.forEach((e) => {
     });
     removeProduct(ele.currentTarget);
 
-    if (wishlistPage.innerHTML === "") {
+    if (myCounter === 0) {
       userAlert.style.display = "none";
       alertBtn.style.display = "none";
     } else {
@@ -731,3 +735,72 @@ function showNotification(header, body) {
 }
 
 //End Account Page
+
+//Start Product Transfare To Order Page
+
+const buyAllBtn = document.querySelector(".buy-all-btn");
+const buyNowBtn = document.querySelectorAll(".buy-now ");
+
+buyNowBtn.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    removeProductInSessionStorage();
+    sessionStorage.setItem(`${e.currentTarget.id}`, [
+      e.currentTarget.parentNode.parentNode.parentNode
+        .querySelector(".product-img img")
+        .getAttribute("src"),
+      e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+        ".product-name"
+      ).textContent,
+      e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+        ".product-price"
+      ).firstChild.textContent,
+      e.currentTarget.parentNode.parentNode.parentNode.getAttribute("data-set"),
+    ]);
+  });
+});
+
+buyAllBtn.addEventListener("click", () => {
+  const wishlistProducts = document.querySelectorAll(
+    ".wish-list-page .product-holder"
+  );
+
+  removeProductInSessionStorage(wishlistProducts);
+  addProductInSessionStorage(wishlistProducts);
+});
+
+function removeProductInSessionStorage(products) {
+  for (let i = 0; i < sessionStorage?.length; i++) {
+    if (!isNaN(sessionStorage.key(i))) {
+      sessionStorage.removeItem(sessionStorage.key(i));
+    }
+    console.log(sessionStorage.key(i));
+  }
+}
+
+function addProductInSessionStorage(products) {
+  products.forEach((e) => {
+    sessionStorage.setItem(`${e.id}`, [
+      e.querySelector(".product-img img").getAttribute("src"),
+      e.querySelector(".product-name").textContent,
+      e.querySelector(".product-price").firstChild.textContent,
+      e.getAttribute("data-set"),
+    ]);
+  });
+}
+
+//End Product Transfare To Order Page
+
+//start links handle
+
+// regex2 = /app\/$/;
+
+// console.log();
+// allSections.forEach((e) => {
+//   regex = /$/;
+//   if (e.getAttribute("data-set") === location.href.match(regex)) {
+//     e.style.display = "block";
+//     if (e.getAttribute("data-set") === "landing-on") e.style.display = "flex";
+//   } else {
+//     e.style.display = "none";
+//   }
+// });

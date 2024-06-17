@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../CSS/all.min.css" />
     <link rel="stylesheet" href="../CSS/output.css" />
-    <link rel="stylesheet" href="../CSS/order.css" />
     <link rel="stylesheet" href="../CSS/mainPage.css" />
+    <link rel="stylesheet" href="../CSS/order.css" />
+
     <link rel="stylesheet" href="../CSS/normalize.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,69 +28,17 @@
     <div class="main container mx-auto">
       <div class="items-holder">
         <h1>Your items</h1>
-        <div class="items">
-          <div class="item-box">
-            <form action="">
-              <img src="../Images/Medicin 1.jpg" alt="" />
-              <p>Name</p>
-              <p>Catigory</p>
-              <p class="item-price">30</p>
-              <input
-                type="number"
-                name="item-quantity"
-                id="item-quantity"
-                min="1"
-                max="10"
-                value="1"
-              />
-              <input
-                type="checkbox"
-                name="check-order"
-                id="check-order"
-                checked
-              />
-            </form>
-          </div>
-          <div class="item-box">
-            <form action="">
-              <img src="../Images/Medicin 1.jpg" alt="" />
-              <p>Name</p>
-              <p>Catigory</p>
-              <p class="item-price">20</p>
-              <input
-                type="number"
-                name="item-quantity"
-                id="item-quantity"
-                min="1"
-                max="10"
-                value="1"
-              />
-              <input
-                type="checkbox"
-                name="check-order"
-                id="check-order"
-                checked
-              />
-            </form>
-          </div>
-          <div class="item-box">
-            <form action="">
-              <img src="../Images/Medicin 1.jpg" alt="" />
-              <p>Name</p>
-              <p>Catigory</p>
-              <p class="item-price">15</p>
-              <input
-                type="number"
-                name="item-quantity"
-                id="item-quantity"
-                min="1"
-                max="10"
-                value="1"
-              />
-              <input type="checkbox" name="check-order" id="check-order" />
-            </form>
-          </div>
+        <div class="select-div">
+          <label for="select-all">Select All</label>
+          <input
+            type="checkbox"
+            name="select-all"
+            id="select-all"
+            checked
+            class="select-all"
+          />
         </div>
+        <div class="items"></div>
       </div>
       <div style="width: 300px" class="side-bar-contain"></div>
     </div>

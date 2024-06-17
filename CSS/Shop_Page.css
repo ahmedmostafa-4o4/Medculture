@@ -1367,6 +1367,36 @@ body {
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.wish-list-page .buy-all {
+    position: absolute;
+    top: -40px;
+    right: 50%;
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+}
+
+.wish-list-page .buy-all .buy-all-btn {
+    padding: 10px;
+    background-color: var(--Blue);
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    width: 150px;
+}
+
+.wish-list-page .buy-all .buy-all-btn:hover {
+    background-color: #0073c6e8;
 }
 
 .account-page .wish-list-page .product-holder {

@@ -1,79 +1,3 @@
-//Start Orders Number Handel
-const checkBoxs = document.querySelectorAll(
-  ".main .items-holder .items .item-box form input[type='checkbox']"
-);
-const orders = document.getElementById("orders-num");
-let counter = 0;
-orders.innerHTML = counter;
-checkBoxs.forEach((e) => {
-  e.addEventListener("click", (ele) => {
-    counter = 0;
-    checkBoxs.forEach((e) => {
-      if (e.checked === true) counter++;
-    });
-    orders.innerHTML = counter;
-  });
-});
-
-checkBoxs.forEach((e) => {
-  if (e.checked === true) counter++;
-});
-orders.innerHTML = counter;
-//End Orders Number Handel
-
-//Start Total Price Handel
-const itemPrice = document.querySelectorAll("item-price");
-const totalPrice = document.getElementById("total-price");
-const itemQuantity = document.querySelectorAll(
-  "input[name = 'item-quantity'] "
-);
-
-let total = 0;
-let count = 0;
-itemQuantity.forEach((e) => {
-  e.addEventListener("input", (ele) => {
-    total = 0;
-    count = ele.target.value;
-    checkBoxs.forEach((e) => {
-      e.addEventListener("click", (ele) => {
-        if (ele.target.checked === true)
-          total += +ele.target.parentNode.children[3].innerHTML * +count;
-        else total -= +ele.target.parentNode.children[3].innerHTML * +count;
-        if (total < 0) total = 0;
-        totalPrice.innerHTML = `${total} EG`;
-      });
-
-      if (e.checked === true)
-        total +=
-          e.parentNode.children[3].innerHTML * e.parentNode.children[4].value;
-      totalPrice.innerHTML = `${total} EG`;
-    });
-    count = 0;
-  });
-});
-
-checkBoxs.forEach((e) => {
-  e.addEventListener("click", (ele) => {
-    if (ele.target.checked === true)
-      total +=
-        +ele.target.parentNode.children[3].innerHTML *
-        +ele.target.parentNode.children[4].value;
-    else
-      total -=
-        +ele.target.parentNode.children[3].innerHTML *
-        +ele.target.parentNode.children[4].value;
-    if (total < 0) total = 0;
-    totalPrice.innerHTML = `${total} EG`;
-  });
-
-  if (e.checked === true)
-    total +=
-      e.parentNode.children[3].innerHTML * e.parentNode.children[4].value;
-  totalPrice.innerHTML = `${total} EG`;
-});
-
-//End Total Price Handel
-
 // Start Side Bar Handle
 
 const openner = document.querySelector(".openner");
@@ -228,9 +152,11 @@ cardExpireDate.addEventListener("input", (e) => {
 
 //Start Order Form Handle
 
-const orderFormInputs = document.forms[3].querySelectorAll("input");
+const orderFormInputs = document
+  .querySelector(".user-info")
+  .querySelectorAll("input");
 
-document.forms[3].addEventListener("submit", (ele) => {
+document.querySelector(".user-info").addEventListener("submit", (ele) => {
   orderFormInputs.forEach((e) => {
     if (e.value === "") {
       e.style.borderColor = "red";
@@ -239,10 +165,14 @@ document.forms[3].addEventListener("submit", (ele) => {
       e.style.borderColor = "#ccc";
     }
   });
-});
-const creditFormInputs = document.forms[4].querySelectorAll("input");
 
-document.forms[4].addEventListener("submit", (ele) => {
+  if (orders.innerHTML == 0) ele.preventDefault();
+});
+const creditFormInputs = document
+  .querySelector(".user-detailes")
+  .querySelectorAll("input");
+
+document.querySelector(".user-detailes").addEventListener("submit", (ele) => {
   creditFormInputs.forEach((e) => {
     if (e.value === "") {
       e.style.borderColor = "red";
@@ -254,3 +184,167 @@ document.forms[4].addEventListener("submit", (ele) => {
 });
 
 //End Order Form Handle
+
+//Order Products Handel
+
+const itemsBox = document.querySelector(".items");
+
+for (let i = 0; i < sessionStorage?.length; i++) {
+  if (!isNaN(sessionStorage.key(i))) {
+    const itemBox = document.createElement("div");
+    itemBox.className = "item-box";
+    itemBox.innerHTML = ` <form action="">
+                  <img class="item-img" src="${
+                    sessionStorage.getItem(sessionStorage.key(i)).split(",")[0]
+                  }" alt="" />
+                  <p class="item-name">${
+                    sessionStorage.getItem(sessionStorage.key(i)).split(",")[1]
+                  }</p>
+                  <p class="item-category">${
+                    sessionStorage.getItem(sessionStorage.key(i)).split(",")[3]
+                  }</p>
+                  <p class="item-price">${
+                    sessionStorage.getItem(sessionStorage.key(i)).split(",")[2]
+                  } <span>EGP</span></p>
+                  <input
+                    type="number"
+                    name="item-quantity"
+                    id="item-quantity"
+                    min="1"
+                    max="10"
+                    value="1"
+                  />
+                  <input
+                    type="checkbox"
+                    name="check-order"
+                    id="check-order"
+                    checked
+                  />
+                </form>`;
+    itemsBox.appendChild(itemBox);
+  }
+}
+
+//Start Orders Number Handel
+const checkBoxs = document.querySelectorAll(
+  ".item-box form input[type='checkbox']"
+);
+const orders = document.getElementById("orders-num");
+let counter = 0;
+orders.innerHTML = counter;
+checkBoxs.forEach((e) => {
+  e.addEventListener("click", (ele) => {
+    counter = 0;
+    checkBoxs.forEach((e) => {
+      if (e.checked === true) counter++;
+    });
+    orders.innerHTML = counter;
+  });
+});
+
+checkBoxs.forEach((e) => {
+  if (e.checked === true) counter++;
+});
+orders.innerHTML = counter;
+//End Orders Number Handel
+
+//Start Total Price Handel
+const itemPrice = document.querySelectorAll("item-price");
+const totalPrice = document.getElementById("total-price");
+const itemQuantity = document.querySelectorAll(
+  "input[name = 'item-quantity'] "
+);
+
+let total = 0;
+let count = 0;
+itemQuantity.forEach((e) => {
+  e.addEventListener("input", (ele) => {
+    total = 0;
+    count = ele.target.value;
+    checkBoxs.forEach((e) => {
+      e.addEventListener("click", (ele) => {
+        if (ele.target.checked === true)
+          total +=
+            +ele.target.parentNode.children[3].firstChild.textContent * +count;
+        else
+          total -=
+            +ele.target.parentNode.children[3].firstChild.textContent * +count;
+        if (total < 0) total = 0;
+        totalPrice.innerHTML = `${total.toFixed()} EG`;
+      });
+
+      if (e.checked === true)
+        total +=
+          e.parentNode.children[3].firstChild.textContent *
+          e.parentNode.children[4].value;
+      totalPrice.innerHTML = `${total.toFixed()} EG`;
+    });
+    count = 0;
+  });
+});
+
+checkBoxs.forEach((e) => {
+  e.addEventListener("click", (ele) => {
+    if (ele.target.checked === true)
+      total +=
+        +ele.target.parentNode.children[3].firstChild.textContent *
+        +ele.target.parentNode.children[4].value;
+    else
+      total -=
+        +ele.target.parentNode.children[3].firstChild.textContent *
+        +ele.target.parentNode.children[4].value;
+    if (total < 0) total = 0;
+    totalPrice.innerHTML = `${total.toFixed()} EG`;
+  });
+
+  if (e.checked === true)
+    total +=
+      e.parentNode.children[3].firstChild.textContent *
+      e.parentNode.children[4].value;
+  totalPrice.innerHTML = `${total.toFixed()} EG`;
+});
+
+//End Total Price Handel
+
+//Start Select Items
+
+const selectCheckBox = document.getElementById("select-all");
+
+checkBoxs.forEach((e) => {
+  e.addEventListener("click", () => {
+    if (orders.textContent == 0) selectCheckBox.checked = false;
+    else if (orders.textContent == checkBoxs.length)
+      selectCheckBox.checked = true;
+  });
+
+  selectCheckBox.addEventListener("click", () => {
+    total = 0;
+
+    //orders counter
+    counter = 0;
+    checkBoxs.forEach((e) => {
+      if (e.checked === true) counter++;
+    });
+    orders.innerHTML = counter;
+
+    if (selectCheckBox.checked) {
+      checkBoxs.forEach((box) => {
+        box.checked = true;
+      });
+    } else {
+      checkBoxs.forEach((box) => {
+        box.checked = false;
+      });
+    }
+
+    checkBoxs.forEach((e) => {
+      if (e.checked === true)
+        total +=
+          e.parentNode.children[3].firstChild.textContent *
+          e.parentNode.children[4].value;
+
+      totalPrice.innerHTML = `${total.toFixed()} EG`;
+    });
+  });
+});
+//End Select Items
