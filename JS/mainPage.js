@@ -75,7 +75,6 @@ stars.forEach((e) => {
     for (let i = +ele.currentTarget.getAttribute("data-set"); i > 0; i--) {
       stars.forEach((e) => {
         if (e.getAttribute("data-set") === `${i}`) {
-          console.log(i);
           e.classList.remove("fa-regular");
           e.classList.add("fa-solid");
         }
@@ -104,8 +103,6 @@ let allSections = [
 
 let allLinks = [...sideBarLinks, ...navBarLinks];
 let overlaySidebar = document.querySelector(".overlay-sidebar");
-
-console.log(landingDiv);
 
 overlaySidebar.addEventListener("click", () => {
   sideBar.classList.remove("side-bar-show");
@@ -420,6 +417,32 @@ atwl.forEach((e) => {
       wishlistPage.append(cloneProductBox);
       myCounter++;
     }
+
+    //products transitions to order page
+    buyNowBtn = document.querySelectorAll(".buy-now ");
+    buyNowBtn.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        removeProductInSessionStorage();
+        sessionStorage.setItem(
+          `${e.currentTarget.parentNode.parentNode.parentNode.id}`,
+          [
+            e.currentTarget.parentNode.parentNode.parentNode
+              .querySelector(".product-img img")
+              .getAttribute("src"),
+            e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+              ".product-name"
+            ).textContent,
+            e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+              ".product-price"
+            ).firstChild.textContent,
+            e.currentTarget.parentNode.parentNode.parentNode.getAttribute(
+              "data-set"
+            ),
+          ]
+        );
+      });
+    });
+    //products transitions to order page
 
     document.querySelectorAll(".buy-now a").forEach((link) => {
       link.addEventListener("click", function (event) {
@@ -739,25 +762,6 @@ function showNotification(header, body) {
 //Start Product Transfare To Order Page
 
 const buyAllBtn = document.querySelector(".buy-all-btn");
-const buyNowBtn = document.querySelectorAll(".buy-now ");
-
-buyNowBtn.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    removeProductInSessionStorage();
-    sessionStorage.setItem(`${e.currentTarget.id}`, [
-      e.currentTarget.parentNode.parentNode.parentNode
-        .querySelector(".product-img img")
-        .getAttribute("src"),
-      e.currentTarget.parentNode.parentNode.parentNode.querySelector(
-        ".product-name"
-      ).textContent,
-      e.currentTarget.parentNode.parentNode.parentNode.querySelector(
-        ".product-price"
-      ).firstChild.textContent,
-      e.currentTarget.parentNode.parentNode.parentNode.getAttribute("data-set"),
-    ]);
-  });
-});
 
 buyAllBtn.addEventListener("click", () => {
   const wishlistProducts = document.querySelectorAll(
@@ -768,14 +772,40 @@ buyAllBtn.addEventListener("click", () => {
   addProductInSessionStorage(wishlistProducts);
 });
 
-function removeProductInSessionStorage(products) {
-  for (let i = 0; i < sessionStorage?.length; i++) {
+function removeProductInSessionStorage() {
+  for (let i = 0; i < sessionStorage.length + 1; i++) {
     if (!isNaN(sessionStorage.key(i))) {
       sessionStorage.removeItem(sessionStorage.key(i));
     }
-    console.log(sessionStorage.key(i));
   }
 }
+
+buyNowBtn = document.querySelectorAll(".buy-now ");
+removeProductInSessionStorage();
+
+buyNowBtn.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    removeProductInSessionStorage();
+
+    sessionStorage.setItem(
+      `${e.currentTarget.parentNode.parentNode.parentNode.id}`,
+      [
+        e.currentTarget.parentNode.parentNode.parentNode
+          .querySelector(".product-img img")
+          .getAttribute("src"),
+        e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+          ".product-name"
+        ).textContent,
+        e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+          ".product-price"
+        ).firstChild.textContent,
+        e.currentTarget.parentNode.parentNode.parentNode.getAttribute(
+          "data-set"
+        ),
+      ]
+    );
+  });
+});
 
 function addProductInSessionStorage(products) {
   products.forEach((e) => {
@@ -788,19 +818,11 @@ function addProductInSessionStorage(products) {
   });
 }
 
-//End Product Transfare To Order Page
+let currentLocation = location.href;
+let _allSections = [aboutUsDiv, servicesDiv, testimonialsDiv, feedBackDiv];
 
-//start links handle
-
-// regex2 = /app\/$/;
-
-// console.log();
-// allSections.forEach((e) => {
-//   regex = /$/;
-//   if (e.getAttribute("data-set") === location.href.match(regex)) {
-//     e.style.display = "block";
-//     if (e.getAttribute("data-set") === "landing-on") e.style.display = "flex";
-//   } else {
-//     e.style.display = "none";
-//   }
-// });
+_allSections.forEach((e) => {
+  if (currentLocation.endsWith(`${e.getAttribute("data-set")}`))
+    e.style.display = "block";
+  else e.style.display = "none";
+});

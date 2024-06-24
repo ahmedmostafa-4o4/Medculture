@@ -4,24 +4,20 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow: hidden;
+    perspective: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .bg {
     position: relative;
     width: 100%;
     height: 100vh;
-
 }
 
-.bg::before {
-    content: "";
-    position: absolute;
-    top: 40px;
-    right: 200px;
-    width: 200px;
-    height: 100px;
-
-}
 
 .parent {
     position: absolute;
@@ -46,6 +42,38 @@ body {
     -o-border-radius: 30px;
 }
 
+@media not all and (min-width:800px) {
+    .parent {
+        position: initial;
+        background-color: transparent;
+        width: 370px;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+        transform-origin: center center;
+        transform-style: preserve-3d;
+    }
+
+
+    .rotate-on {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+    }
+
+    .rotate-off {
+        transform: rotateY(0);
+        -webkit-transform: rotateY(0);
+        -moz-transform: rotateY(0);
+        -ms-transform: rotateY(0);
+        -o-transform: rotateY(0);
+    }
+}
+
 .parent form {
     width: 50%;
     height: 100%;
@@ -60,6 +88,19 @@ body {
     align-items: center;
 }
 
+@media not all and (min-width:800px) {
+    .parent .sign-in {
+        position: absolute;
+        z-index: -1;
+        width: 350px;
+        background-color: white;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+    }
+}
+
 .parent .sign-in label {
     align-self: flex-start;
     margin-left: 81px;
@@ -67,14 +108,23 @@ body {
     color: rgb(139 139 188);
 }
 
+form div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
 .parent .sign-in .pass-eye-in {
     position: absolute;
-    top: 60%;
-    right: 12%;
+    top: 10px;
+    right: calc(380px - 300px);
     cursor: pointer;
     color: rgb(139 139 188);
     z-index: 1;
 }
+
 
 .parent .sign-up {
     display: flex;
@@ -82,20 +132,42 @@ body {
     align-items: center;
 }
 
+@media not all and (min-width:800px) {
+    .parent .sign-up {
+        position: absolute;
+        width: 350px;
+        background-color: white;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+    }
+}
+
 .username-icon {
     position: absolute;
-    top: 39.8%;
+    top: 12px;
     font-size: 13px;
-    left: 61.5%;
+    left: 82px;
     color: rgb(139 139 188);
 }
 
+
+
+
 .password-icon {
     position: absolute;
-    top: 60%;
+    top: 12px;
     font-size: 13px;
-    left: 61.5%;
+    left: 82px;
     color: rgb(139 139 188);
+}
+
+@media not all and (min-width:800px) {
+
+    .password-icon,
+    .username-icon {
+        left: 75px;
+    }
 }
 
 .parent .sign-up .nameInput {
@@ -109,8 +181,8 @@ body {
 
 .parent .sign-up .pass-eye {
     position: absolute;
-    top: 50%;
-    left: 35%;
+    top: 10px;
+    right: calc(380px - 300px);
     cursor: pointer;
     color: rgb(139 139 188);
     z-index: 1;
@@ -199,6 +271,12 @@ body {
     z-index: 1000;
 }
 
+@media not all and (min-width:800px) {
+    .parent .landing {
+        display: none;
+    }
+}
+
 .parent .landing button {
     width: 50%;
     padding: 10px;
@@ -278,4 +356,22 @@ span {
     width: 200px;
     margin-top: 4px;
     display: none;
+}
+
+form p:last-child {
+    font-size: 12px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #2196f3;
+    display: none;
+    cursor: pointer;
+}
+
+@media not all and (min-width:800px) {
+    form p:last-child {
+        display: flex;
+    }
 }

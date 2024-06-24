@@ -23,27 +23,8 @@ overlaySidebar.addEventListener("click", () => {
   overlaySidebar.classList.remove("display");
 });
 
-//Start Product Description
-const productDes = document.querySelectorAll(".product-description");
-let desBox;
-let description;
-productDes.forEach((product) => {
-  product.addEventListener("mouseover", (element) => {
-    desBox = document.createElement("p");
-    desBox.className = "product-hover";
-    description = document.createTextNode(`${element.currentTarget.innerHTML}`);
-    desBox.append(description);
-    element.currentTarget.append(desBox);
-    product.addEventListener("mouseleave", (element) => {
-      desBox.remove();
-    });
-  });
-  product.addEventListener("mouseleave", (element) => {
-    desBox.remove();
-  });
-});
+let productDes;
 
-//End Product Description
 //Home Button Handel
 const sideBarBtns = document.querySelectorAll(".side-bar-drop-down-menu li a");
 const homeBtn = document.querySelector(".drop-icon");
@@ -107,7 +88,12 @@ let priceNode;
 
 const scrollBarLeftArrow = document.querySelector(".left-arrow");
 const scrollBarRightArrow = document.querySelector(".right-arrow");
+// const productsScrollBarLeftArrow = document.querySelector(".all-p .left-arrow");
+// const productsScrollBarRightArrow = document.querySelector(
+//   ".all-p .right-arrow"
+// );
 const scrollBar = document.querySelector(".departs");
+// const productsScrollBar = document.querySelector(".products");
 
 scrollBarLeftArrow.addEventListener("click", function () {
   scrollBar.scrollLeft -= 70;
@@ -116,6 +102,13 @@ scrollBarLeftArrow.addEventListener("click", function () {
 scrollBarRightArrow.addEventListener("click", function () {
   scrollBar.scrollLeft += 70;
 });
+// productsScrollBarLeftArrow.addEventListener("click", function () {
+//   productsScrollBar.scrollLeft -= 140;
+// });
+
+// productsScrollBarRightArrow.addEventListener("click", function () {
+//   productsScrollBar.scrollLeft += 140;
+// });
 
 let mainPage = document.querySelector(".main");
 let accountPage = document.querySelector(".account-page");
@@ -123,7 +116,6 @@ let accountPage = document.querySelector(".account-page");
 function openAccountPage() {
   mainPage.style.display = "none";
   accountPage.style.display = "flex";
-  console.log("Opened");
 }
 
 function back() {
@@ -253,7 +245,7 @@ const atwl = document.querySelectorAll(".atwl i");
 const wishlistPage = document.querySelector(".wish-list-page");
 const alertBtn = document.querySelector(".user-wishlist span");
 const userAlert = document.querySelector(".red-alert");
-
+let buyNowBtn = document.querySelectorAll(".buy-now ");
 let counter = 0;
 
 if (counter === 0) {
@@ -292,7 +284,33 @@ atwl.forEach((e) => {
       wishlistPage.append(cloneProductBox);
       counter++;
     }
+    //products transitions to order page
+    buyNowBtn = document.querySelectorAll(".buy-now ");
+    // buyNowBtn.forEach((button) => {
+    //   button.addEventListener("click", (e) => {
+    //     removeProductInSessionStorage();
+    //     sessionStorage.setItem(
+    //       `${e.currentTarget.parentNode.parentNode.parentNode.id}`,
+    //       [
+    //         e.currentTarget.parentNode.parentNode.parentNode
+    //           .querySelector(".product-img img")
+    //           .getAttribute("src"),
+    //         e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+    //           ".product-name"
+    //         ).textContent,
+    //         e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+    //           ".product-price"
+    //         ).firstChild.textContent,
+    //         e.currentTarget.parentNode.parentNode.parentNode.getAttribute(
+    //           "data-set"
+    //         ),
+    //       ]
+    //     );
 
+    //     productDes = document.querySelectorAll(".product-description");
+    //   });
+    // });
+    //products transitions to order page
     document.querySelectorAll(".buy-now a").forEach((link) => {
       link.addEventListener("click", function (event) {
         showLoadingOverlay();
@@ -301,20 +319,15 @@ atwl.forEach((e) => {
     removeProduct(ele.currentTarget);
 
     if (counter === 0) {
-      console.log("true");
       userAlert.style.display = "none";
       alertBtn.style.display = "none";
     } else {
-      console.log("false");
-
       userAlert.style.display = "block";
 
       alertBtn.style.display = "block";
     }
   });
 });
-
-console.log(counter);
 
 function removeProduct(starIcon) {
   const removeSavedProduct = document.querySelectorAll(".rm-btn");
@@ -338,6 +351,28 @@ function removeProduct(starIcon) {
   });
 }
 
+//Start Product Description
+productDes = document.querySelectorAll(".product-description");
+let desBox;
+let description;
+productDes.forEach((product) => {
+  product.addEventListener("mouseover", (element) => {
+    desBox = document.createElement("p");
+    desBox.className = "product-hover";
+    description = document.createTextNode(`${element.currentTarget.innerHTML}`);
+    desBox.append(description);
+    element.currentTarget.append(desBox);
+    product.addEventListener("mouseleave", (element) => {
+      desBox.remove();
+    });
+  });
+  product.addEventListener("mouseleave", (element) => {
+    desBox.remove();
+  });
+});
+
+//End Product Description
+
 // Categories
 
 const categories = document.querySelectorAll(".departs div");
@@ -345,12 +380,12 @@ const productDivs = document.querySelectorAll(".product-holder");
 categories.forEach((e) => {
   e.addEventListener("click", (ele) => {
     productDivs.forEach((e) => {
-      console.log(e);
-
       if (
         e.getAttribute("data-set") ===
         ele.currentTarget.getAttribute("data-set")
       ) {
+        e.style.display = "flex";
+      } else if (ele.currentTarget.getAttribute("data-set") === "All") {
         e.style.display = "flex";
       } else {
         e.style.display = "none";
@@ -671,25 +706,6 @@ window.addEventListener("pageshow", function (event) {
 //Product Transfare To Order Page
 
 const buyAllBtn = document.querySelector(".buy-all-btn");
-const buyNowBtn = document.querySelectorAll(".buy-now ");
-
-buyNowBtn.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    removeProductInSessionStorage();
-    sessionStorage.setItem(`${e.currentTarget.id}`, [
-      e.currentTarget.parentNode.parentNode.parentNode
-        .querySelector(".product-img img")
-        .getAttribute("src"),
-      e.currentTarget.parentNode.parentNode.parentNode.querySelector(
-        ".product-name"
-      ).textContent,
-      e.currentTarget.parentNode.parentNode.parentNode.querySelector(
-        ".product-price"
-      ).firstChild.textContent,
-      e.currentTarget.parentNode.parentNode.parentNode.getAttribute("data-set"),
-    ]);
-  });
-});
 
 buyAllBtn.addEventListener("click", () => {
   const wishlistProducts = document.querySelectorAll(
@@ -700,12 +716,35 @@ buyAllBtn.addEventListener("click", () => {
   addProductInSessionStorage(wishlistProducts);
 });
 
+buyNowBtn.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    removeProductInSessionStorage();
+
+    sessionStorage.setItem(
+      `${e.currentTarget.parentNode.parentNode.parentNode.id}`,
+      [
+        e.currentTarget.parentNode.parentNode.parentNode
+          .querySelector(".product-img img")
+          .getAttribute("src"),
+        e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+          ".product-name"
+        ).textContent,
+        e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+          ".product-price"
+        ).firstChild.textContent,
+        e.currentTarget.parentNode.parentNode.parentNode.getAttribute(
+          "data-set"
+        ),
+      ]
+    );
+  });
+});
+
 function removeProductInSessionStorage(products) {
   for (let i = 0; i < sessionStorage?.length; i++) {
     if (!isNaN(sessionStorage.key(i))) {
       sessionStorage.removeItem(sessionStorage.key(i));
     }
-    console.log(sessionStorage.key(i));
   }
 }
 

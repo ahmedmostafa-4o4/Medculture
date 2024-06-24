@@ -59,7 +59,9 @@ nav a h1 {
     width: 100%;
 }
 
-.main .items-holder .items .item-box form {
+form {}
+
+.item-box {
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -72,6 +74,10 @@ nav a h1 {
     -o-border-radius: 5px;
     padding: 10px;
     margin-bottom: 20px;
+}
+
+.item-box input:first-child {
+    width: 20px;
 }
 
 .main .items-holder .items .item-box img {
@@ -90,7 +96,7 @@ nav a h1 {
 }
 
 
-.main .items-holder .items .item-box form input[type="number"] {
+form input[type="number"] {
     width: 50px;
     text-align: center;
     padding: 5px;
@@ -102,11 +108,11 @@ nav a h1 {
     -o-transition: 0.5s;
 }
 
-.main .items-holder .items .item-box form input[type="number"]:hover {
+form input[type="number"]:hover {
     outline: 2px solid #ccc;
 }
 
-.main .items-holder .items .item-box form input[type="checkbox"] {
+form input[type="checkbox"] {
     width: 20px;
     height: 20px;
 }
@@ -163,10 +169,16 @@ nav a h1 {
 .orders-and-price {
     display: flex;
     justify-content: space-around;
+    width: 100%;
 }
 
 .orders-and-price>div {
     text-align: center;
+}
+
+.orders-and-price>div input {
+    text-align: center;
+    width: 100px;
 }
 
 .orders-and-price>div h1 {
@@ -177,20 +189,21 @@ nav a h1 {
     font-size: 20px;
 }
 
-.order-side-bar form {
+form {
     margin-top: 20px;
 }
 
-.order-side-bar form>div {
+.full-name,
+.address,
+.phone-number {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
     gap: 5px;
 }
 
-.order-side-bar form>div label {}
 
-.order-side-bar form>div input {
+.detailes input {
     border: 1px solid #ccc;
     padding: 6px;
     border-radius: 6px;
@@ -200,26 +213,26 @@ nav a h1 {
     -o-border-radius: 6px;
 }
 
-.order-side-bar form>div input:focus,
-.order-side-bar form>div input:hover {
+.detailes input:focus,
+.detailes input:hover {
     outline: 1px solid #bdbcbc;
 }
 
-.order-side-bar form .payment-method {
+.order-side-bar .payment-method {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-.order-side-bar form .payment-method h1 {
+.order-side-bar .payment-method h1 {
     font-size: 20px;
 }
 
-.order-side-bar form .payment-method div {
+.order-side-bar .payment-method div {
     margin-bottom: 10px;
 }
 
-.order-side-bar form button {
+.order-side-bar button {
     width: 100%;
     padding: 20px;
     background-color: var(--Dark-blue);
@@ -236,7 +249,7 @@ nav a h1 {
     -o-transition: 0.5s;
 }
 
-.order-side-bar form button:hover {
+.order-side-bar button:hover {
     opacity: 0.9;
 }
 
@@ -456,15 +469,18 @@ nav a h1 {
 .payment-details .user-detailes {
     width: 100%;
     margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    background-color: transparent
 }
 
-.payment-details .user-detailes div {
+.user-detailes div {
     margin-bottom: 30px;
     position: relative;
     background-color: transparent;
 }
 
-.payment-details .user-detailes div p {
+.user-detailes p {
     position: absolute;
     top: 0px;
     left: 5px;
@@ -477,14 +493,14 @@ nav a h1 {
     -o-transition: 0.5s;
 }
 
-.payment-details .user-detailes div input {
+.user-detailes input {
     border-bottom: 1px solid blue;
     width: 100%;
     padding: 3px 6px;
     background-color: transparent;
 }
 
-.payment-details .user-detailes div input:focus {
+.user-detailes input:focus {
     outline: none;
 }
 
@@ -500,16 +516,16 @@ nav a h1 {
 
 }
 
-.payment-details .user-detailes .date-cvv {
+.payment-details .date-cvv {
     display: flex;
     justify-content: space-between;
 }
 
-.payment-details .user-detailes .date-cvv div {
+.payment-details .date-cvv div {
     width: 45%;
 }
 
-.payment-details .user-detailes button {
+.payment-details #credit-btn {
     display: block;
     padding: 10px;
     background: linear-gradient(60deg, var(--Dark-blue), rgb(36, 145, 247));
@@ -523,6 +539,8 @@ nav a h1 {
     -o-border-radius: 5px;
     color: white;
     font-weight: bold;
+    text-align: center;
+    cursor: pointer;
 }
 
 .credit-card-page .arrow {

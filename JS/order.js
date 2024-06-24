@@ -32,18 +32,6 @@ blackBg.addEventListener("click", (ele) => {
   creditPage.style.display = "none";
 });
 
-paymentForm.addEventListener("submit", (e) => {
-  radioInput.forEach((ele) => {
-    if (ele.checked === true && ele.getAttribute("name") === "credit-card") {
-      blackBg.style.display = "block";
-      creditPage.style.display = "flex";
-      e.preventDefault();
-    } else {
-      return 1;
-    }
-  });
-});
-
 const inputPlaceHolder = document.querySelectorAll(
   ".payment-details .user-detailes div p"
 );
@@ -154,31 +142,57 @@ cardExpireDate.addEventListener("input", (e) => {
 
 const orderFormInputs = document
   .querySelector(".user-info")
-  .querySelectorAll("input");
+  .querySelectorAll("input:not(.user-detailes input)");
 
 document.querySelector(".user-info").addEventListener("submit", (ele) => {
   orderFormInputs.forEach((e) => {
     if (e.value === "") {
       e.style.borderColor = "red";
       ele.preventDefault();
+      return;
     } else {
       e.style.borderColor = "#ccc";
     }
   });
 
-  if (orders.innerHTML == 0) ele.preventDefault();
+  if (orders.value == 0) {
+    ele.preventDefault();
+    return;
+  }
 });
 const creditFormInputs = document
   .querySelector(".user-detailes")
   .querySelectorAll("input");
 
-document.querySelector(".user-detailes").addEventListener("submit", (ele) => {
+let flag = 0;
+
+document.getElementById("credit-btn").addEventListener("click", (ele) => {
   creditFormInputs.forEach((e) => {
     if (e.value === "") {
       e.style.borderColor = "red";
-      ele.preventDefault();
+      blackBg.style.display = "block";
+      creditPage.style.display = "flex";
+      flag = 0;
     } else {
       e.style.borderColor = "#ccc";
+      blackBg.style.display = "none";
+      creditPage.style.display = "none";
+      flag = 1;
+    }
+  });
+  console.log("clicked");
+});
+
+paymentForm.addEventListener("submit", (e) => {
+  radioInput.forEach((ele) => {
+    if (
+      ele.checked === true &&
+      ele.getAttribute("name") === "credit-card" &&
+      flag === 0
+    ) {
+      blackBg.style.display = "block";
+      creditPage.style.display = "flex";
+      e.preventDefault();
     }
   });
 });
@@ -193,7 +207,13 @@ for (let i = 0; i < sessionStorage?.length; i++) {
   if (!isNaN(sessionStorage.key(i))) {
     const itemBox = document.createElement("div");
     itemBox.className = "item-box";
-    itemBox.innerHTML = ` <form action="">
+    itemBox.innerHTML = ` 
+        <input
+                    type="hidden"
+                    name="product-id"
+                    value="${sessionStorage.key(i)}"
+                    
+                  />
                   <img class="item-img" src="${
                     sessionStorage.getItem(sessionStorage.key(i)).split(",")[0]
                   }" alt="" />
@@ -220,32 +240,30 @@ for (let i = 0; i < sessionStorage?.length; i++) {
                     id="check-order"
                     checked
                   />
-                </form>`;
+                `;
     itemsBox.appendChild(itemBox);
   }
 }
 
 //Start Orders Number Handel
-const checkBoxs = document.querySelectorAll(
-  ".item-box form input[type='checkbox']"
-);
+const checkBoxs = document.querySelectorAll(".item-box input[type='checkbox']");
 const orders = document.getElementById("orders-num");
 let counter = 0;
-orders.innerHTML = counter;
+orders.value = counter;
 checkBoxs.forEach((e) => {
   e.addEventListener("click", (ele) => {
     counter = 0;
     checkBoxs.forEach((e) => {
       if (e.checked === true) counter++;
     });
-    orders.innerHTML = counter;
+    orders.value = counter;
   });
 });
 
 checkBoxs.forEach((e) => {
   if (e.checked === true) counter++;
 });
-orders.innerHTML = counter;
+orders.value = counter;
 //End Orders Number Handel
 
 //Start Total Price Handel
@@ -265,19 +283,19 @@ itemQuantity.forEach((e) => {
       e.addEventListener("click", (ele) => {
         if (ele.target.checked === true)
           total +=
-            +ele.target.parentNode.children[3].firstChild.textContent * +count;
+            +ele.target.parentNode.children[4].firstChild.textContent * +count;
         else
           total -=
-            +ele.target.parentNode.children[3].firstChild.textContent * +count;
+            +ele.target.parentNode.children[4].firstChild.textContent * +count;
         if (total < 0) total = 0;
-        totalPrice.innerHTML = `${total.toFixed()} EG`;
+        totalPrice.value = `${total.toFixed()} EG`;
       });
 
       if (e.checked === true)
         total +=
-          e.parentNode.children[3].firstChild.textContent *
-          e.parentNode.children[4].value;
-      totalPrice.innerHTML = `${total.toFixed()} EG`;
+          e.parentNode.children[4].firstChild.textContent *
+          e.parentNode.children[5].value;
+      totalPrice.value = `${total.toFixed()} EG`;
     });
     count = 0;
   });
@@ -287,21 +305,21 @@ checkBoxs.forEach((e) => {
   e.addEventListener("click", (ele) => {
     if (ele.target.checked === true)
       total +=
-        +ele.target.parentNode.children[3].firstChild.textContent *
-        +ele.target.parentNode.children[4].value;
+        +ele.target.parentNode.children[4].firstChild.textContent *
+        +ele.target.parentNode.children[5].value;
     else
       total -=
-        +ele.target.parentNode.children[3].firstChild.textContent *
-        +ele.target.parentNode.children[4].value;
+        +ele.target.parentNode.children[4].firstChild.textContent *
+        +ele.target.parentNode.children[5].value;
     if (total < 0) total = 0;
-    totalPrice.innerHTML = `${total.toFixed()} EG`;
+    totalPrice.value = `${total.toFixed()} EG`;
   });
 
   if (e.checked === true)
     total +=
-      e.parentNode.children[3].firstChild.textContent *
-      e.parentNode.children[4].value;
-  totalPrice.innerHTML = `${total.toFixed()} EG`;
+      e.parentNode.children[4].firstChild.textContent *
+      e.parentNode.children[5].value;
+  totalPrice.value = `${total.toFixed()} EG`;
 });
 
 //End Total Price Handel
@@ -312,9 +330,8 @@ const selectCheckBox = document.getElementById("select-all");
 
 checkBoxs.forEach((e) => {
   e.addEventListener("click", () => {
-    if (orders.textContent == 0) selectCheckBox.checked = false;
-    else if (orders.textContent == checkBoxs.length)
-      selectCheckBox.checked = true;
+    if (orders.value == 0) selectCheckBox.checked = false;
+    else if (orders.value == checkBoxs.length) selectCheckBox.checked = true;
   });
 
   selectCheckBox.addEventListener("click", () => {
@@ -325,7 +342,7 @@ checkBoxs.forEach((e) => {
     checkBoxs.forEach((e) => {
       if (e.checked === true) counter++;
     });
-    orders.innerHTML = counter;
+    orders.value = counter;
 
     if (selectCheckBox.checked) {
       checkBoxs.forEach((box) => {
@@ -340,10 +357,10 @@ checkBoxs.forEach((e) => {
     checkBoxs.forEach((e) => {
       if (e.checked === true)
         total +=
-          e.parentNode.children[3].firstChild.textContent *
-          e.parentNode.children[4].value;
+          e.parentNode.children[4].firstChild.textContent *
+          e.parentNode.children[5].value;
 
-      totalPrice.innerHTML = `${total.toFixed()} EG`;
+      totalPrice.value = `${total.toFixed()} EG`;
     });
   });
 });

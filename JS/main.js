@@ -151,3 +151,17 @@ if (localStorage.getItem("State") === "signed") {
   location.assign("../Pages/Index.html");
 }
 //End State Handling
+
+//Start Mobile Screen Animation
+
+const signIn = document.querySelector(".sign-in-btn");
+const signUp = document.querySelector(".sign-up-btn");
+const parentDiv = document.querySelector(".parent");
+signIn.addEventListener("click", () => {
+  parentDiv.classList.replace("rotate-off", "rotate-on");
+});
+signUp.addEventListener("click", () => {
+  parentDiv.classList.replace("rotate-on", "rotate-off");
+});
+
+//End Mobile Screen Animation

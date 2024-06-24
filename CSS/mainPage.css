@@ -239,10 +239,12 @@ ul {
     background: none;
 }
 
-
+.user-info {
+    right: -100px;
+}
 
 .user-info::before {
-    left: 135px;
+    left: 150px;
 }
 
 .main-bg {
@@ -1550,7 +1552,7 @@ ul {
     justify-items: center;
 }
 
-.about-us-content .team-members .cards div {
+.about-us-content .team-members .cards>div {
     width: 200px;
     height: 300px;
     background-color: #ccc;
@@ -1559,7 +1561,121 @@ ul {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    position: relative;
 }
+
+.team-members .cards div .member-name {
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    z-index: 9;
+}
+
+.member-name .name {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.member-name .role {
+    color: white;
+
+    font-size: 15px;
+}
+
+.team-members .cards>div {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+
+.team-members .cards>div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.514);
+    z-index: 1;
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+}
+
+.team-members .cards>div:nth-child(1) {
+    background-image: url('../Images/Team\ Members/Ahmed\ Mostafa.jpg');
+}
+
+.team-members .cards>div:nth-child(3) {
+    background-image: url('../Images/Team\ Members/Mohammed\ Elsayed.jpg');
+}
+
+.team-members .cards>div:nth-child(2) {
+    background-image: url('../Images/Team\ Members/Amr\ Soliman.jpg');
+}
+
+.team-members .cards>div:nth-child(4) {
+    background-image: url('../Images/Team\ Members/Rana.jpg');
+}
+
+.team-members .cards>div:nth-child(5) {
+    background-image: url('../Images/Team\ Members/Amina.jpg');
+}
+
+.team-members .cards>div:nth-child(6) {
+    background-image: url('../Images/Team\ Members/Shahd\ Hany.jpg');
+}
+
+.team-members .cards>div:nth-child(7) {
+    background-image: url('../Images/Team\ Members/Hadeer\ Yasser.jpg');
+}
+
+.team-members .cards>div:nth-child(8) {
+    background-image: url('../Images/Team\ Members/Maria.jpg');
+}
+
+.team-members .cards>div:nth-child(9) {
+    background-image: url('../Images/Team\ Members/Mohammed\ Ashery.jpg');
+}
+
+.team-members .cards>div:nth-child(10) {
+    background-image: url('../Images/Team\ Members/Shahd\ Mohammed.jpg');
+}
+
+.team-members .cards>div:nth-child(11) {
+    background-image: url('../Images/Team\ Members/Shaimaa.jpg');
+}
+
+.team-members .cards>div:nth-child(12) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.team-members .cards>div:nth-child(12) .member-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.team-members .cards>div:nth-child(12) .member-name p {}
 
 .about-us-content .branding {
     width: 100%;

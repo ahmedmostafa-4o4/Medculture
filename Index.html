@@ -12,28 +12,32 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="bg"></div>
-    <div class="parent">
+    <div class="parent rotate-off">
       <form action="" class="sign-in">
         <h1>Sign in</h1>
         <label for="user-name-field">Email</label>
-        <i class="fa-regular fa-user username-icon"></i>
-        <input
-          type="email"
-          placeholder="Type your email"
-          id="user-name-field"
-        />
+        <div>
+          <i class="fa-regular fa-user username-icon"></i>
+          <input
+            type="email"
+            placeholder="Type your email"
+            id="user-name-field"
+          />
+        </div>
         <span id="emailSignIn-span">This Email Doesn't Exist!</span>
         <label for="password-field">Password</label>
-        <i class="fa-solid fa-lock password-icon"></i>
-        <input
-          type="password"
-          placeholder="Type your password"
-          id="password-field"
-        />
-        <i class="fa-regular fa-eye pass-eye-in"></i>
+        <div>
+          <i class="fa-solid fa-lock password-icon"></i>
+          <input
+            type="password"
+            placeholder="Type your password"
+            id="password-field"
+          />
+          <i class="fa-regular fa-eye pass-eye-in"></i>
+        </div>
         <span id="passwordSignIn-span">Wrong Password, Try again</span>
         <button id="btn">Login</button>
+        <p class="sign-up-btn">Sign up</p>
       </form>
       <div class="landing">
         <div class="links">
@@ -70,16 +74,18 @@
         </div>
         <input type="email" placeholder="Enter your email" id="sign-up-email" />
         <span id="emailSignUp-span">This email already exist!</span>
-        <input
-          type="password"
-          placeholder="Enter your password"
-          id="sign-up-password"
-        />
-        <span id="passwordSignUp-span"
-          >Minimum 8 characters, both lower and upper case Must include symbols
-          Must include numbers.
-        </span>
-        <i class="fa-regular fa-eye pass-eye"></i>
+        <div>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            id="sign-up-password"
+          />
+          <span id="passwordSignUp-span"
+            >Minimum 8 characters, both lower and upper case Must include
+            symbols Must include numbers.
+          </span>
+          <i class="fa-regular fa-eye pass-eye"></i>
+        </div>
         <input
           type="password"
           placeholder="Confirm password"
@@ -87,6 +93,7 @@
         />
         <span id="confirm-span">Type your password correctly!</span>
         <button>Sign up</button>
+        <p class="sign-in-btn">Sign in</p>
       </form>
     </div>
     <script src="./JS/PageJS.js" type="module"></script>
