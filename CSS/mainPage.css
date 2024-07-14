@@ -1609,6 +1609,7 @@ ul {
     -o-border-radius: inherit;
 }
 
+/* 
 .team-members .cards>div:nth-child(1) {
     background-image: url('../Images/Team\ Members/Ahmed\ Mostafa.jpg');
 }
@@ -1651,7 +1652,7 @@ ul {
 
 .team-members .cards>div:nth-child(11) {
     background-image: url('../Images/Team\ Members/Shaimaa.jpg');
-}
+} */
 
 .team-members .cards>div:nth-child(12) {
     display: flex;
@@ -1675,7 +1676,7 @@ ul {
     width: 100%;
 }
 
-.team-members .cards>div:nth-child(12) .member-name p {}
+.team-members .cards>div:nth-child(12) .member-name p {}
 
 
 
