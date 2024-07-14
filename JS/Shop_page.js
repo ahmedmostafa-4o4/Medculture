@@ -209,30 +209,30 @@ dropDownMenuBtns.forEach(function (e) {
   });
 });
 
-const alarmBtn = document.querySelector(".notification");
+// const alarmBtn = document.querySelector(".notification");
 
-alarmBtn.addEventListener("click", (ele) => {
-  sideBarbtns.forEach(function (element) {
-    element.classList.remove("active");
-    if (
-      ele.currentTarget.getAttribute("data-set") ===
-      element.getAttribute("data-set")
-    ) {
-      element.classList.add("active");
-    }
-  });
-  rightPages.forEach(function (e) {
-    if (
-      e.getAttribute("data-set") === ele.currentTarget.getAttribute("data-set")
-    ) {
-      openAccountPage();
-      e.classList.remove("page-hidden");
-    } else {
-      openAccountPage();
-      e.classList.add("page-hidden");
-    }
-  });
-});
+// alarmBtn.addEventListener("click", (ele) => {
+//   sideBarbtns.forEach(function (element) {
+//     element.classList.remove("active");
+//     if (
+//       ele.currentTarget.getAttribute("data-set") ===
+//       element.getAttribute("data-set")
+//     ) {
+//       element.classList.add("active");
+//     }
+//   });
+//   rightPages.forEach(function (e) {
+//     if (
+//       e.getAttribute("data-set") === ele.currentTarget.getAttribute("data-set")
+//     ) {
+//       openAccountPage();
+//       e.classList.remove("page-hidden");
+//     } else {
+//       openAccountPage();
+//       e.classList.add("page-hidden");
+//     }
+//   });
+// });
 
 //Alarm Page
 
@@ -311,6 +311,18 @@ atwl.forEach((e) => {
     //   });
     // });
     //products transitions to order page
+
+    fetch("https://fakestoreapi.com/products/1")
+      .then((res) => res.json())
+      .then((json) => data(json));
+
+    function data(data) {
+      const d = data;
+      console.log(d);
+    }
+
+    data();
+
     document.querySelectorAll(".buy-now a").forEach((link) => {
       link.addEventListener("click", function (event) {
         showLoadingOverlay();

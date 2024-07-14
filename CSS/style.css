@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('/Images/Main\ Background.jpg');
+    background: linear-gradient(30deg, rgb(6, 33, 51) 30%, rgb(1, 60, 99) 50%, rgb(6, 33, 51) 100%);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -348,6 +348,29 @@ form div {
 .landing .links .github:hover,
 .landing .links .twitter:hover {
     color: black;
+}
+
+.landing>div {
+    display: flex;
+    width: 100%;
+    gap: 55px;
+}
+
+.landing>div h1 {
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+
+.landing>div span {
+
+
+    margin: 0 auto;
+    display: block;
+    color: #00e1ff;
+    font-size: 50px;
+    width: fit-content;
+
 }
 
 span {

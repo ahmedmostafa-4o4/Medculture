@@ -1,24 +1,24 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../CSS/all.min.css" />
-    <link rel="stylesheet" href="../CSS/output.css" />
-    <link rel="stylesheet" href="../CSS/Shop_Page.css" />
-
-    <link rel="stylesheet" href="../CSS/mainPage.css" />
-    <link rel="stylesheet" href="../CSS/normalize.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../CSS/all.min.css" rel="stylesheet" />
+    <link href="../CSS/output.css" rel="stylesheet" />
+    <link href="../CSS/Shop_Page.css" rel="stylesheet" />
+    <link href="../CSS/mainPage.css" rel="stylesheet" />
+    <link href="../CSS/normalize.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="../Images/Logo.jpg" />
+    <link href="../Images/Logo.jpg" rel="icon" />
     <link
-      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      rel="stylesheet"
     />
     <title>Med Culture</title>
   </head>
@@ -42,14 +42,17 @@
             <i class="fa-solid fa-bars-staggered" id="side-bar-open-btn"></i>
             <div class="side-bar">
               <div class="logo-side">
-                <a href="" class="linkedPage"
+                <a
+                  href="./mainPage.html"
+                  class="linkedPage back-to-home"
+                  data-set="landing-on"
                   ><span class="med">Med</span>Culture</a
                 >
               </div>
               <ul class="side-bar-links">
                 <li class="side-bar-dropped-menu">
                   <a
-                    href="#3084"
+                    href="./mainPage.html"
                     class="drop-icon block mb-1 w-fit"
                     data-set="landing-on"
                     >Home
@@ -59,9 +62,7 @@
                   >
                 </li>
                 <li>
-                  <a href="../Pages/Shop_Page.html" class="linkedPage"
-                    >Shop Now</a
-                  >
+                  <a class="linkedPage" href="./Shop_Page.html">Shop Now</a>
                 </li>
                 <li><a href="#services" data-set="services">Services</a></li>
                 <li>
@@ -71,13 +72,13 @@
                 </li>
                 <li><a href="#about-us" data-set="about-us">About Us</a></li>
                 <li>
-                  <a href="#feed-back" data-set="feed-back">Feedback</a>
+                  <a href="#feed-back" data-set="feed-back">Contact us</a>
                 </li>
               </ul>
               <i class="fa-solid fa-xmark" id="side-bar-close-btn"></i>
             </div>
           </div>
-          <div class="logo">
+          <div class="logo back-to-home">
             <a href="" data-set="landing-on" class="linkedPage"
               ><span class="med">Med</span>Culture</a
             >
@@ -88,7 +89,7 @@
               <a href="" class="drop-icon" data-set="landing-on">Home </a>
             </li>
             <li>
-              <a href="../Pages/Shop_Page.html" class="linkedPage">Shop Now</a>
+              <a class="linkedPage" href="./Shop_Page.html">Shop Now</a>
             </li>
             <li><a href="#about-us" data-set="about-us">About Us</a></li>
             <li><a href="#services" data-set="services">Services</a></li>
@@ -96,20 +97,26 @@
               <a href="#testimonials" data-set="testimonials">Testimonials</a>
             </li>
             <li>
-              <a href="#feed-back" data-set="feed-back">Feedback</a>
+              <a href="#feed-back" data-set="feed-back">Contact us</a>
             </li>
           </ul>
 
-          <!-- <div class="logs">
-            <button class="log-in-btn">Log in</button>
-            <button class="sign-up-btn">Sign up</button>
-          </div> -->
-          <div class="user-btn" style="margin-left: 70px">
+          <div class="user-btn" style="margin-left: 70px; margin-right: 0">
             <span class="red-alert"></span>
-            <span>A</span>
+
+            <img
+              alt=""
+              src="../Images/Team Members/Ahmed Mostafa.jpg"
+              style="border-radius: 50%"
+            />
+
             <div class="user-info" style="right: -20px">
               <div class="user-img">
-                <span>A</span>
+                <img
+                  alt=""
+                  src="../Images/Team Members/Ahmed Mostafa.jpg"
+                  style="border-radius: 50%"
+                />
               </div>
               <p class="user-name">Ahmed Mostafa</p>
 
@@ -138,7 +145,11 @@
               </div>
               <div class="log-out">
                 <i class="fa-solid fa-right-from-bracket"></i>
-                <p>Log out</p>
+                <p>
+                  <a href="../Index.html" style="width: 100%; height: 100%"
+                    >Log out</a
+                  >
+                </p>
               </div>
             </div>
           </div>
@@ -166,12 +177,12 @@
               Get Your Medications Delivered Fast and Easy
             </p>
             <button class="shop-now-btn">
-              <a href="../Pages/Shop_Page.html" class="linkedPage">Shop now</a>
+              <a class="linkedPage" href="./Shop_Page.html">Shop now</a>
               <i class="fa-solid fa-arrow-right"></i>
             </button>
           </div>
           <div class="social-links">
-            <a href="#" class="facebook"
+            <a href="javascript:void(0)" class="facebook"
               ><i class="fa-brands fa-square-facebook"></i
             ></a>
             <a href="#" class="instgram"
@@ -194,79 +205,41 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <!-- Slides -->
+
               <div class="swiper-slide">
-                <div data-set="" class="product-holder slider-product" id="1">
+                <div
+                  data-set="Medicin"
+                  class="product-holder slider-product"
+                  id="1"
+                >
                   <div class="product-img">
-                    <img src="" alt="" />
+                    <img
+                      alt=""
+                      src="../Images/arrangement-medical-desk-with-copy-space.jpg"
+                    />
                   </div>
+
                   <div class="product-details">
-                    <p class="product-name">Morfen</p>
+                    <p class="product-name">TEST</p>
                     <p class="product-description">
-                      Morphine is a non-synthetic narcotic with a high potential
-                      for abuse and is derived from opium. It is used for the
-                      treatment of pain
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Odit illo, consequatur corrupti perspiciatis voluptas
+                      aperiam, laboriosam officia nemo minima omnis, rem
+                      recusandae cum mollitia aliquid voluptatibus
+                      exercitationem nam cupiditate commodi.
                     </p>
                     <span class="product-price">30.99 <span>EGP</span></span>
                     <div class="btns">
-                      <button class="atwl">
+                      <button class="atwl" data-product-id="{{ product.id }}">
                         <i class="fa-regular fa-star"></i>
                       </button>
                       <button class="buy-now">
-                        <a href="../Pages/order.html">Buy Now</a>
+                        <a href="./order.html">Buy Now</a>
                       </button>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide">
-                <div data-set="" class="product-holder slider-product" id="2">
-                  <div class="product-img">
-                    <img src="" alt="" />
-                  </div>
-                  <div class="product-details">
-                    <p class="product-name">Morfen</p>
-                    <p class="product-description">
-                      Morphine is a non-synthetic narcotic with a high potential
-                      for abuse and is derived from opium. It is used for the
-                      treatment of pain
-                    </p>
-                    <span class="product-price">30.99 <span>EGP</span></span>
-                    <div class="btns">
-                      <button class="atwl">
-                        <i class="fa-regular fa-star"></i>
-                      </button>
-                      <button class="buy-now">
-                        <a href="../Pages/order.html">Buy Now</a>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div data-set="" class="product-holder slider-product" id="3">
-                  <div class="product-img">
-                    <img src="" alt="" />
-                  </div>
-                  <div class="product-details">
-                    <p class="product-name">Morfen</p>
-                    <p class="product-description">
-                      Morphine is a non-synthetic narcotic with a high potential
-                      for abuse and is derived from opium. It is used for the
-                      treatment of pain
-                    </p>
-                    <span class="product-price">30.99 <span>EGP</span></span>
-                    <div class="btns">
-                      <button class="atwl">
-                        <i class="fa-regular fa-star"></i>
-                      </button>
-                      <button class="buy-now">
-                        <a href="../Pages/order.html">Buy Now</a>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              ...
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
@@ -286,79 +259,40 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <!-- Slides -->
+
               <div class="swiper-slide">
-                <div data-set="" class="product-holder slider-product" id="1">
+                <div
+                  data-set="Medicin"
+                  class="product-holder slider-product"
+                  id="1"
+                >
                   <div class="product-img">
-                    <img src="" alt="" />
+                    <img
+                      alt=""
+                      src="../Images/arrangement-medical-desk-with-copy-space.jpg"
+                    />
                   </div>
+
                   <div class="product-details">
-                    <p class="product-name">Morfen</p>
+                    <p class="product-name">TEST</p>
                     <p class="product-description">
-                      Morphine is a non-synthetic narcotic with a high potential
-                      for abuse and is derived from opium. It is used for the
-                      treatment of pain
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Cum aliquam itaque earum quia sit minima, quo, esse
+                      consectetur saepe assumenda nemo, eaque dolor beatae dicta
+                      alias vitae obcaecati nobis laboriosam!
                     </p>
                     <span class="product-price">30.99 <span>EGP</span></span>
                     <div class="btns">
-                      <button class="atwl">
+                      <button class="atwl" data-product-id="{{ product.id }}">
                         <i class="fa-regular fa-star"></i>
                       </button>
                       <button class="buy-now">
-                        <a href="../Pages/order.html">Buy Now</a>
+                        <a href="./order.html">Buy Now</a>
                       </button>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide">
-                <div data-set="" class="product-holder slider-product" id="2">
-                  <div class="product-img">
-                    <img src="" alt="" />
-                  </div>
-                  <div class="product-details">
-                    <p class="product-name">Morfen</p>
-                    <p class="product-description">
-                      Morphine is a non-synthetic narcotic with a high potential
-                      for abuse and is derived from opium. It is used for the
-                      treatment of pain
-                    </p>
-                    <span class="product-price">30.99 <span>EGP</span></span>
-                    <div class="btns">
-                      <button class="atwl">
-                        <i class="fa-regular fa-star"></i>
-                      </button>
-                      <button class="buy-now">
-                        <a href="../Pages/order.html">Buy Now</a>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div data-set="" class="product-holder slider-product" id="3">
-                  <div class="product-img">
-                    <img src="" alt="" />
-                  </div>
-                  <div class="product-details">
-                    <p class="product-name">Morfen</p>
-                    <p class="product-description">
-                      Morphine is a non-synthetic narcotic with a high potential
-                      for abuse and is derived from opium. It is used for the
-                      treatment of pain
-                    </p>
-                    <span class="product-price">30.99 <span>EGP</span></span>
-                    <div class="btns">
-                      <button class="atwl">
-                        <i class="fa-regular fa-star"></i>
-                      </button>
-                      <button class="buy-now">
-                        <a href="../Pages/order.html">Buy Now</a>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              ...
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
@@ -515,166 +449,18 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates, amet consequuntur. Hic similique illo libero a vitae
-                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Voluptates, amet consequuntur. Hic similique
-                illo libero a vitae doloremque esse incidunt.
-              </p>
-              <div class="p-img-name-holder">
-                <img src="../Images/image-daniel.jpg" alt="" />
-                <p>Ahmed Mostafa</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="stars text-yellow-400">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
               </div>
 
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates, amet consequuntur. Hic similique illo libero a vitae
-                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Voluptates, amet consequuntur. Hic similique
-                illo libero a vitae doloremque esse incidunt.
+                Voluptas id dolore culpa dicta optio aliquam illum ad dolorum
+                doloremque! Animi, velit natus totam distinctio odio earum ipsam
+                error officia fugit.
               </p>
               <div class="p-img-name-holder">
-                <img src="../Images/image-daniel.jpg" alt="" />
-                <p>Ahmed Mostafa</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="stars text-yellow-400">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-              </div>
-
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates, amet consequuntur. Hic similique illo libero a vitae
-                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Voluptates, amet consequuntur. Hic similique
-                illo libero a vitae doloremque esse incidunt.
-              </p>
-              <div class="p-img-name-holder">
-                <img src="../Images/image-daniel.jpg" alt="" />
-                <p>Ahmed Mostafa</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="stars text-yellow-400">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates, amet consequuntur. Hic similique illo libero a vitae
-                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Voluptates, amet consequuntur. Hic similique
-                illo libero a vitae doloremque esse incidunt.
-              </p>
-              <div class="p-img-name-holder">
-                <img src="../Images/image-daniel.jpg" alt="" />
-                <p>Ahmed Mostafa</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="stars text-yellow-400">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates, amet consequuntur. Hic similique illo libero a vitae
-                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Voluptates, amet consequuntur. Hic similique
-                illo libero a vitae doloremque esse incidunt.
-              </p>
-              <div class="p-img-name-holder">
-                <img src="../Images/image-daniel.jpg" alt="" />
-                <p>Ahmed Mostafa</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="stars text-yellow-400">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates, amet consequuntur. Hic similique illo libero a vitae
-                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Voluptates, amet consequuntur. Hic similique
-                illo libero a vitae doloremque esse incidunt.
-              </p>
-              <div class="p-img-name-holder">
-                <img src="../Images/image-daniel.jpg" alt="" />
-                <p>Ahmed Mostafa</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="stars text-yellow-400">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates, amet consequuntur. Hic similique illo libero a vitae
-                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Voluptates, amet consequuntur. Hic similique
-                illo libero a vitae doloremque esse incidunt.
-              </p>
-              <div class="p-img-name-holder">
-                <img src="../Images/image-daniel.jpg" alt="" />
-                <p>Ahmed Mostafa</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="stars text-yellow-400">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates, amet consequuntur. Hic similique illo libero a vitae
-                doloremque esse incidunt. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Voluptates, amet consequuntur. Hic similique
-                illo libero a vitae doloremque esse incidunt.
-              </p>
-              <div class="p-img-name-holder">
-                <img src="../Images/image-daniel.jpg" alt="" />
+                <img alt="" src="../Images/Team Members/Ahmed Mostafa.jpg" />
                 <p>Ahmed Mostafa</p>
               </div>
             </div>
@@ -715,15 +501,15 @@
               </div>
             </div>
             <div>
-              <img src="../Images/1384.jpg" alt="" />
+              <img alt="" src="../Images/1384.jpg" />
             </div>
             <div>
-              <img src="../Images/3513.jpg" alt="" />
+              <img alt="" src="../Images/3513.jpg" />
             </div>
             <div>
               <img
-                src="../Images/business-concept-with-team-close-up.jpg"
                 alt=""
+                src="../Images/business-concept-with-team-close-up.jpg"
               />
             </div>
           </div>
@@ -869,38 +655,39 @@
           </div>
           <h1 id="contact-form">GET IN TOUCH WITH US</h1>
           <div class="container mx-auto anima-off">
-            <form action="">
+            <form method="post">
               <div class="right">
                 <div class="name">
                   <div>
-                    <label for="fname">FULL NAME</label>
-                    <input type="text" name="fname" />
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name" />
                   </div>
                   <div>
-                    <label for="lname">EMAIL</label>
-                    <input type="email" name="lname" />
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" />
                   </div>
                 </div>
-                <!-- <div class="stars">
-              <i class="fa-regular fa-star" data-set="1"></i>
-              <i class="fa-regular fa-star" data-set="2"></i>
-              <i class="fa-regular fa-star" data-set="3"></i>
-              <i class="fa-regular fa-star" data-set="4"></i>
-              <i class="fa-regular fa-star" data-set="5"></i>
-            </div> -->
               </div>
               <div class="left">
-                <label for="feed-back">YOUR MASSEGE </label>
+                <label for="content">Your Message</label>
                 <textarea
-                  name="feed-back"
-                  id="feed-back"
+                  name="content"
+                  id="content"
                   cols="30"
                   rows="10"
                 ></textarea>
+                <label for="rating">Rate the site:</label>
+                <select name="rating" id="rating">
+                  <option value="1">1 star</option>
+                  <option value="2">2 stars</option>
+                  <option value="3">3 stars</option>
+                  <option value="4">4 stars</option>
+                  <option value="5">5 stars</option>
+                </select>
               </div>
-
-              <button type="submit">Submit</button>
+              <button type="submit">Submit Interaction</button>
             </form>
+
             <div class="contact-info">
               <h2>Contact Information</h2>
               <div>
@@ -939,7 +726,7 @@
       <footer>
         <div class="holder">
           <div class="logo">
-            <img src="../Images/Logo.jpg" alt="" />
+            <img alt="" src="../Images/Logo.jpg" />
             <span class="med">Med</span>
             Culture
           </div>
@@ -1007,6 +794,7 @@
           <i class="fa-solid fa-star"></i>
           <p>Wishlist</p>
         </div>
+
         <div class="side-bar-alarm" data-set="alarm">
           <i class="fa-solid fa-stopwatch"></i>
           <p>Alarms</p>
@@ -1019,55 +807,70 @@
       <div class="right-page">
         <div class="user-info-page page-hidden" data-set="account">
           <div class="user-img">
-            <img src="" alt="" />
+            <img
+              style="border-radius: 70%"
+              src="../Images/Team Members/Ahmed Mostafa.jpg"
+              alt="User Photo"
+            />
             <div class="upload-btn-wrapper">
               <button class="btn"><i class="fa-solid fa-camera"></i></button>
-              <input type="file" name="myfile" />
+              <input type="file" name="photo" id="photo-input" />
             </div>
           </div>
-          <form action="" class="user-info-fields">
+          <form
+            id="user-info-form"
+            action=""
+            method="post"
+            class="user-info-fields"
+            enctype="multipart/form-data"
+          >
             <div>
               <label for="user-first-name">First Name</label>
-
-              <input type="text" id="user-first-name" value="Ahmed" disabled />
-              <p id="change-first-name">Change</p>
+              <input
+                disabled
+                id="user-first-name"
+                name="first_name"
+                type="text"
+                value="Ahmed"
+              />
+              <p class="change-info" data-field="first_name">Change</p>
             </div>
             <div>
-              <label for="user-last-name">last Name</label>
-              <input type="text" id="user-last-name" value="Mostafa" disabled />
-              <p id="change-last-name">Change</p>
+              <label for="user-last-name">Last Name</label>
+              <input
+                disabled
+                id="user-last-name"
+                name="last_name"
+                type="text"
+                value="Mostafa"
+              />
+              <p class="change-info" data-field="last_name">Change</p>
             </div>
             <div>
               <label for="user-email">Your Email</label>
               <input
-                type="text"
+                disabled
                 id="user-email"
-                value="ahmedmostafa00@gmail.com"
-                disabled
-              />
-              <p id="change-email">Change</p>
-            </div>
-            <div>
-              <label for="user-birthdate">Birthdate</label>
-              <input
+                name="email"
                 type="text"
-                id="user-birthdate"
-                value="31/3/2003"
-                disabled
+                value="ahmedmostafa56@gmail.com"
               />
-              <p id="change-birthdate">Change</p>
+              <p class="change-info" data-field="email">Change</p>
             </div>
             <div>
               <label for="user-address">Your Address</label>
               <input
-                type="text"
-                id="user-address"
-                value="New Fayoum"
                 disabled
+                id="user-address"
+                name="address"
+                type="text"
+                value="Elfayoum"
               />
-              <p id="change-address">Change</p>
+              <p class="change-info" data-field="address">Change</p>
             </div>
+
             <button
+              type="submit"
               class="save-info-btn-false save-info-btn"
               id="save-info-btn"
               disabled
@@ -1076,13 +879,60 @@
             </button>
           </form>
         </div>
-        <!-- CC -->
+        <script>
+          document
+            .getElementById("photo-input")
+            .addEventListener("change", function (event) {
+              var reader = new FileReader();
+              reader.onload = function () {
+                var img = document.querySelector(".user-img img");
+                img.src = reader.result;
+              };
+              reader.readAsDataURL(event.target.files[0]);
 
+              // Enable save button
+              document.getElementById("save-info-btn").disabled = false;
+              document
+                .getElementById("save-info-btn")
+                .classList.remove("save-info-btn-false");
+            });
+
+          document.querySelectorAll(".change-info").forEach(function (element) {
+            element.addEventListener("click", function () {
+              var field = this.getAttribute("data-field");
+              document.getElementById("user-" + field).disabled = false;
+              document.getElementById("save-info-btn").disabled = false;
+              document
+                .getElementById("save-info-btn")
+                .classList.remove("save-info-btn-false");
+            });
+          });
+        </script>
+        <!-- CC -->
         <div class="wish-list-page page-hidden" data-set="wishlist">
           <div class="buy-all">
             <button class="buy-all-btn">
-              <a href="../Pages/order.html">Buy all</a>
+              <a href="./order.html">Buy all</a>
             </button>
+          </div>
+
+          <div class="product-holder" data-set="Medicin" id="1">
+            <div class="product-img">
+              <img alt="" src="../Images/Team Members/Ahmed Mostafa.jpg" />
+            </div>
+            <div class="product-details">
+              <p class="product-name">TEST</p>
+              <p class="product-description">TEST</p>
+              <span class="product-price">30.99 <span>EGP</span></span>
+              <div class="btns">
+                <button class="buy-now">
+                  <a href="./order.html">Buy Now</a>
+                </button>
+                <div class="rm-btn" data-product-id="{{ product.id }}">
+                  Remove
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <!-- CC -->
@@ -1148,20 +998,14 @@
           <div class="alarms" id="alarmList"></div>
         </div>
         <!-- CC -->
-        <div class="settings-page page-hidden" data-set="settings">
+        <div class="settings-page" data-set="settings">
           <h2>Change Password</h2>
-          <form action="">
+          <form method="post">
             <div>
-              <label for="old-password">Old Password</label>
-              <input type="password" name="old-password" />
+              <label for="id_password">New Password</label>
             </div>
             <div>
-              <label for="new-password">New Password</label>
-              <input type="password" name="new-password" />
-            </div>
-            <div>
-              <label for="confirm-password">Confirm New Password</label>
-              <input type="password" name="confirm-password" />
+              <label for="id_confirm_pass">Confirm New Password</label>
             </div>
             <button type="submit">Change</button>
           </form>
@@ -1171,7 +1015,6 @@
     </div>
     <span class="arrow-up center"><i class="fa-solid fa-arrow-up"></i></span>
     <script src="../JS/mainPage.js"></script>
-
     <script
       src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
       type="module"
@@ -1248,6 +1091,64 @@
           }
         });
       }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("JavaScript is loaded.");
+
+        document.querySelectorAll(".atwl").forEach((button) => {
+          button.addEventListener("click", function () {
+            console.log("Button clicked.");
+            const productId = this.dataset.productId;
+            fetch("{% url 'shop'", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": "{{ csrf_token }}",
+                "X-Requested-With": "XMLHttpRequest",
+              },
+              body: JSON.stringify({ product_id: productId }),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                console.log(data);
+                if (data.status === "added") {
+                  this.querySelector("i").classList.remove("fa-regular");
+                  this.querySelector("i").classList.add("fa-solid");
+                } else if (data.status === "removed") {
+                  this.querySelector("i").classList.remove("fa-solid");
+                  this.querySelector("i").classList.add("fa-regular");
+                }
+              })
+              .catch((error) => console.error("Error:", error));
+          });
+        });
+
+        document.querySelectorAll(".rm-btn").forEach((button) => {
+          button.addEventListener("click", function () {
+            console.log("Remove button clicked.");
+            const productId = this.dataset.productId;
+            fetch("{% url 'shop'", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": "{{ csrf_token }}",
+                "X-Requested-With": "XMLHttpRequest",
+              },
+              body: JSON.stringify({ product_id: productId }),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                console.log(data);
+                if (data.status === "removed") {
+                  this.closest(".product-holder").remove();
+                }
+              })
+              .catch((error) => console.error("Error:", error));
+          });
+        });
+      });
     </script>
   </body>
 </html>

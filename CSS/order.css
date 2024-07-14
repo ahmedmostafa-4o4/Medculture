@@ -21,7 +21,6 @@ nav {
     background-color: white;
 }
 
-nav a {}
 
 nav a h1 {
     width: fit-content;
@@ -170,6 +169,7 @@ form input[type="checkbox"] {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .orders-and-price>div {
@@ -281,7 +281,7 @@ form {
     z-index: 999999999999;
 }
 
-@media not all and (min-width: 900px) {
+@media not all and (min-width: 9000px) {
     .credit-card-page {
         width: 380px;
         overflow-x: auto;
@@ -319,7 +319,7 @@ form {
     -o-transition: 0.5s;
 }
 
-@media not all and (min-width: 900px) {
+@media not all and (min-width: 9000px) {
     .credit-card-page .cards {
         width: 100%;
         position: absolute;
@@ -446,7 +446,7 @@ form {
     position: relative;
 }
 
-@media not all and (min-width: 900px) {
+@media not all and (min-width: 9000px) {
     .credit-card-page .payment-details {
         width: 100%;
     }
@@ -567,7 +567,7 @@ form {
     rotate: 135deg;
 }
 
-@media not all and (min-width: 900px) {
+@media not all and (min-width: 9000px) {
     .credit-card-page .arrow {
         display: block;
     }

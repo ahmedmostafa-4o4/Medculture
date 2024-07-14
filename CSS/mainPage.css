@@ -1646,7 +1646,7 @@ ul {
 }
 
 .team-members .cards>div:nth-child(10) {
-    background-image: url('../Images/Team\ Members/Shahd\ Mohammed.jpg');
+    background-image: url("../Images/Team\ Members/Shahd\ Mohammed.jpg");
 }
 
 .team-members .cards>div:nth-child(11) {
@@ -1675,7 +1675,9 @@ ul {
     width: 100%;
 }
 
-.team-members .cards>div:nth-child(12) .member-name p {}
+.team-members .cards>div:nth-child(12) .member-name p {}
+
+
 
 .about-us-content .branding {
     width: 100%;

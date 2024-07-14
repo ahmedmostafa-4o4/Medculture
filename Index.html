@@ -3,23 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Main Style -->
-    <link rel="stylesheet" href="./CSS/style.css" />
-    <!-- Normalize File -->
-    <link rel="stylesheet" href="./CSS/normalize.css" />
-    <!-- Font Awesome File -->
-    <link rel="stylesheet" href="./CSS/all.min.css" />
-    <title>Document</title>
+
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/normalize.css" />
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <title>Med Culture</title>
+
+    <style>
+      .error-message {
+        display: none; /* بدء العملية: الرسائل لن تظهر أولا */
+        color: red; /* إعطاء الرسائل لون أحمر */
+      }
+    </style>
   </head>
   <body>
     <div class="parent rotate-off">
-      <form action="" class="sign-in">
+      <!-- Sign in form -->
+      <form
+        action="./Pages/mainPage.html#landing-on"
+        method="post"
+        class="sign-in"
+      >
         <h1>Sign in</h1>
         <label for="user-name-field">Email</label>
         <div>
           <i class="fa-regular fa-user username-icon"></i>
           <input
             type="email"
+            name="email"
             placeholder="Type your email"
             id="user-name-field"
           />
@@ -32,71 +43,155 @@
             type="password"
             placeholder="Type your password"
             id="password-field"
+            name="password"
           />
           <i class="fa-regular fa-eye pass-eye-in"></i>
         </div>
         <span id="passwordSignIn-span">Wrong Password, Try again</span>
-        <button id="btn">Login</button>
+        <button id="btn" name="login">Login</button>
         <p class="sign-up-btn">Sign up</p>
       </form>
+
+      <!-- Sign up form -->
       <div class="landing">
-        <div class="links">
-          <a href="#" class="facebook"
-            ><i class="fa-brands fa-square-facebook"></i
-          ></a>
-          <a href="#" class="instgram"
-            ><i class="fa-brands fa-square-instagram"></i
-          ></a>
-          <a href="#" class="twitter"
-            ><i class="fa-brands fa-square-x-twitter"></i
-          ></a>
-          <a href="#" class="github"
-            ><i class="fa-brands fa-square-github"></i
-          ></a>
+        <div>
+          <div class="links">
+            <a href="#" class="facebook"
+              ><i class="fa-brands fa-square-facebook"></i
+            ></a>
+            <a href="#" class="instgram"
+              ><i class="fa-brands fa-square-instagram"></i
+            ></a>
+            <a href="#" class="twitter"
+              ><i class="fa-brands fa-square-x-twitter"></i
+            ></a>
+            <a href="#" class="github"
+              ><i class="fa-brands fa-square-github"></i
+            ></a>
+          </div>
+          <!-- <h1><span>Med</span>Culture</h1> -->
         </div>
         <button class="slider-btn" id="slider-btn">Sign up</button>
       </div>
-      <form action="" class="sign-up">
+
+      <!-- Registration form -->
+      <form method="POST" class="sign-up">
         <h1>Sign up</h1>
         <div class="input-holder">
           <input
             class="nameInput"
             type="text"
             placeholder="First Name"
+            name="first_name"
             required
           />
           <input
             class="nameInput"
             type="text"
             placeholder="Last Name"
+            name="last_name"
             required
           />
         </div>
-        <input type="email" placeholder="Enter your email" id="sign-up-email" />
+        <input
+          type="email"
+          placeholder="Enter your email"
+          id="sign-up-email"
+          name="email"
+        />
         <span id="emailSignUp-span">This email already exist!</span>
         <div>
           <input
             type="password"
             placeholder="Enter your password"
             id="sign-up-password"
+            name="password"
           />
           <span id="passwordSignUp-span"
             >Minimum 8 characters, both lower and upper case Must include
-            symbols Must include numbers.
-          </span>
+            symbols Must include numbers.</span
+          >
           <i class="fa-regular fa-eye pass-eye"></i>
         </div>
         <input
           type="password"
           placeholder="Confirm password"
           id="confirm-password"
+          name="confirm_pass"
         />
         <span id="confirm-span">Type your password correctly!</span>
-        <button>Sign up</button>
+        <button type="submit" name="register">Sign Up</button>
         <p class="sign-in-btn">Sign in</p>
       </form>
     </div>
-    <script src="./JS/PageJS.js" type="module"></script>
-    <script src="./JS/main.js"></script>
+
+    <script src="JS/main.js"></script>
+    <script>
+      // انتظر حتى تتم استعداد صفحة HTML
+      document.addEventListener("DOMContentLoaded", function () {
+        // تحديد العناصر التي تحتوي على الرسائل الخطأ
+        var errorMessages = document.querySelectorAll(".error-message");
+
+        // إظهار الرسائل الخطأ إذا كانت موجودة
+        errorMessages.forEach(function (message) {
+          if (message.textContent.trim().length > 0) {
+            message.style.display = "block";
+          }
+        });
+
+        // إخفاء الرسائل الخطأ عند النقر على أي مكان في النموذج
+        document.body.addEventListener("click", function (event) {
+          // تحديد عناصر النموذجات
+          var forms = document.querySelectorAll(".sign-in, .sign-up");
+
+          // التأكد من أن النقر كان داخل أحد النماذج
+          forms.forEach(function (form) {
+            if (form.contains(event.target)) {
+              // إخفاء جميع الرسائل الخطأ داخل النموذج
+              var errorMessagesInsideForm =
+                form.querySelectorAll(".error-message");
+              errorMessagesInsideForm.forEach(function (message) {
+                message.style.display = "none";
+              });
+            }
+          });
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // إظهار الرسائل الخطأ إذا كانت موجودة
+        var errorMessages = document.querySelectorAll(".error-message");
+        errorMessages.forEach(function (message) {
+          if (message.textContent.trim().length > 0) {
+            message.style.display = "block";
+          } else {
+            message.style.display = "none";
+          }
+        });
+
+        // إخفاء الرسائل الخطأ عند إعادة تحميل الصفحة
+        window.addEventListener("beforeunload", function () {
+          var errorMessages = document.querySelectorAll(".error-message");
+          errorMessages.forEach(function (message) {
+            message.style.display = "none";
+          });
+        });
+
+        // إخفاء الرسائل الخطأ عند النقر خارج النموذج
+        document.body.addEventListener("click", function (event) {
+          var forms = document.querySelectorAll(".sign-in, .sign-up");
+          forms.forEach(function (form) {
+            if (!form.contains(event.target)) {
+              var errorMessagesInsideForm =
+                form.querySelectorAll(".error-message");
+              errorMessagesInsideForm.forEach(function (message) {
+                message.style.display = "none";
+              });
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

@@ -31,20 +31,20 @@ let signUpForm = document.querySelector(".sign-up");
 let validEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/g;
 let validPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm;
 
-let array = [];
-let newArray = [];
-let key;
+// let array = [];
+// let newArray = [];
+// let key;
 
-for (let i = 0; i < window.localStorage?.length; i++) {
-  array.push(`${window.localStorage.getItem(window.localStorage.key(i))}`);
-}
-for (let i = 0; i < window.localStorage.length; i++) {
-  if (window.localStorage.key(i).includes("no.")) {
-    newArray[
-      window.localStorage.key(i).slice(7)
-    ] = `${window.localStorage.getItem(window.localStorage.key(i))}`;
-  }
-}
+// for (let i = 0; i < window.localStorage?.length; i++) {
+//   array.push(`${window.localStorage.getItem(window.localStorage.key(i))}`);
+// }
+// for (let i = 0; i < window.localStorage.length; i++) {
+//   if (window.localStorage.key(i).includes("no.")) {
+//     newArray[
+//       window.localStorage.key(i).slice(7)
+//     ] = `${window.localStorage.getItem(window.localStorage.key(i))}`;
+//   }
+// }
 
 signUpForm.onsubmit = function () {
   let flag = false;
@@ -91,11 +91,11 @@ toggleEye.addEventListener("click", function () {
 // End Sign Up Handling
 
 //Start Sign In Handling
-let emailSignIn = document.getElementById("user-name-field");
-let passwordSignIn = document.getElementById("password-field");
-let emailSignInWarning = document.getElementById("emailSignIn-span");
-let passwordSignInWarning = document.getElementById("passwordSignIn-span");
-let signInForm = document.querySelector(".sign-in");
+// let emailSignIn = document.getElementById("user-name-field");
+// let passwordSignIn = document.getElementById("password-field");
+// let emailSignInWarning = document.getElementById("emailSignIn-span");
+// let passwordSignInWarning = document.getElementById("passwordSignIn-span");
+// let signInForm = document.querySelector(".sign-in");
 // signInForm.onsubmit = function () {
 //   if (newArray.includes(emailSignIn.value)) {
 //     emailSignIn.style.marginBottom = "30px";
@@ -130,6 +130,8 @@ let signInForm = document.querySelector(".sign-in");
 //     return false;
 //   }
 // };
+
+const passwordSignIn = document.getElementById("password-field");
 
 let toggleEyeIn = document.querySelector(".pass-eye-in");
 toggleEyeIn.addEventListener("click", function () {

@@ -1,3 +1,7 @@
+if (sessionStorage.length === 0 || sessionStorage.getItem("CP") === "null") {
+  sessionStorage.setItem("CP", "landing-on");
+}
+
 const scrollBtn = document.querySelector(".arrow-up");
 
 window.onscroll = function () {
@@ -85,8 +89,8 @@ stars.forEach((e) => {
 
 //transisions
 
-let sideBarLinks = document.querySelectorAll(".side-bar-links>li>a");
-let navBarLinks = document.querySelectorAll(".links>li>a");
+let sideBarLinks = document.querySelectorAll(".side-bar-links>li>a:not(.linkedPage)");
+let navBarLinks = document.querySelectorAll(".links>li>a:not(.linkedPage)");
 let aboutUsDiv = document.querySelector("div[data-set = 'about-us']");
 let servicesDiv = document.querySelector("div[data-set = 'services']");
 let testimonialsDiv = document.querySelector("div[data-set = 'testimonials']");
@@ -152,12 +156,19 @@ allSections.forEach((e) => {
   }
 });
 
-regex = /mainPage\.html$/;
-regex2 = /app\/$/;
+const backToHomeLinkes = document.querySelectorAll(".back-to-home a");
 
-if (regex.test(location.href) || regex2.test(location.href))
-  landingDiv.style.display = "flex";
-else landingDiv.style.display = "none";
+backToHomeLinkes.forEach(e => {
+  e.addEventListener("click", (ele) => {
+    sessionStorage.setItem("CP", `${ele.target.getAttribute("data-set")}`);
+  })
+})
+
+
+
+// if (regex.test(location.href) || regex2.test(location.href))
+//   landingDiv.style.display = "flex";
+// else landingDiv.style.display = "none";
 
 //Letters Animations && show animation
 
@@ -300,24 +311,35 @@ function back() {
   accountPage.style.display = "none";
 }
 
-const userInfoForm = document.querySelectorAll(".user-info-fields div");
-const saveBtn = document.querySelector(".save-info-btn");
+document.addEventListener('DOMContentLoaded', function() {
+  const userInfoForm = document.querySelectorAll(".user-info-fields div");
+  const saveBtn = document.querySelector(".save-info-btn");
 
-userInfoForm.forEach(function (e) {
-  e.children[2].onclick = function () {
-    e.children[1].disabled = false;
-    e.children[1].focus();
-    saveBtn.classList.remove("save-info-btn-false");
-    saveBtn.classList.add("save-info-btn-true");
-    saveBtn.disabled = false;
-    if (e.children[1].disabled === false) {
-      e.children[1].addEventListener(
-        "blur",
-        () => (e.children[1].disabled = true)
-      );
-    }
+  userInfoForm.forEach(function(e) {
+      e.children[2].onclick = function() {
+          e.children[1].disabled = false;
+          e.children[1].focus();
+          saveBtn.classList.remove("save-info-btn-false");
+          saveBtn.classList.add("save-info-btn-true");
+          saveBtn.disabled = false;
+      };
+  });
+
+  saveBtn.onclick = function() {
+      userInfoForm.forEach(function(e) {
+          e.children[1].disabled = false;
+      });
   };
 });
+
+
+
+// for (let i = 0; i < sessionStorage.length; i++) {
+//   if (sessionStorage.key(i) != "CP") {
+//     sessionStorage.setItem("CP", "landing-on");
+//   }
+// }
+
 
 let sideBarSet;
 let rightPageSet;

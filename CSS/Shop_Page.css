@@ -335,9 +335,9 @@ body {
     border: 2px solid var(--green-color);
 }
 
-.user-btn,
-.nav .wishlist-btn,
-.nav .notification {
+.user-btn
+ {
+    margin-right: 45px;
     width: 45px;
     height: 45px;
     border: 2px solid var(--red-color);
@@ -414,7 +414,7 @@ body {
     min-width: 200px;
     position: absolute;
     top: calc(100% + 10px);
-    right: -80px;
+    right: -40px;
     background-color: var(--main-color);
     flex-direction: column;
     justify-content: start;
@@ -435,7 +435,7 @@ body {
     content: "";
     position: absolute;
     top: -16px;
-    left: 90px;
+    left: 130px;
     border-color: transparent transparent var(--main-color) transparent;
     border-width: 8px;
     border-style: solid;
@@ -772,6 +772,7 @@ body {
 
 .product-holder .product-img img {
     border-radius: 25px;
+    width: 100%;
     height: 100%;
     max-width: 100%;
 
@@ -790,18 +791,23 @@ body {
     margin: 8px 0;
 }
 
-.product-holder .product-details p:nth-of-type(1) {
+.product-holder .product-details>p:nth-of-type(1) {
     color: white;
     font-weight: bold;
     margin: 5px 0;
     text-align: start;
     cursor: pointer;
+    text-wrap: balance;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
-.product-holder .product-details p:nth-of-type(2) {
+.product-holder .product-details>p:nth-of-type(2) {
     height: 50px;
     margin: 5px 0;
-    color: #ccccccb2;
+    color: #ccc;
     text-align: start;
     line-height: 1.3;
     font-size: 13px;
@@ -1462,6 +1468,8 @@ body {
     box-shadow: -1px 5px 13px 0px black
 }
 
+
+
 .account-page .wish-list-page .product-holder .product-img {
     width: 50%;
     flex: 1 1;
@@ -1490,13 +1498,13 @@ body {
 }
 
 .account-page .wish-list-page .product-holder .product-details .product-name {
-    color: black;
+    color: white;
     font-size: 17px;
 }
 
 .account-page .wish-list-page .product-holder .product-details .product-description {
     position: relative;
-    color: rgba(0, 0, 0, 0.616);
+    color: #ccc;
 }
 
 .product-hover {
@@ -1516,7 +1524,7 @@ body {
 }
 
 .account-page .wish-list-page .product-holder .product-details .product-price {
-    color: black;
+    color: white;
 }
 
 .account-page .wish-list-page .product-holder .product-details .btns {
